@@ -16,7 +16,7 @@ export const Socials = () => {
 
       </div>
 
-      <a href="#" className="btn-cv" target="_blank" rel="noreferrer" download >
+      <a href="#" className="btn-cv" rel="noreferrer"  >
         <MdDownload />
         <span className="btn-cv">
           Download CV
