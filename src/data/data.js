@@ -85,6 +85,25 @@ export const projects = [
     ],
     source: 'https://github.com/HectorTorrez/Patient-Manager',
     sourceIcon: BiLinkExternal,
+  },
+  {
+    title: 'Marketing Website',
+    description: 'It is a website designed to promote and sell products or services..',
+    demo: 'https://serene-paprenjak-31dcf5.netlify.app/',
+    demoIcon: FiGithub,
+    tags: [
+      {
+        icon: DiJavascript1, color: '#F7DF1E'
+      },
+      {
+        icon: FaReact, color: '#61DAFB'
+      },
+      {
+        icon: DiCss3, color: '#1572B6'
+      },
+    ],
+    source: 'https://github.com/HectorTorrez/marketing-website',
+    sourceIcon: BiLinkExternal,
   }
 
 ]
