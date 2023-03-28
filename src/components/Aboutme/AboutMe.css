@@ -1,0 +1,24 @@
+main{
+  display: flex;
+  justify-content: center;
+  margin: 30px 10px 30px 10px;
+  
+}
+.aboutme-main{
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+}
+.aboutme-main h1{
+  text-align: start;
+  font-size: 3.0rem;
+  color: var(--titles);
+}
+.aboutme-main p {
+ text-align: start;
+ line-height: 1.625;
+  font-size: 1.7rem;
+
+}

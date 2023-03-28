@@ -1,0 +1,39 @@
+.socials-container{
+  display: flex; 
+  align-items: center;
+  gap: 50px;
+
+
+}
+.socials{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  margin-top: 20px;
+}
+.socials-icons{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.socials-container a{
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.5rem;
+  height: 25px;
+  color: var(--titles);
+}
+.btn-cv svg{
+  width: 30px;
+}
+.btn-cv{
+  vertical-align: middle;
+}
+.socials-container a svg{
+  vertical-align: middle;
+  width: 20px;
+
+}

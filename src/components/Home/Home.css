@@ -1,0 +1,21 @@
+.home{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 30px 10px 30px 10px;
+}
+.home__container p:nth-child(1){
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+  
+}
+.home__container h1{
+  font-size: 5.0rem;
+}
+.home__container h1 span{
+  color: var(--titles);
+}
+.home__container p:nth-child(3){
+  font-size: 1.7rem;
+  
+}

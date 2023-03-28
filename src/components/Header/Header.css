@@ -1,0 +1,31 @@
+nav{
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.nav-ul{
+  display: flex;
+  gap: 30px;
+
+}
+.nav-ul li {
+  font-size: 1.5rem;
+  list-style: none;
+  
+}
+.nav-ul li a{
+  text-decoration: none;
+  color: #fff;
+  transition: border-bottom 0.5s ease;
+
+}
+.nav-ul li a:hover{
+  color: var(--titles);
+  border-bottom: 1px solid var(--titles);
+  
+}
+.nav-ul li a:active{
+  color: var(--titles);
+}
