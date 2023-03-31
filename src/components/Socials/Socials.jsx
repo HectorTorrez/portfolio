@@ -1,6 +1,7 @@
 import { MdDownload } from "react-icons/md"
 import { socials } from "../../data/data"
 import './Socials.css'
+import pdf from '../assets/CVHector-Antonio-Torrez-Buruca.pdf'
 
 export const Socials = () => {
   return (
@@ -16,7 +17,7 @@ export const Socials = () => {
 
       </div>
 
-      <a href="#" className="btn-cv" rel="noreferrer"  >
+      <a href={pdf} className="btn-cv" rel="noreferrer" target="_blank"   >
         <MdDownload />
         <span className="btn-cv">
           Download CV

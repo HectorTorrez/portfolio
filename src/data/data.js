@@ -30,6 +30,25 @@ export const socials = [
 
 export const projects = [
   {
+    title: 'Shopping Website',
+    description: 'It is a website designed to promote and sell products or services..',
+    demo: 'https://serene-paprenjak-31dcf5.netlify.app/',
+    demoIcon: FiGithub,
+    tags: [
+      {
+        icon: DiJavascript1, color: '#F7DF1E'
+      },
+      {
+        icon: FaReact, color: '#61DAFB'
+      },
+      {
+        icon: DiCss3, color: '#1572B6'
+      },
+    ],
+    source: 'https://github.com/HectorTorrez/marketing-website',
+    sourceIcon: BiLinkExternal,
+  },
+  {
     title: 'Anime list',
     description: 'This project starts with the idea of creating a web application to manage a list of anime.',
     demo: 'https://anime-list00.netlify.app/',
@@ -46,25 +65,6 @@ export const projects = [
       },
     ],
     source: 'https://github.com/HectorTorrez/anime-list',
-    sourceIcon: BiLinkExternal,
-  },
-  {
-    title: 'Todo List',
-    description: 'This project is a simple todo list, where you can add and delete.',
-    demo: 'https://hectortorrez.github.io/react-tasks/',
-    demoIcon: FiGithub,
-    tags: [
-      {
-        icon: DiJavascript1, color: '#F7DF1E'
-      },
-      {
-        icon: FaReact, color: '#61DAFB'
-      },
-      {
-        icon: DiCss3, color: '#1572B6'
-      },
-    ],
-    source: 'https://github.com/HectorTorrez/react-tasks',
     sourceIcon: BiLinkExternal,
   },
   {
@@ -87,9 +87,9 @@ export const projects = [
     sourceIcon: BiLinkExternal,
   },
   {
-    title: 'Marketing Website',
-    description: 'It is a website designed to promote and sell products or services..',
-    demo: 'https://serene-paprenjak-31dcf5.netlify.app/',
+    title: 'Todo List',
+    description: 'This project is a simple todo list, where you can add and delete.',
+    demo: 'https://hectortorrez.github.io/react-tasks/',
     demoIcon: FiGithub,
     tags: [
       {
@@ -102,9 +102,10 @@ export const projects = [
         icon: DiCss3, color: '#1572B6'
       },
     ],
-    source: 'https://github.com/HectorTorrez/marketing-website',
+    source: 'https://github.com/HectorTorrez/react-tasks',
     sourceIcon: BiLinkExternal,
-  }
+  },
 
 ]
+
 
