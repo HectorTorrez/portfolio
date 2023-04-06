@@ -11,7 +11,7 @@ export const Projects = () => {
           projects &&
           projects.map((project) => (
 
-            <div className='project-card' key={project.title}>
+            <a href={project.demo} target='_blank' className='project-card' key={project.title}>
 
               <div className='project-info'>
                 <h3>{project.title}</h3>
@@ -30,7 +30,7 @@ export const Projects = () => {
                   <a href={project.demo} className='btn-small' target='_blank' rel="noreferrer" >Demo{<project.sourceIcon />}</a>
                 </div>
               </div>
-            </div>
+            </a>
 
           ))
         }

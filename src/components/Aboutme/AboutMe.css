@@ -5,9 +5,9 @@ main{
   
 }
 .aboutme-main{
-
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 5px;
 
 }
@@ -17,8 +17,8 @@ main{
   color: var(--titles);
 }
 .aboutme-main p {
- text-align: start;
+ text-align: center;
  line-height: 1.625;
-  font-size: 1.7rem;
+  font-size: 1.9rem;
 
 }
