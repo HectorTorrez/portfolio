@@ -1,21 +1,26 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { projects } from '../../data/data.js'
 import { Technologies } from '../Technologies/Technologies.jsx'
+import { UserContext } from '../Context/UseContext.jsx'
+
 export const Projects = () => {
+
+  const { language } = useContext(UserContext)
+
   return (
     <>
-      <h2>Projects</h2>
+      <h2>{language ? "Projects" : "Proyectos"}</h2>
       <div className='project'>
 
         {
           projects &&
           projects.map((project) => (
 
-            <a href={project.demo} target='_blank' className='project-card' key={project.title}>
+            <div key={project.title} className='project-card' >
 
               <div className='project-info'>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
+                <h3>{language ? project.title : project.titleES}</h3>
+                <p>{language ? project.description : project.descriptionES}</p>
 
               </div>
               <div className='technologies'>
@@ -26,12 +31,12 @@ export const Projects = () => {
               </div>
               <div className='project-links'>
                 <div className='btn-links'>
-                  <a href={project.source} className='btn-small' target='_blank' rel="noreferrer" >Source {<project.demoIcon />}</a>
+                  <a href={project.source} className='btn-small' target='_blank' rel="noreferrer" >{language ? "Source" : "Código Fuente"} {<project.demoIcon />}</a>
                   <a href={project.demo} className='btn-small' target='_blank' rel="noreferrer" >Demo{<project.sourceIcon />}</a>
                 </div>
               </div>
-            </a>
 
+            </div>
           ))
         }
       </div >

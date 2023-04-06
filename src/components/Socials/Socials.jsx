@@ -2,8 +2,16 @@ import { MdDownload } from "react-icons/md"
 import { socials } from "../../data/data"
 import './Socials.css'
 import pdf from '../assets/CVHector-Antonio-Torrez-Buruca.pdf'
+import pdfES from '../assets/CVHector-Antonio-Torrez-BurucaES.pdf'
+import { useContext } from "react"
+import { UserContext } from "../Context/UseContext"
+
+
 
 export const Socials = () => {
+
+  const { language } = useContext(UserContext)
+
   return (
     <div className="socials-container">
       {
@@ -16,10 +24,10 @@ export const Socials = () => {
       }
 
       <div className="socials-icons">
-        <a href={pdf} className="btn-cv" rel="noreferrer" target="_blank"   >
+        <a href={language ? pdf : pdfES} className="btn-cv" rel="noreferrer" target="_blank"   >
           <MdDownload />
           <span className="btn-cv">
-            Download CV
+            {language ? "Download Resume" : "Descargar CV"}
           </span>
 
         </a>

@@ -1,12 +1,24 @@
+import { useContext } from 'react'
 import './Header.css'
+import { UserContext } from '../Context/UseContext'
 export const Header = () => {
+
+  const { language, setLanguage } = useContext(UserContext)
+
+
+  const handleLanguage = () => {
+    setLanguage(!language)
+  }
+
   return (
     <nav>
-      <ul className='nav-ul'>
-        {/* <li><a href="#aboutme-main">About me</a></li> */}
-        <li><a href="#">Projects</a></li>
-        {/* <li><a href="#">Contact</a></li> */}
-      </ul>
+      {/* <button onClick={handleLanguage}>{language ? "en" : "es"}</button> */}
+      <div className="language-switch">
+        <button onClick={handleLanguage} className={language ? "language-button active" : "language-button"}>EN</button>
+        <button onClick={handleLanguage} className={language ? "language-button" : "language-button active"}>ES</button>
+
+      </div>
+
     </nav>
   )
 }

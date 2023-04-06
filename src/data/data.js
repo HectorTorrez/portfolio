@@ -31,7 +31,9 @@ export const socials = [
 export const projects = [
   {
     title: 'Shopping Website',
-    description: 'It is a website designed to promote and sell products or services..',
+    titleES: 'Carrito de Compra',
+    description: 'It is a website designed to promote and sell products.',
+    descriptionES: 'Es una página web diseñada para promocionar la venta de productos',
     demo: 'https://serene-paprenjak-31dcf5.netlify.app/',
     demoIcon: FiGithub,
     tags: [
@@ -50,7 +52,9 @@ export const projects = [
   },
   {
     title: 'Anime list',
+    titleES: 'Lista de Anime',
     description: 'This project starts with the idea of creating a web application to manage a list of anime.',
+    descriptionES: 'Este proyecto empieza con la idea de crear una web para gestionar una lista de anime',
     demo: 'https://anime-list00.netlify.app/',
     demoIcon: FiGithub,
     tags: [
@@ -69,7 +73,9 @@ export const projects = [
   },
   {
     title: 'Patient Manager',
+    titleES: 'Administrador de Pacientes',
     description: 'This is a patient listing application, where you can create, edit and delete.',
+    descriptionES: 'Esta es una aplicación de listado de paciente, donde tú puedes crear, editar y eliminar.',
     demo: 'https://main--aesthetic-starship-355674.netlify.app/',
     demoIcon: FiGithub,
     tags: [
@@ -88,7 +94,9 @@ export const projects = [
   },
   {
     title: 'Todo List',
+    titleES: 'Administrador de Tareas',
     description: 'This project is a simple todo list, where you can add and delete.',
+    descriptionES: 'Es un simple administrador de tareas, donde puedes agregar y eliminar.',
     demo: 'https://hectortorrez.github.io/react-tasks/',
     demoIcon: FiGithub,
     tags: [
