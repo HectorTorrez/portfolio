@@ -1,4 +1,4 @@
-import { BiLinkExternal, DiJavascript1, FiGithub, FiLinkedin } from 'react-icons/all'
+import { BiLinkExternal, DiJavascript1, FiGithub, FiLinkedin, IoLogoFirebase, SiTailwindcss } from 'react-icons/all'
 import { AiFillHtml5 } from 'react-icons/all'
 import { DiCss3 } from 'react-icons/all'
 import { FaReact } from 'react-icons/all'
@@ -29,6 +29,30 @@ export const socials = [
 ]
 
 export const projects = [
+  {
+ title: 'Fitlog',
+    titleES: 'Notas de Ejercicios',
+    description: 'This project is a log of exercises, where you can add, edit and delete. I used React and Firebase.',
+    descriptionES: 'Este proyecto es un registro de ejercicios, donde puedes agregar, editar y eliminar. Utilicé React y Firebase.',
+    demo: 'https://fitlog-ht.netlify.app/',
+    demoIcon: FiGithub,
+    tags: [
+      {
+        icon: DiJavascript1, color: '#F7DF1E'
+      },
+      {
+        icon: FaReact, color: '#61DAFB'
+      },
+      {
+        icon: IoLogoFirebase, color: '#FFCA28'
+      },
+      {
+        icon: SiTailwindcss, color: '#38B2AC'
+      },
+    ],
+    source: 'https://github.com/HectorTorrez/FitLog',
+    sourceIcon: BiLinkExternal,
+  },
   {
     title: 'Shopping Website',
     titleES: 'Carrito de Compra',
