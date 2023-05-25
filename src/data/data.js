@@ -117,6 +117,30 @@ export const projects = [
     sourceIcon: BiLinkExternal,
   },
   {
+    title: 'Realtime Chat',
+    titleES: 'Chat en Tiempo Real',
+    description: 'This project is a realtime chat, where you can create a room and chat with your friends.',
+    descriptionES: 'Es un chat en tiempo real, donde puedes crear una sala y chatear con tus amigos.',
+    demo: 'https://realtime-chat-ht.netlify.app/',
+    demoIcon: FiGithub,
+    tags: [
+      {
+        icon: DiJavascript1, color: '#F7DF1E'
+      },
+      {
+        icon: FaReact, color: '#61DAFB'
+      },
+      {
+        icon: IoLogoFirebase, color: '#FFCA28'
+      },
+      {
+        icon: SiTailwindcss, color: '#38B2AC'
+      },
+    ],
+    source: 'https://github.com/HectorTorrez/realtime-chat',
+    sourceIcon: BiLinkExternal,
+  },
+  {
     title: 'Todo List',
     titleES: 'Administrador de Tareas',
     description: 'This project is a simple todo list, where you can add and delete.',
