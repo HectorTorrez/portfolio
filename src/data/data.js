@@ -172,7 +172,7 @@ export const projects = [
     titleES: 'Administrador de Tareas',
     description: 'This project is a simple todo list, where you can add and delete.',
     descriptionES: 'Es un simple administrador de tareas, donde puedes agregar y eliminar.',
-    demo: 'https:/todolist-ty.netlify.app/',
+    demo: 'https://todolistty.netlify.app',
     demoIcon: FiGithub,
     tags: [
      
