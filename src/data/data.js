@@ -186,7 +186,7 @@ export const projects = [
         icon: DiCss3, color: '#1572B6'
       },
     ],
-    source: 'https://hectortorrez.github.io/react-tasks/',
+    source: 'https://github.com/HectorTorrez/TodoList-Typescript',
     sourceIcon: BiLinkExternal,
   },
 
