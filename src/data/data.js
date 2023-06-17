@@ -1,4 +1,4 @@
-import { BiLinkExternal, DiJavascript1, FiGithub, FiLinkedin, IoLogoFirebase, SiTailwindcss } from 'react-icons/all'
+import { BiLinkExternal, DiJavascript1, FiGithub, FiLinkedin, IoLogoFirebase, SiTailwindcss, TbBrandTypescript } from 'react-icons/all'
 import { AiFillHtml5 } from 'react-icons/all'
 import { DiCss3 } from 'react-icons/all'
 import { FaReact } from 'react-icons/all'
@@ -7,6 +7,9 @@ export const skills = [
 
   {
     icon: DiJavascript1, color: '#F7DF1E'
+  },
+  {
+    icon: TbBrandTypescript, color: '#3178C6'
   },
   {
     icon: AiFillHtml5, color: '#E34F26'
@@ -169,20 +172,21 @@ export const projects = [
     titleES: 'Administrador de Tareas',
     description: 'This project is a simple todo list, where you can add and delete.',
     descriptionES: 'Es un simple administrador de tareas, donde puedes agregar y eliminar.',
-    demo: 'https://hectortorrez.github.io/react-tasks/',
+    demo: 'https:/todolist-ty.netlify.app/',
     demoIcon: FiGithub,
     tags: [
-      {
-        icon: DiJavascript1, color: '#F7DF1E'
-      },
+     
       {
         icon: FaReact, color: '#61DAFB'
+      },
+      {
+        icon: TbBrandTypescript, color: '#3178C6'
       },
       {
         icon: DiCss3, color: '#1572B6'
       },
     ],
-    source: 'https://github.com/HectorTorrez/react-tasks',
+    source: 'https://hectortorrez.github.io/react-tasks/',
     sourceIcon: BiLinkExternal,
   },
 
