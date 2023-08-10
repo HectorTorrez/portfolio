@@ -13,7 +13,6 @@ export const Home = () => {
         <h1>
           {language ? "I'm" : "Soy"} <span>Héctor</span>
         </h1>
-        {/* <p>I consider myself to be hard working, willing to adapt in general with a great passion for learning, and keep improving as a Software Developer.</p> */}
         {language ? (
           <p>
             I'm a Front-end Developer with experience in the creation of web
