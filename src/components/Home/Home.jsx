@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Socials } from "../Socials";
-import "./";
+import "./Home.css";
 import { UserContext } from "../Context/UseContext";
 
 export const Home = () => {

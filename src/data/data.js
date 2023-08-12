@@ -1,4 +1,4 @@
-import { BiLinkExternal, DiJavascript1, FiGithub, FiLinkedin, IoLogoFirebase, SiTailwindcss, TbBrandRedux, TbBrandTypescript } from 'react-icons/all'
+import { BiLinkExternal, DiJavascript1, FiGithub, FiLinkedin, SiFirebase, SiSupabase, SiTailwindcss, TbBrandRedux, TbBrandTypescript } from 'react-icons/all'
 import { AiFillHtml5 } from 'react-icons/all'
 import { DiCss3 } from 'react-icons/all'
 import { FaReact } from 'react-icons/all'
@@ -22,7 +22,16 @@ export const skills = [
   },
   {
     icon: TbBrandRedux, color: '#764ABC'
+  },
+  {
+    icon: SiSupabase, color: '#3ECF8E'
+  },
+  {
+    icon: SiFirebase, color: '#FFCA28'
   }
+
+  
+
 ]
 
 export const socials = [
@@ -35,6 +44,33 @@ export const socials = [
 ]
 
 export const projects = [
+  {
+    title: 'Market Place',
+       titleES: 'Market Place',
+       description: 'This project is a market place, where you can add, edit and delete products. I used React, Redux and Supabase.',
+       descriptionES: 'Este proyecto es un market place, donde puedes agregar, editar y eliminar productos. Utilicé React, Redux y Supabase.',
+       demo: 'https://marketplace-ht.netlify.app/',
+       demoIcon: FiGithub,
+       tags: [
+         {
+          icon: TbBrandTypescript, color: '#3178C6'
+         },
+         {
+           icon: FaReact, color: '#61DAFB'
+         },
+         {
+          icon: TbBrandRedux, color: '#764ABC'
+        },
+         {
+           icon: SiSupabase, color: '#3ECF8E'
+         },
+         {
+           icon: SiTailwindcss, color: '#38B2AC'
+         },
+       ],
+       source: 'https://github.com/HectorTorrez/marketPlace',
+       sourceIcon: BiLinkExternal,
+     },
   {
  title: 'Fitlog',
     titleES: 'Notas de Ejercicios',
@@ -50,7 +86,7 @@ export const projects = [
         icon: FaReact, color: '#61DAFB'
       },
       {
-        icon: IoLogoFirebase, color: '#FFCA28'
+        icon: SiFirebase, color: '#FFCA28'
       },
       {
         icon: SiTailwindcss, color: '#38B2AC'
@@ -95,7 +131,7 @@ export const projects = [
         icon: FaReact, color: '#61DAFB'
       },
       {
-        icon: IoLogoFirebase, color: '#FFCA28'
+        icon: SiFirebase, color: '#FFCA28'
       },
       {
         icon: SiTailwindcss, color: '#38B2AC'
@@ -161,7 +197,7 @@ export const projects = [
         icon: FaReact, color: '#61DAFB'
       },
       {
-        icon: IoLogoFirebase, color: '#FFCA28'
+        icon: SiFirebase, color: '#FFCA28'
       },
       {
         icon: SiTailwindcss, color: '#38B2AC'
