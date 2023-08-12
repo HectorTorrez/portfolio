@@ -1,4 +1,4 @@
-import { BiLinkExternal, DiJavascript1, FiGithub, FiLinkedin, IoLogoFirebase, SiTailwindcss, TbBrandTypescript } from 'react-icons/all'
+import { BiLinkExternal, DiJavascript1, FiGithub, FiLinkedin, IoLogoFirebase, SiTailwindcss, TbBrandRedux, TbBrandTypescript } from 'react-icons/all'
 import { AiFillHtml5 } from 'react-icons/all'
 import { DiCss3 } from 'react-icons/all'
 import { FaReact } from 'react-icons/all'
@@ -19,6 +19,9 @@ export const skills = [
   },
   {
     icon: FaReact, color: '#61DAFB'
+  },
+  {
+    icon: TbBrandRedux, color: '#764ABC'
   }
 ]
 
