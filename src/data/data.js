@@ -1,35 +1,90 @@
-import { BiLinkExternal, DiJavascript1, FiGithub, FiLinkedin, SiFirebase, SiSupabase, SiTailwindcss, TbBrandRedux, TbBrandTypescript } from 'react-icons/all'
-import { AiFillHtml5 } from 'react-icons/all'
-import { DiCss3 } from 'react-icons/all'
-import { FaReact } from 'react-icons/all'
+
+import{BiLinkExternal} from 'react-icons/bi'
+import {AiFillHtml5} from 'react-icons/ai'
+import {DiCss3, DiJavascript1} from 'react-icons/di'
+import {FaReact} from 'react-icons/fa'
+import {FiGithub, FiLinkedin} from 'react-icons/fi'
+import {SiFirebase, SiSupabase, SiTailwindcss} from 'react-icons/si'
+import {TbBrandRedux, TbBrandTypescript} from 'react-icons/tb'
+import {BiLogoNodejs} from 'react-icons/bi'
+import {SiExpress, SiMongoose, SiMongodb, SiJest} from 'react-icons/si'
 
 export const skills = [
 
   {
-    icon: DiJavascript1, color: '#F7DF1E'
-  },
-  {
-    icon: TbBrandTypescript, color: '#3178C6'
-  },
-  {
-    icon: AiFillHtml5, color: '#E34F26'
-  },
-  {
-    icon: DiCss3, color: '#1572B6'
-  },
-  {
-    icon: FaReact, color: '#61DAFB'
-  },
-  {
-    icon: TbBrandRedux, color: '#764ABC'
-  },
+    frontend: [
+      {
+        icon: DiJavascript1, color: '#F7DF1E'
+      },
+      {
+          icon: FaReact, color: '#61DAFB'
+      },
+      {
+          icon: TbBrandTypescript, color: '#3178C6'
+      },
+      {
+        icon: DiCss3, color: '#1572B6'
+      },
+      {
+       icon: TbBrandRedux, color: '#764ABC'
+      },
+      {
+        icon: SiTailwindcss, color: '#38B2AC'
+      },
+      {
+        icon: AiFillHtml5, color: '#E34F26'
+      },
+    ],
+    backend: [
+    {
+    icon: BiLogoNodejs, color: '#3ECF8E'
+    },
+    {
+        icon: SiExpress, color: '#3ECF8E'
+    },    
+    {
+      icon: SiMongodb, color: '#3ECF8E'
+    },
+    {
+      icon: SiMongoose, color: '#880000'
+    },
   {
     icon: SiSupabase, color: '#3ECF8E'
-  },
-  {
-    icon: SiFirebase, color: '#FFCA28'
-  }
+  }, 
+    
+    ],
 
+    testing: [
+      {
+        icon: SiJest, color: '#C21325'
+      }, 
+    ]
+  } 
+
+  // {
+  //   icon: DiJavascript1, color: '#F7DF1E'
+  // },
+  // {
+  //   icon: TbBrandTypescript, color: '#3178C6'
+  // },
+  // {
+  //   icon: AiFillHtml5, color: '#E34F26'
+  // },
+  // {
+  //   icon: DiCss3, color: '#1572B6'
+  // },
+  // {
+  //   icon: FaReact, color: '#61DAFB'
+  // },
+  // {
+  //   icon: TbBrandRedux, color: '#764ABC'
+  // },
+  // {
+  //   icon: SiSupabase, color: '#3ECF8E'
+  // },
+  // {
+  //   icon: SiFirebase, color: '#FFCA28'
+  // }
   
 
 ]
