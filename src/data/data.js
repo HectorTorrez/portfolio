@@ -195,27 +195,7 @@ export const projects = [
     source: 'https://github.com/HectorTorrez/Quac',
     sourceIcon: BiLinkExternal,
   },
-  {
-    title: 'Anime list',
-    titleES: 'Lista de Anime',
-    description: 'This project starts with the idea of creating a web application to manage a list of anime.',
-    descriptionES: 'Este proyecto empieza con la idea de crear una web para gestionar una lista de anime',
-    demo: 'https://anime-list00.netlify.app/',
-    demoIcon: FiGithub,
-    tags: [
-      {
-        icon: DiJavascript1, color: '#F7DF1E'
-      },
-      {
-        icon: FaReact, color: '#61DAFB'
-      },
-      {
-        icon: DiCss3, color: '#1572B6'
-      },
-    ],
-    source: 'https://github.com/HectorTorrez/anime-list',
-    sourceIcon: BiLinkExternal,
-  },
+
   {
     title: 'Patient Manager',
     titleES: 'Administrador de Pacientes',
@@ -259,6 +239,27 @@ export const projects = [
       },
     ],
     source: 'https://github.com/HectorTorrez/realtime-chat',
+    sourceIcon: BiLinkExternal,
+  },
+  {
+    title: 'Anime list',
+    titleES: 'Lista de Anime',
+    description: 'This project starts with the idea of creating a web application to manage a list of anime.',
+    descriptionES: 'Este proyecto empieza con la idea de crear una web para gestionar una lista de anime',
+    demo: 'https://anime-list00.netlify.app/',
+    demoIcon: FiGithub,
+    tags: [
+      {
+        icon: DiJavascript1, color: '#F7DF1E'
+      },
+      {
+        icon: FaReact, color: '#61DAFB'
+      },
+      {
+        icon: DiCss3, color: '#1572B6'
+      },
+    ],
+    source: 'https://github.com/HectorTorrez/anime-list',
     sourceIcon: BiLinkExternal,
   },
   {

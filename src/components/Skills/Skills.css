@@ -32,7 +32,8 @@
 .container-skills{
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
+  margin-top: 10px;
 }
 .skills{
   display: flex;
