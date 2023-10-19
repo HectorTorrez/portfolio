@@ -94,7 +94,7 @@ export const socials = [
     icon: FiGithub, source: 'https://github.com/HectorTorrez', name: 'Github'
   },
   {
-    icon: FiLinkedin, source: 'https://www.linkedin.com/in/%F0%9F%9A%80-hector-torrez-75a40a20b/', name: 'Linkedin'
+    icon: FiLinkedin, source: 'https://www.linkedin.com/in/hector-torrez/', name: 'Linkedin'
   },
 ]
 
