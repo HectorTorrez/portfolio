@@ -100,8 +100,10 @@ export const socials = [
 
 export const projects = [
   {
+
     title: 'Market Place',
        titleES: 'Market Place',
+       image: 'https://drive.google.com/uc?id=1OMX0a0RzwtNMq-zM9NiMv5R3FlIEltjV',
        description: 'This project is a market place, where you can add, edit and delete products. I used React, Redux and Supabase.',
        descriptionES: 'Este proyecto es un market place, donde puedes agregar, editar y eliminar productos. Utilicé React, Redux y Supabase.',
        demo: 'https://marketplace-ht.netlify.app/',
@@ -110,6 +112,9 @@ export const projects = [
          {
           icon: TbBrandTypescript, color: '#3178C6'
          },
+         {
+          icon: DiJavascript1, color: '#F7DF1E'
+        },
          {
            icon: FaReact, color: '#61DAFB'
          },
@@ -151,26 +156,31 @@ export const projects = [
     sourceIcon: BiLinkExternal,
   },
   {
-    title: 'Shopping Website',
+    title: 'ShoppingCart',
     titleES: 'Carrito de Compra',
+    image: 'https://github.com/HectorTorrez/ShoppingCart/assets/69362017/7365cf19-980b-446c-bc7b-2cbd4a3ae41d',
     description: 'It is a website designed to promote and sell products.',
     descriptionES: 'Es una página web diseñada para promocionar la venta de productos',
-    demo: 'https://serene-paprenjak-31dcf5.netlify.app/',
+    demo: 'https://shoppingcart-ts01.netlify.app/',
     demoIcon: FiGithub,
     tags: [
       {
         icon: DiJavascript1, color: '#F7DF1E'
       },
       {
+        icon: TbBrandTypescript, color: '#3178C6'
+      },
+      {
         icon: FaReact, color: '#61DAFB'
       },
       {
-        icon: DiCss3, color: '#1572B6'
+        icon: SiTailwindcss, color: '#38B2AC'
       },
     ],
     source: 'https://github.com/HectorTorrez/marketing-website',
     sourceIcon: BiLinkExternal,
   },
+
   {
     title: 'Quac',
     titleES: 'Quac',
@@ -195,13 +205,12 @@ export const projects = [
     source: 'https://github.com/HectorTorrez/Quac',
     sourceIcon: BiLinkExternal,
   },
-
   {
-    title: 'Patient Manager',
-    titleES: 'Administrador de Pacientes',
-    description: 'This is a patient listing application, where you can create, edit and delete.',
-    descriptionES: 'Esta es una aplicación de listado de paciente, donde tú puedes crear, editar y eliminar.',
-    demo: 'https://main--aesthetic-starship-355674.netlify.app/',
+    title: 'Shopping Website',
+    titleES: 'Carrito de Compra',
+    description: 'It is a website designed to promote and sell products.',
+    descriptionES: 'Es una página web diseñada para promocionar la venta de productos',
+    demo: 'https://serene-paprenjak-31dcf5.netlify.app/',
     demoIcon: FiGithub,
     tags: [
       {
@@ -214,11 +223,12 @@ export const projects = [
         icon: DiCss3, color: '#1572B6'
       },
     ],
-    source: 'https://github.com/HectorTorrez/Patient-Manager',
+    source: 'https://github.com/HectorTorrez/marketing-website',
     sourceIcon: BiLinkExternal,
   },
   {
     title: 'Realtime Chat',
+    image: 'https://github.com/HectorTorrez/realtime-chat/assets/69362017/e78ff814-9843-4b70-9b11-1ce36556a995',
     titleES: 'Chat en Tiempo Real',
     description: 'This project is a realtime chat, where you can create a room and chat with your friends.',
     descriptionES: 'Es un chat en tiempo real, donde puedes crear una sala y chatear con tus amigos.',
@@ -239,6 +249,27 @@ export const projects = [
       },
     ],
     source: 'https://github.com/HectorTorrez/realtime-chat',
+    sourceIcon: BiLinkExternal,
+  },
+  {
+    title: 'Patient Manager',
+    titleES: 'Administrador de Pacientes',
+    description: 'This is a patient listing application, where you can create, edit and delete.',
+    descriptionES: 'Esta es una aplicación de listado de paciente, donde tú puedes crear, editar y eliminar.',
+    demo: 'https://main--aesthetic-starship-355674.netlify.app/',
+    demoIcon: FiGithub,
+    tags: [
+      {
+        icon: DiJavascript1, color: '#F7DF1E'
+      },
+      {
+        icon: FaReact, color: '#61DAFB'
+      },
+      {
+        icon: DiCss3, color: '#1572B6'
+      },
+    ],
+    source: 'https://github.com/HectorTorrez/Patient-Manager',
     sourceIcon: BiLinkExternal,
   },
   {

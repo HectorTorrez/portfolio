@@ -21,6 +21,9 @@ export const Projects = () => {
               <div className='project-info'>
                 <h3>{language ? project.title : project.titleES}</h3>
                 <p>{language ? project.description : project.descriptionES}</p>
+                <article className='project-info--img'>
+                  <img src={project.image} alt="" />
+                </article>
 
               </div>
               <div className='technologies'>
