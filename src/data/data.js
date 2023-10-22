@@ -181,30 +181,30 @@ export const projects = [
     sourceIcon: BiLinkExternal,
   },
 
-  {
-    title: 'Quac',
-    titleES: 'Quac',
-    description: 'This project starts with the idea of creating a social media to write and share your thoughts. ',
-    descriptionES: 'Este proyecto empieza con la idea de crear una red social para escribir y compartir tus pensamientos.',
-    demo: 'https://quac.netlify.app/',
-    demoIcon: FiGithub,
-    tags: [
-      {
-        icon: DiJavascript1, color: '#F7DF1E'
-      },
-      {
-        icon: FaReact, color: '#61DAFB'
-      },
-      {
-        icon: SiFirebase, color: '#FFCA28'
-      },
-      {
-        icon: SiTailwindcss, color: '#38B2AC'
-      },
-    ],
-    source: 'https://github.com/HectorTorrez/Quac',
-    sourceIcon: BiLinkExternal,
-  },
+  // {
+  //   title: 'Quac',
+  //   titleES: 'Quac',
+  //   description: 'This project starts with the idea of creating a social media to write and share your thoughts. ',
+  //   descriptionES: 'Este proyecto empieza con la idea de crear una red social para escribir y compartir tus pensamientos.',
+  //   demo: 'https://quac.netlify.app/',
+  //   demoIcon: FiGithub,
+  //   tags: [
+  //     {
+  //       icon: DiJavascript1, color: '#F7DF1E'
+  //     },
+  //     {
+  //       icon: FaReact, color: '#61DAFB'
+  //     },
+  //     {
+  //       icon: SiFirebase, color: '#FFCA28'
+  //     },
+  //     {
+  //       icon: SiTailwindcss, color: '#38B2AC'
+  //     },
+  //   ],
+  //   source: 'https://github.com/HectorTorrez/Quac',
+  //   sourceIcon: BiLinkExternal,
+  // },
   {
     title: 'Shopping Website',
     titleES: 'Carrito de Compra',
