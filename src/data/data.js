@@ -61,30 +61,6 @@ export const skills = [
     ]
   } 
 
-  // {
-  //   icon: DiJavascript1, color: '#F7DF1E'
-  // },
-  // {
-  //   icon: TbBrandTypescript, color: '#3178C6'
-  // },
-  // {
-  //   icon: AiFillHtml5, color: '#E34F26'
-  // },
-  // {
-  //   icon: DiCss3, color: '#1572B6'
-  // },
-  // {
-  //   icon: FaReact, color: '#61DAFB'
-  // },
-  // {
-  //   icon: TbBrandRedux, color: '#764ABC'
-  // },
-  // {
-  //   icon: SiSupabase, color: '#3ECF8E'
-  // },
-  // {
-  //   icon: SiFirebase, color: '#FFCA28'
-  // }
   
 
 ]
@@ -131,30 +107,30 @@ export const projects = [
        source: 'https://github.com/HectorTorrez/marketPlace',
        sourceIcon: BiLinkExternal,
      },
-  {
- title: 'Fitlog',
-    titleES: 'Notas de Ejercicios',
-    description: 'This project is a log of exercises, where you can add, edit and delete. I used React and Firebase.',
-    descriptionES: 'Este proyecto es un registro de ejercicios, donde puedes agregar, editar y eliminar. Utilicé React y Firebase.',
-    demo: 'https://fitlog-ht.netlify.app/',
-    demoIcon: FiGithub,
-    tags: [
-      {
-        icon: DiJavascript1, color: '#F7DF1E'
-      },
-      {
-        icon: FaReact, color: '#61DAFB'
-      },
-      {
-        icon: SiFirebase, color: '#FFCA28'
-      },
-      {
-        icon: SiTailwindcss, color: '#38B2AC'
-      },
-    ],
-    source: 'https://github.com/HectorTorrez/FitLog',
-    sourceIcon: BiLinkExternal,
-  },
+//   {
+//  title: 'Fitlog',
+//     titleES: 'Notas de Ejercicios',
+//     description: 'This project is a log of exercises, where you can add, edit and delete. I used React and Firebase.',
+//     descriptionES: 'Este proyecto es un registro de ejercicios, donde puedes agregar, editar y eliminar. Utilicé React y Firebase.',
+//     demo: 'https://fitlog-ht.netlify.app/',
+//     demoIcon: FiGithub,
+//     tags: [
+//       {
+//         icon: DiJavascript1, color: '#F7DF1E'
+//       },
+//       {
+//         icon: FaReact, color: '#61DAFB'
+//       },
+//       {
+//         icon: SiFirebase, color: '#FFCA28'
+//       },
+//       {
+//         icon: SiTailwindcss, color: '#38B2AC'
+//       },
+//     ],
+//     source: 'https://github.com/HectorTorrez/FitLog',
+//     sourceIcon: BiLinkExternal,
+//   },
   {
     title: 'ShoppingCart',
     titleES: 'Carrito de Compra',
@@ -254,6 +230,7 @@ export const projects = [
   {
     title: 'Patient Manager',
     titleES: 'Administrador de Pacientes',
+    image: 'https://github.com/HectorTorrez/Patient-Manager/assets/69362017/e816c29f-7ab9-467e-a0bc-36df999770a7',
     description: 'This is a patient listing application, where you can create, edit and delete.',
     descriptionES: 'Esta es una aplicación de listado de paciente, donde tú puedes crear, editar y eliminar.',
     demo: 'https://main--aesthetic-starship-355674.netlify.app/',
@@ -275,6 +252,7 @@ export const projects = [
   {
     title: 'Anime list',
     titleES: 'Lista de Anime',
+    image: 'https://github.com/HectorTorrez/anime-list/assets/69362017/244b116b-d817-48af-97a2-a83ba576ac6d',
     description: 'This project starts with the idea of creating a web application to manage a list of anime.',
     descriptionES: 'Este proyecto empieza con la idea de crear una web para gestionar una lista de anime',
     demo: 'https://anime-list00.netlify.app/',
@@ -296,6 +274,7 @@ export const projects = [
   {
     title: 'Todo List',
     titleES: 'Administrador de Tareas',
+    image: 'https://github.com/HectorTorrez/TodoList-Typescript/assets/69362017/66a7a643-aca2-4dbe-a7f4-dee8f5e6a72d',
     description: 'This project is a simple todo list, where you can add and delete.',
     descriptionES: 'Es un simple administrador de tareas, donde puedes agregar y eliminar.',
     demo: 'https://todolistty.netlify.app',
