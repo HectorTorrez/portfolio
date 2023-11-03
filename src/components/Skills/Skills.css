@@ -57,7 +57,7 @@
   flex-wrap: wrap;
 }
 
-@media  (min-width: 700px) {
+@media  (min-width: 1130px) {
   .container-skills{
   flex-direction: row;
 
