@@ -5,7 +5,7 @@ import {DiCss3, DiJavascript1} from 'react-icons/di'
 import {FaReact} from 'react-icons/fa'
 import {FiGithub, FiLinkedin} from 'react-icons/fi'
 import {SiFirebase, SiSupabase, SiTailwindcss} from 'react-icons/si'
-import {TbBrandRedux, TbBrandTypescript} from 'react-icons/tb'
+import {TbBrandCypress, TbBrandRedux, TbBrandTypescript} from 'react-icons/tb'
 import {BiLogoNodejs} from 'react-icons/bi'
 import {SiExpress, SiMongoose, SiMongodb, SiJest} from 'react-icons/si'
 
@@ -58,6 +58,9 @@ export const skills = [
       {
         icon: SiJest, color: '#C21325'
       }, 
+      {
+        icon: TbBrandCypress, color: '#ffffff'
+      }
     ]
   } 
 
@@ -75,6 +78,47 @@ export const socials = [
 ]
 
 export const projects = [
+  {
+
+    title: 'Blog',
+       titleES: 'Blog',
+       image: 'https://github.com/HectorTorrez/blog-frontend/assets/69362017/6097b58b-c5e7-4c5e-a44a-fa0149f01367',
+       description: 'This project is a blog, where you can add, edit and delete posts. I used React, Node.js, Express, MongoDB.',
+       descriptionES: 'Este proyecto es un blog, donde puedes agregar, editar y eliminar posts. Utilicé React, Node.js, Express, MongoDB.',
+       demo: 'https://blog-ht.netlify.app/',
+       demoIcon: FiGithub,
+       tags: [
+         {
+          icon: TbBrandTypescript, color: '#3178C6'
+         },
+         {
+          icon: DiJavascript1, color: '#F7DF1E'
+        },
+         {
+           icon: FaReact, color: '#61DAFB'
+         },
+         {
+           icon: SiTailwindcss, color: '#38B2AC'
+         },
+         {
+          icon: BiLogoNodejs, color: '#3ECF8E'
+          },
+          {
+              icon: SiExpress, color: '#3ECF8E'
+          },    
+          {
+            icon: SiMongodb, color: '#3ECF8E'
+          },
+          {
+            icon: SiJest, color: '#C21325'
+          },
+          {
+            icon: TbBrandCypress, color: '#ffffff'
+          }
+       ],
+       source: 'https://github.com/HectorTorrez/blog-frontend',
+       sourceIcon: BiLinkExternal,
+     },
   {
 
     title: 'Market Place',
