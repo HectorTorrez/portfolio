@@ -12,17 +12,18 @@ export const Socials = () => {
   return (
     <div className="socials-container">
       {socials.map((social) => (
-        <div key={social.name} className="socials-icons">
-          <a href={social.source} target="_blank" rel="noreferrer">
+        <div key={social.name} >
+          <a href={social.source} className="socials-icons" target="_blank" rel="noreferrer">
             {<social.icon />}
           </a>
         </div>
       ))}
 
-      <div className="socials-icons">
+      <div>
+      {/* className="socials-icons" */}
         <a
           href={language ? pdf : pdfES}
-          className="btn-cv"
+          className="btn-cv socials-icons"
           rel="noreferrer"
           target="_blank"
         >
