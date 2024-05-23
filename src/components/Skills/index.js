@@ -1,2 +1,2 @@
-export * from './Skills.jsx'
-export * from './Skills.css'
+export * from "./Skills.jsx";
+export * from "./Skills.css?inline";
