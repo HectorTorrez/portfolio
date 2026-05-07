@@ -18,19 +18,31 @@ export function HeroSection() {
 			</div>
 
 			<div className="mx-auto max-w-3xl stagger-children">
-				<p className="font-medium text-accent-dim text-sm tracking-wide md:text-base">
-					{portfolio.location}
-				</p>
-				<h1
-					id="hero-heading"
-					className="font-display mt-3 text-balance font-bold text-4xl text-text-primary leading-[1.08] tracking-tight md:text-5xl lg:text-6xl"
-				>
-					{portfolio.name}
-				</h1>
-				<p className="mt-4 font-display font-semibold text-accent text-xl md:text-2xl">
-					{portfolio.headline}
-				</p>
-				<div className="mt-8 max-w-2xl space-y-6">
+				<div className="flex flex-col items-center gap-8 md:flex-row md:items-start md:gap-10">
+					<img
+						src="/profile-photo.jpg"
+						alt={`Portrait of ${portfolio.name}`}
+						width={176}
+						height={176}
+						fetchPriority="high"
+						className="h-36 w-36 shrink-0 rounded-full border border-border-strong object-cover shadow-[0_8px_32px_rgb(0_0_0/0.35)] md:h-44 md:w-44"
+					/>
+					<div className="min-w-0 flex-1 text-center md:text-left">
+						<p className="font-medium text-accent-dim text-sm tracking-wide md:text-base">
+							{portfolio.location}
+						</p>
+						<h1
+							id="hero-heading"
+							className="font-display mt-3 text-balance font-bold text-4xl text-text-primary leading-[1.08] tracking-tight md:text-5xl lg:text-6xl"
+						>
+							{portfolio.name}
+						</h1>
+						<p className="mt-4 font-display font-semibold text-accent text-xl md:text-2xl">
+							{portfolio.headline}
+						</p>
+					</div>
+				</div>
+				<div className="mt-8 max-w-2xl space-y-6 text-center md:text-left">
 					{portfolio.aboutParagraphs.map((paragraph) => (
 						<p
 							key={paragraph}
@@ -40,7 +52,7 @@ export function HeroSection() {
 						</p>
 					))}
 				</div>
-				<div className="mt-10 flex flex-wrap gap-4">
+				<div className="mt-10 flex flex-wrap justify-center gap-4 md:justify-start">
 					<a
 						href={mailHref}
 						className={`inline-flex items-center justify-center rounded-full border border-border-strong bg-surface-overlay px-6 py-3 font-medium text-accent text-sm transition-colors hover:border-accent hover:bg-surface-raised ${focusRing}`}

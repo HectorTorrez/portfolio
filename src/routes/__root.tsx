@@ -47,6 +47,21 @@ export const Route = createRootRoute({
 				href: googleFontsHref,
 			},
 			{ rel: "manifest", href: "/manifest.json" },
+			{
+				rel: "icon",
+				href: "/favicon.svg",
+				type: "image/svg+xml",
+				sizes: "any",
+			},
+			{
+				rel: "icon",
+				href: "/favicon.ico",
+				sizes: "48x48",
+			},
+			{
+				rel: "apple-touch-icon",
+				href: "/profile-photo.jpg",
+			},
 		],
 	}),
 	shellComponent: RootDocument,
