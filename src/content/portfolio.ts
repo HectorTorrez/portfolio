@@ -22,7 +22,7 @@ export const portfolioMeta = {
 export const portfolio = {
 	name: "Hector Torrez",
 	headline: "Software Engineer · Full Stack Engineer",
-	location: "El Salvador, San Salvador",
+	location: "El Salvador",
 	aboutParagraphs: [
 		"Software Developer with 3 years of experience building complex web applications in ERP, logistics, and e-commerce environments.",
 		"Worked on large-scale systems including electronic invoicing platforms, shipment management dashboards, and multi-product inventory flows with hierarchical unit conversions and real-time calculations.",
