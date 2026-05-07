@@ -15,8 +15,8 @@ export function SiteFooter() {
 					Let&apos;s talk
 				</h2>
 				<p className="mt-4 max-w-xl text-pretty text-lg text-text-muted">
-					Have a project in mind or want to collaborate? Reach out by email or
-					connect on LinkedIn.
+					Have a project in mind or want to collaborate? Reach out by email,
+					connect on LinkedIn, or browse work on GitHub.
 				</p>
 				<div className="mt-10 flex flex-wrap gap-4">
 					<a
@@ -32,6 +32,14 @@ export function SiteFooter() {
 						className={`inline-flex items-center justify-center rounded-full border border-border-strong px-6 py-3 font-medium text-sm text-text-primary transition-colors hover:border-accent hover:text-accent ${focusRing}`}
 					>
 						LinkedIn profile
+					</a>
+					<a
+						href={portfolio.links.github}
+						target="_blank"
+						rel="noopener noreferrer"
+						className={`inline-flex items-center justify-center rounded-full border border-border-strong px-6 py-3 font-medium text-sm text-text-primary transition-colors hover:border-accent hover:text-accent ${focusRing}`}
+					>
+						GitHub profile
 					</a>
 				</div>
 			</div>

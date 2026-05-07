@@ -100,5 +100,6 @@ export const portfolio = {
 	links: {
 		email: "torrezhectorb@gmail.com",
 		linkedIn: "https://www.linkedin.com/in/hector-torrez",
+		github: "https://github.com/HectorTorrez",
 	},
 } as const;

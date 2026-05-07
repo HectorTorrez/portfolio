@@ -55,6 +55,14 @@ export function HeroSection() {
 					>
 						LinkedIn
 					</a>
+					<a
+						href={portfolio.links.github}
+						target="_blank"
+						rel="noopener noreferrer"
+						className={`inline-flex items-center justify-center rounded-full border border-transparent px-6 py-3 font-medium text-text-muted text-sm transition-colors hover:text-accent ${focusRing}`}
+					>
+						GitHub
+					</a>
 				</div>
 			</div>
 		</section>
