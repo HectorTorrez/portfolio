@@ -16,28 +16,30 @@ export type EducationEntry = {
 export const portfolioMeta = {
 	title: "Hector Torrez · Software Engineer",
 	description:
-		"Frontend developer with 3 years of experience building JavaScript applications across frontend and backend using Next.js, TypeScript, and modern data-fetching tools—focused on performance, UX, and polished interfaces.",
+		"Software Developer building complex web applications across ERP, logistics, and e-commerce — invoicing, shipment dashboards, inventory flows, React, TanStack, and full-stack delivery.",
 } as const;
 
 export const portfolio = {
 	name: "Hector Torrez",
 	headline: "Software Engineer · Full Stack Engineer",
 	location: "El Salvador",
-	summary:
-		"Frontend developer with 3 years of experience developing JavaScript applications across frontend and backend using technologies such as Next.js and TypeScript. Passionate about building attractive, functional, and user-focused interfaces, with a strong focus on performance and user experience.",
+	aboutParagraphs: [
+		"Software Developer with 3 years of experience building complex web applications in ERP, logistics, and e-commerce environments.",
+		"Worked on large-scale systems including electronic invoicing platforms, shipment management dashboards, and multi-product inventory flows with hierarchical unit conversions and real-time calculations.",
+		"Experienced with React ecosystems, TanStack, performance optimization, frontend architecture, and cross-functional collaboration through code reviews and full-stack contributions.",
+	] as const,
 
 	skills: [
-		"TanStack Query",
-		"Next.js",
-		"React",
+		"JavaScript",
 		"TypeScript",
+		"React",
+		"Next.js",
 		"TanStack Start",
-		"Astro",
-		"SCSS",
-		"WordPress",
-		"REST APIs",
-		"Web performance",
-		"Accessibility",
+		"Tailwind CSS",
+		"Node.js",
+		"NestJS",
+		"PostgreSQL",
+		"ExpressJS",
 	] as const,
 
 	experience: [
@@ -63,7 +65,8 @@ export const portfolio = {
 			start: "June 2024",
 			end: "February 2025",
 			highlights: [
-				"Developed websites from scratch using Next.js, React, TypeScript, and TanStack Query.",
+				"Built frontend and backend features for e-commerce and event platforms, including dashboards, filtering systems, real-time updates, administrative tools, and API integrations.",
+				"Developed reusable components and scalable workflows that reduced repetitive operational tasks and improved maintainability across multiple projects.",
 			],
 		},
 		{
