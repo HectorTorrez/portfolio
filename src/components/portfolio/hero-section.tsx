@@ -43,14 +43,12 @@ export function HeroSection() {
 					</div>
 				</div>
 				<div className="mt-8 max-w-2xl space-y-6 text-center md:text-left">
-					{portfolio.aboutParagraphs.map((paragraph) => (
-						<p
-							key={paragraph}
-							className="text-pretty text-lg text-text-muted leading-relaxed md:text-xl"
-						>
-							{paragraph}
-						</p>
-					))}
+					<p className="text-pretty text-lg text-text-muted leading-relaxed md:text-xl">
+						{portfolio.heroSubtitle}
+					</p>
+					<p className="text-pretty text-lg text-text-muted leading-relaxed md:text-xl">
+						{portfolio.heroSupportingText}
+					</p>
 				</div>
 				<div className="mt-10 flex flex-wrap justify-center gap-4 md:justify-start">
 					<a

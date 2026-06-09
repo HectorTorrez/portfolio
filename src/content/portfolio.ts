@@ -21,12 +21,17 @@ export const portfolioMeta = {
 
 export const portfolio = {
 	name: "Hector Torrez",
-	headline: "Software Engineer · Full Stack Engineer",
+	headline: "Software Engineer",
+	heroSubtitle:
+		"Building modern web applications with React, TypeScript, Node.js, and Cloudflare.",
+	heroSupportingText:
+		"3 years building ERP, logistics, e-commerce, financial management, and SaaS platforms.",
 	location: "El Salvador",
 	aboutParagraphs: [
-		"Software Developer with 3 years of experience building complex web applications in ERP, logistics, and e-commerce environments.",
-		"Worked on large-scale systems including electronic invoicing platforms, shipment management dashboards, and multi-product inventory flows with hierarchical unit conversions and real-time calculations.",
-		"Experienced with React ecosystems, TanStack, performance optimization, frontend architecture, and cross-functional collaboration through code reviews and full-stack contributions.",
+		"I'm a Software Engineer focused on building scalable web applications and modern product experiences.",
+		"Over the past three years, I've worked on ERP systems, logistics platforms, e-commerce solutions, financial management tools, and SaaS products.",
+		"My primary expertise is React, TypeScript, and modern frontend architecture, while also developing backend solutions using Node.js, PostgreSQL, Supabase, and Cloudflare.",
+		"I enjoy building maintainable software, improving developer experience, and solving real business problems through technology.",
 	] as const,
 
 	skills: [
@@ -44,7 +49,7 @@ export const portfolio = {
 
 	experience: [
 		{
-			company: "JDK Outstanding Technologies",
+			company: "JDK Tech",
 			role: "Frontend Developer",
 			location: "Grand Prairie, Texas, United States",
 			start: "February 2025",
