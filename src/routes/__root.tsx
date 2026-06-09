@@ -7,7 +7,7 @@ import { portfolioMeta } from "#/content/portfolio";
 import appCss from "../styles.css?url";
 
 const googleFontsHref =
-	"https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Syne:wght@600;700;800&display=swap";
+	"https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap";
 
 export const Route = createRootRoute({
 	head: () => ({
@@ -28,7 +28,7 @@ export const Route = createRootRoute({
 			},
 			{
 				name: "theme-color",
-				content: "#050506",
+				content: "#030303",
 			},
 		],
 		links: [

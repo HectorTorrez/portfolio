@@ -1,24 +1,27 @@
 import { portfolio } from "#/content/portfolio";
 
+import { SectionHeading } from "./section-heading";
+
 export function AboutSection() {
 	return (
 		<section
 			id="about"
 			aria-labelledby="about-heading"
-			className="scroll-mt-24 border-border-subtle border-t bg-surface-raised px-5 py-16 md:px-8 md:py-20"
+			className="section-reveal scroll-mt-24 border-border-subtle border-t bg-surface-raised px-5 py-16 md:px-8 md:py-20"
 		>
-			<div className="mx-auto max-w-3xl">
-				<h2
-					id="about-heading"
-					className="font-display text-balance font-bold text-2xl text-text-primary tracking-tight md:text-3xl"
-				>
+			<div className="mx-auto max-w-4xl">
+				<SectionHeading index="01" id="about-heading">
 					About
-				</h2>
-				<div className="prose prose-invert prose-zinc mt-6 max-w-none space-y-6">
-					{portfolio.aboutParagraphs.map((paragraph) => (
+				</SectionHeading>
+				<div className="mt-8 space-y-5">
+					{portfolio.aboutParagraphs.map((paragraph, i) => (
 						<p
 							key={paragraph}
-							className="text-pretty text-lg text-text-muted leading-relaxed"
+							className={`text-pretty leading-relaxed ${
+								i === 0
+									? "font-display text-lg text-text-primary md:text-xl"
+									: "text-base text-text-muted md:text-lg"
+							}`}
 						>
 							{paragraph}
 						</p>

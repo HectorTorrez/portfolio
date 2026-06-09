@@ -1,3 +1,3 @@
 /** Shared focus-visible ring for interactive anchors/buttons */
 export const focusRing =
-	"focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface-base";
+	"focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-highlight focus-visible:ring-offset-2 focus-visible:ring-offset-surface-base";

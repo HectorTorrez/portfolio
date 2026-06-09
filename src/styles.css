@@ -2,22 +2,23 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
-  --font-body:
-    "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 
-  --color-surface-base: #050506;
-  --color-surface-raised: #0c0c0e;
-  --color-surface-overlay: #141417;
+  --color-surface-base: #030303;
+  --color-surface-raised: #0a0a0a;
+  --color-surface-overlay: #111114;
   --color-border-subtle: rgb(255 255 255 / 0.06);
   --color-border-strong: rgb(255 255 255 / 0.12);
   --color-text-primary: #f4f4f5;
   --color-text-muted: #a1a1aa;
   --color-text-faint: #71717a;
-  --color-accent: #e8e4dc;
-  --color-accent-dim: rgb(232 228 220 / 0.65);
+  --color-accent: #e4e4e7;
+  --color-accent-dim: rgb(228 228 231 / 0.55);
+  --color-accent-highlight: #38bdf8;
 
-  --shadow-glow: 0 0 80px rgb(232 228 220 / 0.04);
+  --shadow-glow: 0 0 80px rgb(56 189 248 / 0.06);
+  --shadow-card: 0 24px 64px rgb(0 0 0 / 0.4);
 
   --animate-fade-up: fade-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -49,6 +50,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
   color-scheme: dark;
 }
 
@@ -81,7 +83,7 @@ body {
   pointer-events: none;
   position: absolute;
   inset: 0;
-  opacity: 0.045;
+  opacity: 0.04;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -104,7 +106,7 @@ body {
 }
 
 .skip-link:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-accent-highlight);
   outline-offset: 2px;
 }
 
@@ -147,4 +149,41 @@ body {
     opacity: 1;
     transform: none;
   }
+}
+
+/* Scroll-triggered section reveals */
+.section-reveal {
+  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 35%;
+}
+
+@supports not (animation-timeline: view()) {
+  .section-reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+.section-heading::after {
+  content: "";
+  display: block;
+  flex: 1;
+  height: 1px;
+  margin-bottom: 0.35rem;
+  background: linear-gradient(
+    to right,
+    var(--color-border-strong),
+    transparent
+  );
 }

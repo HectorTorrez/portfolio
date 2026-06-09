@@ -2,6 +2,7 @@ import { AboutSection } from "./about-section";
 import { EducationSection } from "./education-section";
 import { ExperienceSection } from "./experience-section";
 import { HeroSection } from "./hero-section";
+import { ProjectsSection } from "./projects-section";
 import { SiteFooter } from "./site-footer";
 import { SiteHeader } from "./site-header";
 import { SkillsSection } from "./skills-section";
@@ -19,6 +20,7 @@ export function PortfolioHome() {
 				<HeroSection />
 				<AboutSection />
 				<SkillsSection />
+				<ProjectsSection />
 				<ExperienceSection />
 				<EducationSection />
 			</main>

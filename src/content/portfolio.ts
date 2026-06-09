@@ -13,6 +13,13 @@ export type EducationEntry = {
 	period: string;
 };
 
+export type ProjectEntry = {
+	name: string;
+	description: string;
+	url: string;
+	stack: string[];
+};
+
 export const portfolioMeta = {
 	title: "Hector Torrez · Software Engineer",
 	description:
@@ -88,6 +95,21 @@ export const portfolio = {
 			],
 		},
 	] satisfies ExperienceEntry[],
+
+	projects: [
+		{
+			name: "Pantry",
+			description:
+				"Recipe generator that builds suggestions from ingredients already in your kitchen. Set cooking time, difficulty, and dietary preferences to get AI-powered recipes — no shopping list required.",
+			url: "https://recipe-generator-web.torrezhectorb.workers.dev/",
+			stack: [
+				"TanStack Start",
+				"Cloudflare Workers",
+				"Workers AI",
+				"D1",
+			],
+		},
+	] satisfies ProjectEntry[],
 
 	education: [
 		{
