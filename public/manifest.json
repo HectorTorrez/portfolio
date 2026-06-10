@@ -3,15 +3,21 @@
   "name": "Hector Torrez · Portfolio",
   "icons": [
     {
-      "src": "/favicon.svg",
-      "type": "image/svg+xml",
-      "sizes": "any",
+      "src": "/favicon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
       "purpose": "any"
     },
     {
-      "src": "/profile-photo.jpg",
-      "type": "image/jpeg",
-      "sizes": "800x800",
+      "src": "/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-48.png",
+      "type": "image/png",
+      "sizes": "48x48",
       "purpose": "any"
     }
   ],
