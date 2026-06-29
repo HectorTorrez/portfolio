@@ -57,7 +57,7 @@ export function HeroSection() {
 				<div className="mt-8 flex flex-wrap gap-3 md:mt-10">
 					<CtaLink href={mailHref} variant="primary">
 						Email me
-						<ArrowUpRight aria-hidden className="size-4" />
+						<ArrowUpRight aria-hidden className="size-3.5" />
 					</CtaLink>
 					<CtaLink
 						href={portfolio.links.linkedIn}

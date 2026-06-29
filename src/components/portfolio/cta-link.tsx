@@ -12,7 +12,7 @@ type CtaLinkProps = {
 };
 
 const base =
-	"inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 text-sm font-medium transition-colors";
+	"inline-flex items-center justify-center gap-1.5 rounded-lg px-3.5 py-2 text-sm font-medium transition-colors";
 
 const variants = {
 	primary: `bg-accent-highlight font-semibold text-surface-base hover:opacity-90 ${focusRing} ring-offset-surface-overlay`,
