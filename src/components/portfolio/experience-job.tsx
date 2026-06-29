@@ -5,7 +5,7 @@ export function ExperienceJob({ job }: { job: ExperienceEntry }) {
 		<article className="relative border-accent-highlight/20 border-l-2 pl-6 md:pl-8">
 			<div
 				aria-hidden
-				className="absolute top-2 left-0 size-2.5 -translate-x-[calc(50%+1px)] rounded-full bg-accent-highlight ring-4 ring-surface-raised"
+				className="absolute top-2 left-0 size-2.5 -translate-x-[calc(50%+1px)] rounded-full bg-accent-highlight ring-4 ring-surface-base"
 			/>
 			<header className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">
 				<div>

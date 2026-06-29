@@ -10,7 +10,7 @@ export function SiteHeader() {
 	const [firstName, lastName] = portfolio.name.split(" ");
 
 	return (
-		<header className="sticky top-0 z-50 border-border-subtle border-b bg-surface-base/85 backdrop-blur-md">
+		<header className="sticky top-0 z-50 bg-surface-base">
 			<div className="mx-auto flex max-w-4xl items-center justify-between gap-4 px-5 py-3.5 md:px-8 md:py-4">
 				<a
 					href="#top"

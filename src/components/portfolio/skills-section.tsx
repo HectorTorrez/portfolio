@@ -13,15 +13,9 @@ export function SkillsSection() {
 				<SectionHeading id="skills-heading">
 					Skills
 				</SectionHeading>
-				<ul className="mt-8 flex flex-wrap gap-2 md:gap-2.5">
-					{portfolio.skills.map((skill) => (
-						<li key={skill}>
-							<span className="inline-block rounded-md border border-border-subtle bg-surface-overlay px-3.5 py-2 text-sm text-text-muted">
-								{skill}
-							</span>
-						</li>
-					))}
-				</ul>
+				<p className="mt-8 text-pretty text-base text-text-muted leading-relaxed md:text-lg">
+					{portfolio.skills.join(" · ")}
+				</p>
 			</div>
 		</section>
 	);

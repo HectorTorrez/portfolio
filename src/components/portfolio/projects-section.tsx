@@ -10,7 +10,7 @@ export function ProjectsSection() {
 		<section
 			id="projects"
 			aria-labelledby="projects-heading"
-			className="section-reveal scroll-mt-24 border-border-subtle border-t bg-surface-raised px-5 py-16 md:px-8 md:py-20"
+			className="section-reveal scroll-mt-24 px-5 py-16 md:px-8 md:py-20"
 		>
 			<div className="mx-auto max-w-4xl">
 				<SectionHeading id="projects-heading">
@@ -53,7 +53,7 @@ export function ProjectsSection() {
 									<ul className="mt-5 flex flex-wrap gap-2">
 										{project.stack.map((tech) => (
 											<li key={tech}>
-												<span className="inline-block rounded-md border border-border-subtle bg-surface-base/60 px-2.5 py-1 text-xs text-text-muted">
+												<span className="inline-block rounded-md border border-accent-highlight/25 bg-accent-highlight/10 px-2.5 py-1 font-medium text-accent-highlight text-xs">
 													{tech}
 												</span>
 											</li>
@@ -66,7 +66,7 @@ export function ProjectsSection() {
 											href={project.url}
 											target="_blank"
 											rel="noopener noreferrer"
-											className={`inline-flex size-12 items-center justify-center rounded-full border border-border-strong bg-surface-base text-accent-highlight transition-all hover:border-accent-highlight/50 hover:bg-surface-raised ${focusRing}`}
+											className={`inline-flex size-10 items-center justify-center rounded-lg border border-border-strong bg-surface-base text-accent-highlight transition-all hover:border-accent-highlight/50 hover:bg-surface-raised ${focusRing}`}
 										>
 											<ArrowUpRight aria-hidden className="size-5" />
 											<span className="sr-only">

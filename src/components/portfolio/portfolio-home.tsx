@@ -9,7 +9,7 @@ import { SkillsSection } from "./skills-section";
 
 export function PortfolioHome() {
 	return (
-		<div className="grain relative min-h-dvh bg-surface-base">
+		<div className="min-h-dvh bg-surface-base">
 			<a className="skip-link" href="#main-content">
 				Skip to main content
 			</a>
