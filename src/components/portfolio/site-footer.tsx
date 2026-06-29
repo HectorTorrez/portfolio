@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { portfolio } from "#/content/portfolio";
 
 import { focusRing } from "./focus-ring";
+import { SectionHeading } from "./section-heading";
 
 export function SiteFooter() {
 	const mailHref = `mailto:${portfolio.links.email}`;
@@ -13,15 +14,9 @@ export function SiteFooter() {
 			className="section-reveal scroll-mt-24 border-border-subtle border-t bg-surface-overlay px-5 py-16 md:px-8 md:py-24"
 		>
 			<div className="mx-auto max-w-4xl">
-				<p
-					aria-hidden
-					className="font-display font-bold text-5xl text-accent-highlight/15 leading-none md:text-6xl"
-				>
-					06
-				</p>
-				<h2 className="font-display mt-2 text-balance font-bold text-2xl text-text-primary tracking-tight md:text-3xl">
+				<SectionHeading id="contact-heading">
 					Let&apos;s talk
-				</h2>
+				</SectionHeading>
 				<p className="mt-4 max-w-lg text-pretty text-base text-text-muted md:text-lg">
 					Have a project in mind or want to collaborate? Reach out by email,
 					connect on LinkedIn, or browse work on GitHub.

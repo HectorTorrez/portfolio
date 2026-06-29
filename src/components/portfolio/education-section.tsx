@@ -10,7 +10,7 @@ export function EducationSection() {
 			className="section-reveal scroll-mt-24 px-5 py-16 md:px-8 md:py-20"
 		>
 			<div className="mx-auto max-w-4xl">
-				<SectionHeading index="05" id="education-heading">
+				<SectionHeading id="education-heading">
 					Education
 				</SectionHeading>
 				<ul className="mt-10 flex flex-col gap-8">

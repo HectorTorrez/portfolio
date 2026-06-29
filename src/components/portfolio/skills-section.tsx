@@ -10,7 +10,7 @@ export function SkillsSection() {
 			className="section-reveal scroll-mt-24 px-5 py-16 md:px-8 md:py-20"
 		>
 			<div className="mx-auto max-w-4xl">
-				<SectionHeading index="02" id="skills-heading">
+				<SectionHeading id="skills-heading">
 					Skills
 				</SectionHeading>
 				<ul className="mt-8 flex flex-wrap gap-2 md:gap-2.5">

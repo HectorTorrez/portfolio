@@ -13,7 +13,7 @@ export function ProjectsSection() {
 			className="section-reveal scroll-mt-24 border-border-subtle border-t bg-surface-raised px-5 py-16 md:px-8 md:py-20"
 		>
 			<div className="mx-auto max-w-4xl">
-				<SectionHeading index="03" id="projects-heading">
+				<SectionHeading id="projects-heading">
 					Projects
 				</SectionHeading>
 				<ul className="mt-10 flex flex-col gap-6">
