@@ -27,7 +27,7 @@ export function HeroSection() {
 						width={176}
 						height={176}
 						fetchPriority="high"
-						className="h-24 w-24 shrink-0 rounded-full border border-border-strong object-cover shadow-[0_8px_40px_rgb(0_0_0/0.4)] ring-2 ring-accent-highlight/20 sm:h-32 sm:w-32 md:h-40 md:w-40"
+						className="h-24 w-24 shrink-0 rounded-full border border-border-strong object-cover shadow-[var(--shadow-portrait)] ring-2 ring-accent-highlight/20 sm:h-32 sm:w-32 md:h-40 md:w-40"
 					/>
 					<div className="min-w-0 flex-1">
 						<p className="text-sm text-text-muted tracking-wide">
