@@ -21,12 +21,12 @@ export function SiteHeader() {
 				</a>
 
 				<nav aria-label="Page sections" className="hidden md:block">
-					<ul className="flex items-center gap-6 text-sm">
+					<ul className="flex items-center gap-2 text-sm">
 						{navItems.map((item) => (
 							<li key={item.href}>
 								<a
 									href={item.href}
-									className={`text-text-muted transition-colors hover:text-accent-highlight ${focusRing}`}
+									className={`inline-flex min-h-12 items-center px-3 text-text-muted transition-colors hover:text-accent-highlight ${focusRing}`}
 								>
 									{item.label}
 								</a>
@@ -37,7 +37,7 @@ export function SiteHeader() {
 
 				<details className="mobile-nav group relative md:hidden">
 					<summary
-						className={`flex cursor-pointer list-none items-center gap-2 rounded-md border border-border-subtle bg-surface-overlay px-3 py-2 font-medium text-text-muted text-xs uppercase tracking-wider transition-colors hover:border-border-strong hover:text-accent-highlight [&::-webkit-details-marker]:hidden ${focusRing}`}
+						className={`flex min-h-12 min-w-12 cursor-pointer list-none items-center justify-center gap-2 rounded-lg border border-border-subtle bg-surface-overlay px-4 font-medium text-sm text-text-muted transition-colors hover:border-border-strong hover:text-text-primary [&::-webkit-details-marker]:hidden ${focusRing}`}
 					>
 						<Menu aria-hidden className="size-4 group-open:hidden" />
 						<X aria-hidden className="hidden size-4 group-open:block" />
@@ -45,9 +45,9 @@ export function SiteHeader() {
 					</summary>
 					<nav
 						aria-label="Page sections"
-						className="absolute top-[calc(100%+0.5rem)] right-0 min-w-44 rounded-lg border border-border-strong bg-surface-overlay p-2 shadow-[0_16px_48px_rgb(0_0_0/0.45)]"
+						className="absolute top-[calc(100%+0.5rem)] right-0 min-w-48 rounded-lg border border-border-strong bg-surface-overlay p-2 shadow-[0_16px_48px_rgb(0_0_0/0.45)]"
 					>
-						<ul className="flex flex-col">
+						<ul className="flex flex-col gap-1">
 							{navItems.map((item) => (
 								<li key={item.href}>
 									<a
@@ -56,7 +56,7 @@ export function SiteHeader() {
 											const details = e.currentTarget.closest("details");
 											if (details) details.open = false;
 										}}
-										className={`block rounded-md px-3 py-2.5 text-sm text-text-muted transition-colors hover:bg-surface-raised hover:text-accent-highlight ${focusRing}`}
+										className={`flex min-h-12 items-center rounded-md px-4 text-sm text-text-muted transition-colors hover:bg-surface-raised hover:text-text-primary ${focusRing}`}
 									>
 										{item.label}
 									</a>

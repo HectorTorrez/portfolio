@@ -28,7 +28,7 @@ export function ProjectsSection() {
 								/>
 								<div className="relative">
 									{i === 0 ? (
-										<p className="mb-3 font-medium text-accent-highlight text-xs tracking-[0.14em] uppercase">
+										<p className="mb-3 font-medium text-text-faint text-xs tracking-wide uppercase">
 											Featured
 										</p>
 									) : null}
@@ -53,7 +53,7 @@ export function ProjectsSection() {
 									<ul className="mt-5 flex flex-wrap gap-2">
 										{project.stack.map((tech) => (
 											<li key={tech}>
-												<span className="inline-block rounded-md border border-border-subtle bg-surface-base/60 px-2.5 py-1 font-medium text-text-faint text-xs">
+												<span className="inline-block rounded-md border border-border-subtle bg-surface-base/60 px-2.5 py-1 text-xs text-text-muted">
 													{tech}
 												</span>
 											</li>

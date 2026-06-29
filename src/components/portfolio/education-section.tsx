@@ -20,7 +20,7 @@ export function EducationSection() {
 								<h3 className="font-display font-normal text-lg text-text-primary md:text-xl">
 									{edu.institution}
 								</h3>
-								<p className="mt-1.5 text-accent-highlight text-sm md:text-base">
+								<p className="mt-1.5 text-sm text-text-muted md:text-base">
 									{edu.credential}
 								</p>
 								<p className="mt-1.5 text-text-faint text-sm tabular-nums">

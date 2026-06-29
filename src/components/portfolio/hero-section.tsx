@@ -2,7 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 
 import { portfolio } from "#/content/portfolio";
 
-import { focusRing } from "./focus-ring";
+import { CtaLink } from "./cta-link";
 
 export function HeroSection() {
 	const mailHref = `mailto:${portfolio.links.email}`;
@@ -30,7 +30,7 @@ export function HeroSection() {
 						className="h-24 w-24 shrink-0 rounded-full border border-border-strong object-cover shadow-[0_8px_40px_rgb(0_0_0/0.4)] ring-2 ring-accent-highlight/20 sm:h-32 sm:w-32 md:h-40 md:w-40"
 					/>
 					<div className="min-w-0 flex-1">
-						<p className="font-medium text-accent-highlight text-sm tracking-wide">
+						<p className="text-sm text-text-muted tracking-wide">
 							{portfolio.location}
 						</p>
 						<h1
@@ -49,35 +49,32 @@ export function HeroSection() {
 					<p className="text-pretty text-base text-text-muted leading-relaxed md:text-lg">
 						{portfolio.heroSubtitle}
 					</p>
-					<p className="text-pretty text-sm text-text-faint leading-relaxed md:text-base">
+					<p className="text-pretty text-base text-text-muted leading-relaxed md:text-lg">
 						{portfolio.heroSupportingText}
 					</p>
 				</div>
 
 				<div className="mt-8 flex flex-wrap gap-3 md:mt-10">
-					<a
-						href={mailHref}
-						className={`inline-flex items-center justify-center gap-2 rounded-full border border-border-strong bg-surface-overlay px-5 py-2.5 font-medium text-text-primary text-sm transition-all hover:border-accent-highlight/50 hover:bg-surface-raised ${focusRing}`}
-					>
+					<CtaLink href={mailHref} variant="primary">
 						Email me
-						<ArrowUpRight aria-hidden className="size-3.5 opacity-70" />
-					</a>
-					<a
+						<ArrowUpRight aria-hidden className="size-4" />
+					</CtaLink>
+					<CtaLink
 						href={portfolio.links.linkedIn}
 						target="_blank"
 						rel="noopener noreferrer"
-						className={`inline-flex items-center justify-center rounded-full px-5 py-2.5 font-medium text-text-muted text-sm transition-colors hover:text-accent-highlight ${focusRing}`}
+						variant="secondary"
 					>
 						LinkedIn
-					</a>
-					<a
+					</CtaLink>
+					<CtaLink
 						href={portfolio.links.github}
 						target="_blank"
 						rel="noopener noreferrer"
-						className={`inline-flex items-center justify-center rounded-full px-5 py-2.5 font-medium text-text-muted text-sm transition-colors hover:text-accent-highlight ${focusRing}`}
+						variant="secondary"
 					>
 						GitHub
-					</a>
+					</CtaLink>
 				</div>
 			</div>
 		</section>

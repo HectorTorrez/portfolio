@@ -2,7 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 
 import { portfolio } from "#/content/portfolio";
 
-import { focusRing } from "./focus-ring";
+import { CtaLink } from "./cta-link";
 import { SectionHeading } from "./section-heading";
 
 export function SiteFooter() {
@@ -22,29 +22,26 @@ export function SiteFooter() {
 					connect on LinkedIn, or browse work on GitHub.
 				</p>
 				<div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-					<a
-						href={mailHref}
-						className={`inline-flex items-center justify-center gap-2 rounded-full bg-accent-highlight px-6 py-3 font-semibold text-sm text-surface-base transition-opacity hover:opacity-90 ${focusRing} ring-offset-surface-overlay`}
-					>
+					<CtaLink href={mailHref} variant="primary">
 						Email {portfolio.links.email}
 						<ArrowUpRight aria-hidden className="size-4" />
-					</a>
-					<a
+					</CtaLink>
+					<CtaLink
 						href={portfolio.links.linkedIn}
 						target="_blank"
 						rel="noopener noreferrer"
-						className={`inline-flex items-center justify-center rounded-full border border-border-strong px-6 py-3 font-medium text-sm text-text-primary transition-colors hover:border-accent-highlight/50 hover:text-accent-highlight ${focusRing}`}
+						variant="secondary"
 					>
 						LinkedIn profile
-					</a>
-					<a
+					</CtaLink>
+					<CtaLink
 						href={portfolio.links.github}
 						target="_blank"
 						rel="noopener noreferrer"
-						className={`inline-flex items-center justify-center rounded-full border border-border-strong px-6 py-3 font-medium text-sm text-text-primary transition-colors hover:border-accent-highlight/50 hover:text-accent-highlight ${focusRing}`}
+						variant="secondary"
 					>
 						GitHub profile
-					</a>
+					</CtaLink>
 				</div>
 			</div>
 		</footer>

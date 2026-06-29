@@ -12,7 +12,7 @@ export function ExperienceJob({ job }: { job: ExperienceEntry }) {
 					<h3 className="font-display font-semibold text-lg text-text-primary md:text-xl">
 						{job.company}
 					</h3>
-					<p className="mt-1 font-medium text-accent-highlight text-sm md:text-base">
+					<p className="mt-1 font-medium text-sm text-text-muted md:text-base">
 						{job.role}
 					</p>
 					{job.location ? (
@@ -25,7 +25,7 @@ export function ExperienceJob({ job }: { job: ExperienceEntry }) {
 					<time dateTime={job.end}>{job.end}</time>
 				</p>
 			</header>
-			<ul className="mt-6 list-disc space-y-3 pl-5 text-text-muted marker:text-accent-dim">
+			<ul className="mt-6 list-disc space-y-3 pl-5 text-text-muted marker:text-text-faint">
 				{job.highlights.map((item) => (
 					<li key={item} className="text-pretty leading-relaxed">
 						{item}

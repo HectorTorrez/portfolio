@@ -16,7 +16,7 @@ export function SkillsSection() {
 				<ul className="mt-8 flex flex-wrap gap-2 md:gap-2.5">
 					{portfolio.skills.map((skill) => (
 						<li key={skill}>
-							<span className="inline-block rounded-md border border-border-subtle bg-surface-overlay px-3.5 py-2 text-sm text-text-muted transition-colors hover:border-accent-highlight/30 hover:text-text-primary">
+							<span className="inline-block rounded-md border border-border-subtle bg-surface-overlay px-3.5 py-2 text-sm text-text-muted">
 								{skill}
 							</span>
 						</li>
