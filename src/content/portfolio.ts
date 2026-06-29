@@ -114,12 +114,12 @@ export const portfolio = {
 	education: [
 		{
 			institution: "Universidad Capitán Gerardo Barrios",
-			credential: "System Engineer, Computer Science",
+			credential: "Software Engineer, Computer Science",
 			period: "June 2021 – December 2024",
 		},
 		{
 			institution: "Universidad Capitán General Gerardo Barrios",
-			credential: "Técnico en Ingeniería en Sistemas, Programación",
+			credential: "Technical degree in systems engineering, programming",
 			period: "2018 – 2020",
 		},
 	] satisfies EducationEntry[],
