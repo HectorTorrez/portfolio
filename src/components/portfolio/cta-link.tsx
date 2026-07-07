@@ -4,7 +4,7 @@ import { focusRing } from "./focus-ring";
 
 type CtaLinkProps = {
 	href: string;
-	variant?: "primary" | "secondary" | "tertiary";
+	variant?: "primary" | "secondary" | "tertiary" | "pill";
 	children: ReactNode;
 	className?: string;
 	target?: string;
@@ -12,12 +12,13 @@ type CtaLinkProps = {
 };
 
 const base =
-	"inline-flex items-center justify-center gap-1.5 rounded-lg px-3.5 py-2 text-sm font-medium transition-colors";
+	"inline-flex items-center justify-center gap-1.5 text-sm font-medium transition-all duration-200";
 
 const variants = {
-	primary: `bg-accent-highlight font-semibold text-surface-base hover:opacity-90 ${focusRing} ring-offset-surface-overlay`,
-	secondary: `border border-border-strong text-text-primary hover:border-accent-highlight/50 hover:text-accent-highlight ${focusRing}`,
-	tertiary: `text-text-muted hover:text-accent-highlight ${focusRing}`,
+	primary: `apple-pill bg-accent-highlight px-5 py-2.5 font-normal text-white hover:brightness-110 ${focusRing}`,
+	secondary: `apple-pill border border-border-strong px-5 py-2.5 text-accent-highlight hover:bg-accent-highlight/10 ${focusRing}`,
+	tertiary: `text-accent-highlight hover:underline ${focusRing}`,
+	pill: `apple-pill bg-accent-highlight px-6 py-3 text-base font-normal text-white hover:brightness-110 ${focusRing}`,
 };
 
 export function CtaLink({

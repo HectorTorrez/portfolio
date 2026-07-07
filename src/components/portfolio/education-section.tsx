@@ -9,15 +9,13 @@ export function EducationSection() {
 			aria-labelledby="education-heading"
 			className="section-reveal scroll-mt-24 px-5 py-16 md:px-8 md:py-20"
 		>
-			<div className="mx-auto max-w-4xl">
-				<SectionHeading id="education-heading">
-					Education
-				</SectionHeading>
+			<div className="mx-auto max-w-[980px]">
+				<SectionHeading id="education-heading">Education</SectionHeading>
 				<ul className="mt-10 flex flex-col gap-8">
 					{portfolio.education.map((edu) => (
 						<li key={`${edu.institution}-${edu.period}`}>
 							<article className="border-border-subtle border-l-2 pl-5 md:pl-6">
-								<h3 className="font-display font-normal text-lg text-text-primary md:text-xl">
+								<h3 className="text-lg text-text-primary md:text-xl">
 									{edu.institution}
 								</h3>
 								<p className="mt-1.5 text-sm text-text-muted md:text-base">

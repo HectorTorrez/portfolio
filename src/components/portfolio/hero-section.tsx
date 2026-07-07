@@ -11,9 +11,9 @@ export function HeroSection() {
 		<section
 			id="top"
 			aria-labelledby="hero-heading"
-			className="px-5 pb-16 pt-10 md:px-8 md:pb-24 md:pt-16"
+			className="apple-hero-gradient px-5 pb-16 pt-10 md:px-8 md:pb-24 md:pt-16"
 		>
-			<div className="mx-auto max-w-4xl stagger-children">
+			<div className="mx-auto max-w-[980px] stagger-children">
 				<div className="flex items-center gap-5 sm:gap-7">
 					<img
 						src="/profile-photo.jpg"
@@ -21,7 +21,7 @@ export function HeroSection() {
 						width={176}
 						height={176}
 						fetchPriority="high"
-						className="h-24 w-24 shrink-0 rounded-full border border-border-subtle object-cover sm:h-32 sm:w-32 md:h-40 md:w-40"
+						className="h-24 w-24 shrink-0 rounded-[1.25rem] object-cover shadow-[var(--shadow-portrait)] ring-1 ring-border-subtle sm:h-32 sm:w-32 md:h-40 md:w-40"
 					/>
 					<div className="min-w-0 flex-1">
 						<p className="text-sm text-text-muted tracking-wide">
@@ -29,7 +29,7 @@ export function HeroSection() {
 						</p>
 						<h1
 							id="hero-heading"
-							className="font-display mt-2 text-balance font-bold text-3xl text-text-primary leading-[1.05] tracking-tight sm:text-4xl md:text-5xl lg:text-[3.25rem]"
+							className="apple-display-headline mt-2 text-balance text-3xl text-text-primary sm:text-4xl md:text-5xl lg:text-[3.25rem]"
 						>
 							{portfolio.name}
 						</h1>

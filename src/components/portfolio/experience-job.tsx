@@ -5,11 +5,11 @@ export function ExperienceJob({ job }: { job: ExperienceEntry }) {
 		<article className="relative border-accent-highlight/20 border-l-2 pl-6 md:pl-8">
 			<div
 				aria-hidden
-				className="absolute top-2 left-0 size-2.5 -translate-x-[calc(50%+1px)] rounded-full bg-accent-highlight ring-4 ring-surface-base"
+				className="absolute top-2 left-0 size-2.5 -translate-x-[calc(50%+1px)] rounded-full bg-accent-highlight ring-4 ring-surface-elevated"
 			/>
 			<header className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">
 				<div>
-					<h3 className="font-display font-semibold text-lg text-text-primary md:text-xl">
+					<h3 className="font-semibold text-lg text-text-primary md:text-xl">
 						{job.company}
 					</h3>
 					<p className="mt-1 font-medium text-sm text-text-muted md:text-base">
@@ -25,9 +25,12 @@ export function ExperienceJob({ job }: { job: ExperienceEntry }) {
 					<time dateTime={job.end}>{job.end}</time>
 				</p>
 			</header>
-			<ul className="mt-6 list-disc space-y-3 pl-5 text-text-muted marker:text-text-faint">
+			<ul className="mt-6 space-y-3">
 				{job.highlights.map((item) => (
-					<li key={item} className="text-pretty leading-relaxed">
+					<li
+						key={item}
+						className="text-pretty text-sm text-text-muted leading-relaxed md:text-base"
+					>
 						{item}
 					</li>
 				))}

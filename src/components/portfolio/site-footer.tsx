@@ -8,9 +8,9 @@ export function SiteFooter() {
 	return (
 		<footer
 			id="contact"
-			className="section-reveal scroll-mt-24 px-5 py-16 md:px-8 md:py-24"
+			className="section-reveal scroll-mt-24 border-border-subtle border-t px-5 py-16 md:px-8 md:py-24"
 		>
-			<div className="mx-auto max-w-4xl">
+			<div className="mx-auto max-w-[980px]">
 				<SectionHeading id="contact-heading">Let&apos;s talk</SectionHeading>
 				<p className="mt-4 max-w-lg text-pretty text-base text-text-muted md:text-lg">
 					Have a project in mind or want to collaborate? Reach out by email,

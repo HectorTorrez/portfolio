@@ -9,17 +9,15 @@ export function AboutSection() {
 			aria-labelledby="about-heading"
 			className="section-reveal scroll-mt-24 px-5 py-16 md:px-8 md:py-20"
 		>
-			<div className="mx-auto max-w-4xl">
-				<SectionHeading id="about-heading">
-					About
-				</SectionHeading>
+			<div className="mx-auto max-w-[980px]">
+				<SectionHeading id="about-heading">About</SectionHeading>
 				<div className="mt-8 space-y-5">
 					{portfolio.aboutParagraphs.map((paragraph, i) => (
 						<p
 							key={paragraph}
 							className={`text-pretty leading-relaxed ${
 								i === 0
-									? "font-display text-lg text-text-primary md:text-xl"
+									? "text-lg text-text-primary md:text-xl"
 									: "text-base text-text-muted md:text-lg"
 							}`}
 						>

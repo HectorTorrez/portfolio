@@ -8,7 +8,7 @@ export function SectionHeading({ id, children }: SectionHeadingProps) {
 		<div className="section-heading flex items-end gap-5">
 			<h2
 				id={id}
-				className="font-display text-balance font-bold text-2xl text-text-primary tracking-tight md:text-3xl"
+				className="apple-display-headline text-balance text-2xl text-text-primary md:text-3xl"
 			>
 				{children}
 			</h2>

@@ -12,19 +12,17 @@ export function ProjectsSection() {
 			aria-labelledby="projects-heading"
 			className="section-reveal scroll-mt-24 px-5 py-16 md:px-8 md:py-20"
 		>
-			<div className="mx-auto max-w-4xl">
-				<SectionHeading id="projects-heading">
-					Projects
-				</SectionHeading>
+			<div className="mx-auto max-w-[980px]">
+				<SectionHeading id="projects-heading">Projects</SectionHeading>
 				<ul className="mt-10 flex flex-col gap-6">
 					{portfolio.projects.map((project, i) => (
 						<li key={project.name}>
 							<article
-								className={`group relative overflow-hidden rounded-xl border border-border-subtle bg-surface-overlay p-6 transition-all duration-300 hover:border-accent-highlight/25 hover:shadow-[var(--shadow-card)] md:p-8 ${i === 0 ? "md:grid md:grid-cols-[1fr_auto] md:gap-8" : ""}`}
+								className={`group relative overflow-hidden rounded-2xl border border-border-subtle bg-surface-overlay p-6 transition-all duration-300 hover:border-accent-highlight/25 hover:shadow-[var(--shadow-card)] md:p-8 ${i === 0 ? "md:grid md:grid-cols-[1fr_auto] md:gap-8" : ""}`}
 							>
 								<div
 									aria-hidden
-									className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgb(56_189_248/0.06)_0%,transparent_55%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+									className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgb(41_151_255/0.06)_0%,transparent_55%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 								/>
 								<div className="relative">
 									{i === 0 ? (
@@ -32,7 +30,7 @@ export function ProjectsSection() {
 											Featured
 										</p>
 									) : null}
-									<h3 className="font-display font-normal text-xl md:text-2xl">
+									<h3 className="text-xl md:text-2xl">
 										<a
 											href={project.url}
 											target="_blank"
@@ -53,7 +51,7 @@ export function ProjectsSection() {
 									<ul className="mt-5 flex flex-wrap gap-2">
 										{project.stack.map((tech) => (
 											<li key={tech}>
-												<span className="inline-block rounded-md border border-accent-highlight/25 bg-accent-highlight/10 px-2.5 py-1 font-medium text-accent-highlight text-xs">
+												<span className="apple-pill inline-block border border-accent-highlight/20 bg-accent-highlight/10 px-2.5 py-1 font-medium text-accent-highlight text-xs">
 													{tech}
 												</span>
 											</li>
@@ -66,7 +64,7 @@ export function ProjectsSection() {
 											href={project.url}
 											target="_blank"
 											rel="noopener noreferrer"
-											className={`inline-flex size-10 items-center justify-center rounded-lg border border-border-strong bg-surface-base text-accent-highlight transition-all hover:border-accent-highlight/50 hover:bg-surface-raised ${focusRing}`}
+											className={`inline-flex size-10 items-center justify-center rounded-full bg-accent-highlight text-white transition-all hover:brightness-110 ${focusRing}`}
 										>
 											<ArrowUpRight aria-hidden className="size-5" />
 											<span className="sr-only">

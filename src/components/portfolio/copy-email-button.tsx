@@ -41,7 +41,7 @@ export function CopyEmailButton({ email }: CopyEmailButtonProps) {
 			type="button"
 			onClick={handleCopy}
 			aria-label={copied ? "Email copied to clipboard" : `Copy email ${email}`}
-			className={`inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-lg bg-accent-highlight px-3.5 py-2 font-semibold text-sm text-surface-base transition-colors hover:opacity-90 ${focusRing} ring-offset-surface-overlay`}
+			className={`apple-pill inline-flex cursor-pointer items-center justify-center gap-1.5 bg-accent-highlight px-5 py-2.5 font-normal text-sm text-white transition-all hover:brightness-110 ${focusRing}`}
 		>
 			{copied ? (
 				<>
