@@ -1,6 +1,7 @@
 {
   "short_name": "Hector Torrez",
-  "name": "Hector Torrez · Portfolio",
+  "name": "Hector Torrez | Software Engineer",
+  "description": "Portfolio of Hector Torrez — React, TypeScript, and Cloudflare software engineer.",
   "icons": [
     {
       "src": "/favicon-192.png",
@@ -21,7 +22,7 @@
       "purpose": "any"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#050506",
   "background_color": "#050506"

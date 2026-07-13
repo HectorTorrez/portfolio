@@ -1,32 +1,25 @@
-export type ExperienceEntry = {
-	company: string;
-	role: string;
-	location?: string;
-	start: string;
-	end: string | "Present";
-	highlights: string[];
+import {
+	pantryProject,
+	portfolioLinks,
+	portfolioSiteBase,
+	portfolioSkills,
+} from "../shared";
+import type { PortfolioContent, PortfolioMeta, PortfolioSite } from "../types";
+
+export const portfolioSite: PortfolioSite = {
+	...portfolioSiteBase,
+	locale: "en_US",
 };
 
-export type EducationEntry = {
-	institution: string;
-	credential: string;
-	period: string;
-};
-
-export type ProjectEntry = {
-	name: string;
-	description: string;
-	url: string;
-	stack: string[];
-};
-
-export const portfolioMeta = {
-	title: "Hector Torrez · Software Engineer",
+export const portfolioMeta: PortfolioMeta = {
+	title: "Hector Torrez | Software Engineer · React & TypeScript",
 	description:
-		"Software Developer building complex web applications across ERP, logistics, and e-commerce — invoicing, shipment dashboards, inventory flows, React, TanStack, and full-stack delivery.",
-} as const;
+		"Hector Torrez is a Software Engineer in El Salvador building React, TypeScript, and Cloudflare web apps — ERP, logistics, e-commerce, and full-stack product delivery.",
+	keywords:
+		"Hector Torrez, software engineer, React developer, TypeScript, Node.js, Cloudflare Workers, TanStack, frontend developer, El Salvador, portfolio",
+};
 
-export const portfolio = {
+export const portfolio: PortfolioContent = {
 	name: "Hector Torrez",
 	headline: "Software Engineer",
 	heroSubtitle:
@@ -39,21 +32,8 @@ export const portfolio = {
 		"Over the past three years, I've worked on ERP systems, logistics platforms, e-commerce solutions, financial management tools, and SaaS products.",
 		"My primary expertise is React, TypeScript, and modern frontend architecture, while also developing backend solutions using Node.js, PostgreSQL, Supabase, and Cloudflare.",
 		"I enjoy building maintainable software, improving developer experience, and solving real business problems through technology.",
-	] as const,
-
-	skills: [
-		"JavaScript",
-		"TypeScript",
-		"React",
-		"Next.js",
-		"TanStack Start",
-		"Tailwind CSS",
-		"Node.js",
-		"NestJS",
-		"PostgreSQL",
-		"ExpressJS",
-	] as const,
-
+	],
+	skills: portfolioSkills,
 	experience: [
 		{
 			company: "JDK Tech",
@@ -94,23 +74,14 @@ export const portfolio = {
 				"Developed new API endpoints to support frontend features and data workflows.",
 			],
 		},
-	] satisfies ExperienceEntry[],
-
+	],
 	projects: [
 		{
-			name: "Pantry",
+			...pantryProject,
 			description:
 				"Recipe generator that builds suggestions from ingredients already in your kitchen. Set cooking time, difficulty, and dietary preferences to get AI-powered recipes — no shopping list required.",
-			url: "https://recipe-generator-web.torrezhectorb.workers.dev/",
-			stack: [
-				"TanStack Start",
-				"Cloudflare Workers",
-				"Workers AI",
-				"D1",
-			],
 		},
-	] satisfies ProjectEntry[],
-
+	],
 	education: [
 		{
 			institution: "Universidad Capitán Gerardo Barrios",
@@ -122,11 +93,6 @@ export const portfolio = {
 			credential: "Technical degree in systems engineering, programming",
 			period: "2018 – 2020",
 		},
-	] satisfies EducationEntry[],
-
-	links: {
-		email: "torrezhectorb@gmail.com",
-		linkedIn: "https://www.linkedin.com/in/hector-torrez",
-		github: "https://github.com/HectorTorrez",
-	},
-} as const;
+	],
+	links: portfolioLinks,
+};

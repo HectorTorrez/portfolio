@@ -1,10 +1,10 @@
 import { ArrowUpRight } from "lucide-react";
 
-import { portfolio } from "#/content/portfolio";
-
 import { CtaLink } from "./cta-link";
+import { useLocaleContent } from "./locale-context";
 
 export function HeroSection() {
+	const { portfolio, ui } = useLocaleContent();
 	const mailHref = `mailto:${portfolio.links.email}`;
 
 	return (
@@ -17,7 +17,7 @@ export function HeroSection() {
 				<div className="flex items-center gap-5 sm:gap-7">
 					<img
 						src="/profile-photo.jpg"
-						alt={`Portrait of ${portfolio.name}`}
+						alt={ui.hero.portraitAlt(portfolio.name)}
 						width={176}
 						height={176}
 						fetchPriority="high"
@@ -50,7 +50,7 @@ export function HeroSection() {
 
 				<div className="mt-8 flex flex-wrap gap-3 md:mt-10">
 					<CtaLink href={mailHref} variant="primary">
-						Email me
+						{ui.hero.emailMe}
 						<ArrowUpRight aria-hidden className="size-3.5" />
 					</CtaLink>
 					<CtaLink
@@ -59,7 +59,7 @@ export function HeroSection() {
 						rel="noopener noreferrer"
 						variant="secondary"
 					>
-						LinkedIn
+						{ui.hero.linkedIn}
 					</CtaLink>
 					<CtaLink
 						href={portfolio.links.github}
@@ -67,7 +67,7 @@ export function HeroSection() {
 						rel="noopener noreferrer"
 						variant="secondary"
 					>
-						GitHub
+						{ui.hero.github}
 					</CtaLink>
 				</div>
 			</div>

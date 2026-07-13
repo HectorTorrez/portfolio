@@ -1,4 +1,4 @@
-import type { ExperienceEntry } from "#/content/portfolio";
+import type { ExperienceEntry } from "#/content/types";
 
 export function ExperienceJob({ job }: { job: ExperienceEntry }) {
 	return (

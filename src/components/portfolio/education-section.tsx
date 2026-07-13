@@ -1,8 +1,9 @@
-import { portfolio } from "#/content/portfolio";
-
+import { useLocaleContent } from "./locale-context";
 import { SectionHeading } from "./section-heading";
 
 export function EducationSection() {
+	const { portfolio, ui } = useLocaleContent();
+
 	return (
 		<section
 			id="education"
@@ -10,7 +11,9 @@ export function EducationSection() {
 			className="section-reveal scroll-mt-24 px-5 py-16 md:px-8 md:py-20"
 		>
 			<div className="mx-auto max-w-[980px]">
-				<SectionHeading id="education-heading">Education</SectionHeading>
+				<SectionHeading id="education-heading">
+					{ui.sections.education}
+				</SectionHeading>
 				<ul className="mt-10 flex flex-col gap-8">
 					{portfolio.education.map((edu) => (
 						<li key={`${edu.institution}-${edu.period}`}>

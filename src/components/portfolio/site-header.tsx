@@ -1,12 +1,12 @@
 import { Menu, X } from "lucide-react";
 
-import { portfolio } from "#/content/portfolio";
-
 import { focusRing } from "./focus-ring";
-import { navItems } from "./nav-config";
+import { useLocaleContent } from "./locale-context";
+import { LocaleSwitcher } from "./locale-switcher";
 import { ThemeToggle } from "./theme-toggle";
 
 export function SiteHeader() {
+	const { portfolio, ui, locale } = useLocaleContent();
 	const [firstName, lastName] = portfolio.name.split(" ");
 
 	return (
@@ -22,9 +22,9 @@ export function SiteHeader() {
 				</a>
 
 				<div className="hidden items-center gap-4 md:flex">
-					<nav aria-label="Page sections">
+					<nav aria-label={ui.a11y.pageSections}>
 						<ul className="flex items-center gap-1 text-xs text-text-muted">
-							{navItems.map((item) => (
+							{ui.nav.map((item) => (
 								<li key={item.href}>
 									<a
 										href={item.href}
@@ -36,10 +36,12 @@ export function SiteHeader() {
 							))}
 						</ul>
 					</nav>
+					<LocaleSwitcher locale={locale} />
 					<ThemeToggle />
 				</div>
 
 				<div className="flex items-center gap-2 md:hidden">
+					<LocaleSwitcher locale={locale} />
 					<ThemeToggle />
 					<details className="mobile-nav group relative">
 						<summary
@@ -47,14 +49,14 @@ export function SiteHeader() {
 						>
 							<Menu aria-hidden className="size-4 group-open:hidden" />
 							<X aria-hidden className="hidden size-4 group-open:block" />
-							<span className="sr-only">Menu</span>
+							<span className="sr-only">{ui.a11y.menu}</span>
 						</summary>
 						<nav
-							aria-label="Page sections"
+							aria-label={ui.a11y.pageSections}
 							className="absolute top-[calc(100%+0.5rem)] right-0 min-w-48 rounded-2xl border border-border-strong bg-surface-overlay p-2 shadow-[var(--shadow-dropdown)]"
 						>
 							<ul className="flex flex-col gap-1">
-								{navItems.map((item) => (
+								{ui.nav.map((item) => (
 									<li key={item.href}>
 										<a
 											href={item.href}

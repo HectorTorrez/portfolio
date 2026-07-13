@@ -1,9 +1,14 @@
 import { TanStackDevtools } from "@tanstack/react-devtools";
-import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import {
+	createRootRoute,
+	HeadContent,
+	Scripts,
+	useRouterState,
+} from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 
 import { ThemeProvider } from "#/components/portfolio/theme-provider";
-import { portfolioMeta } from "#/content/portfolio";
+import { localeFromPathname } from "#/content/locales";
 import { themeInitScript } from "#/lib/theme";
 
 import appCss from "../styles.css?url";
@@ -19,15 +24,8 @@ export const Route = createRootRoute({
 				content: "width=device-width, initial-scale=1",
 			},
 			{
-				title: portfolioMeta.title,
-			},
-			{
-				name: "description",
-				content: portfolioMeta.description,
-			},
-			{
 				name: "theme-color",
-				content: "#000000",
+				content: "#050506",
 			},
 		],
 		links: [
@@ -57,9 +55,18 @@ export const Route = createRootRoute({
 	shellComponent: RootDocument,
 });
 
+function useDocumentLang(): string {
+	const pathname = useRouterState({
+		select: (state) => state.location.pathname,
+	});
+	return localeFromPathname(pathname);
+}
+
 function RootDocument({ children }: { children: React.ReactNode }) {
+	const lang = useDocumentLang();
+
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html lang={lang} suppressHydrationWarning>
 			<head>
 				{/* biome-ignore lint/security/noDangerouslySetInnerHtml: inline theme bootstrap avoids flash before hydration */}
 				<script dangerouslySetInnerHTML={{ __html: themeInitScript }} />

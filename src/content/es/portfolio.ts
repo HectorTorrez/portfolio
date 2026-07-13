@@ -1,0 +1,98 @@
+import {
+	pantryProject,
+	portfolioLinks,
+	portfolioSiteBase,
+	portfolioSkills,
+} from "../shared";
+import type { PortfolioContent, PortfolioMeta, PortfolioSite } from "../types";
+
+export const portfolioSite: PortfolioSite = {
+	...portfolioSiteBase,
+	locale: "es_SV",
+};
+
+export const portfolioMeta: PortfolioMeta = {
+	title: "Hector Torrez | Ingeniero de Software · React y TypeScript",
+	description:
+		"Hector Torrez es Ingeniero de Software en El Salvador. Desarrolla aplicaciones web con React, TypeScript y Cloudflare — ERP, logística, e-commerce y productos full-stack.",
+	keywords:
+		"Hector Torrez, ingeniero de software, desarrollador React, TypeScript, Node.js, Cloudflare Workers, TanStack, desarrollador frontend, El Salvador, portafolio",
+};
+
+export const portfolio: PortfolioContent = {
+	name: "Hector Torrez",
+	headline: "Ingeniero de Software",
+	heroSubtitle:
+		"Desarrollo aplicaciones web modernas con React, TypeScript, Node.js y Cloudflare.",
+	heroSupportingText:
+		"3 años construyendo ERP, logística, e-commerce, gestión financiera y plataformas SaaS.",
+	location: "El Salvador",
+	aboutParagraphs: [
+		"Soy Ingeniero de Software enfocado en construir aplicaciones web escalables y experiencias de producto modernas.",
+		"Durante los últimos tres años he trabajado en sistemas ERP, plataformas de logística, soluciones de e-commerce, herramientas de gestión financiera y productos SaaS.",
+		"Mi experiencia principal es React, TypeScript y arquitectura frontend moderna, además de desarrollar soluciones backend con Node.js, PostgreSQL, Supabase y Cloudflare.",
+		"Disfruto construir software mantenible, mejorar la experiencia de desarrollo y resolver problemas de negocio reales a través de la tecnología.",
+	],
+	skills: portfolioSkills,
+	experience: [
+		{
+			company: "JDK Tech",
+			role: "Desarrollador Frontend",
+			location: "Grand Prairie, Texas, Estados Unidos",
+			start: "febrero 2025",
+			end: "Presente",
+			highlights: [
+				"Refactoricé y optimicé componentes frontend con React, Next.js y TanStack Query, mejorando rendimiento, escalabilidad y mantenibilidad.",
+				"Construí componentes UI reutilizables y funcionalidades con Next.js y TanStack Start, enfocándome en routing moderno, obtención de datos y experiencia de desarrollo.",
+				"Desarrollé interfaces basadas en datos integrando Headless WordPress como CMS, consumiendo APIs REST para contenido dinámico.",
+				"Construí y mantuve landing pages responsivas con Astro y SCSS, asegurando consistencia de diseño y enfoque mobile-first.",
+				"Desarrollé una prueba de concepto (PoC) de chatbot en JavaScript para explorar mejoras en interacción de usuario y automatización.",
+				"Revisé pull requests y colaboré con el equipo para promover buenas prácticas, mantener alta calidad de código y estándares frontend consistentes.",
+			],
+		},
+		{
+			company: "BetaCode",
+			role: "Desarrollador Frontend",
+			location: "El Salvador",
+			start: "junio 2024",
+			end: "febrero 2025",
+			highlights: [
+				"Construí funcionalidades frontend y backend para plataformas de e-commerce y eventos, incluyendo dashboards, sistemas de filtrado, actualizaciones en tiempo real, herramientas administrativas e integraciones API.",
+				"Desarrollé componentes reutilizables y flujos escalables que redujeron tareas operativas repetitivas y mejoraron la mantenibilidad en múltiples proyectos.",
+			],
+		},
+		{
+			company: "Freelance",
+			role: "Desarrollador Full Stack",
+			start: "diciembre 2023",
+			end: "mayo 2024",
+			highlights: [
+				"Colaboré en la creación de una interfaz que permitía a los usuarios ver y gestionar ganancias, mejorando la accesibilidad y claridad de datos financieros.",
+				"Desarrollé fórmulas personalizadas similares a Excel, permitiendo realizar cálculos dentro de la plataforma.",
+				"Creé e integré endpoints backend para diversas páginas, asegurando un flujo de datos fluido entre frontend y backend.",
+				"Implementé funcionalidad de arrastrar y soltar para reordenar y gestionar elementos de forma intuitiva dentro de la plataforma.",
+				"Desarrollé nuevos endpoints API para soportar funcionalidades frontend y flujos de datos.",
+			],
+		},
+	],
+	projects: [
+		{
+			...pantryProject,
+			description:
+				"Generador de recetas que crea sugerencias con los ingredientes que ya tienes en tu cocina. Configura tiempo de cocción, dificultad y preferencias dietéticas para obtener recetas con IA — sin lista de compras.",
+		},
+	],
+	education: [
+		{
+			institution: "Universidad Capitán Gerardo Barrios",
+			credential: "Ingeniero de Software, Ciencias de la Computación",
+			period: "junio 2021 – diciembre 2024",
+		},
+		{
+			institution: "Universidad Capitán General Gerardo Barrios",
+			credential: "Técnico en ingeniería de sistemas, programación",
+			period: "2018 – 2020",
+		},
+	],
+	links: portfolioLinks,
+};

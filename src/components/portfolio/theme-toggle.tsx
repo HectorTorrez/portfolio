@@ -3,28 +3,35 @@ import { Monitor, Moon, Sun } from "lucide-react";
 import { getNextThemePreference, type ThemePreference } from "#/lib/theme";
 
 import { focusRing } from "./focus-ring";
+import { useLocaleContent } from "./locale-context";
 import { useTheme } from "./theme-provider";
 
-const themeOptions: Record<
-	ThemePreference,
-	{ label: string; Icon: typeof Sun }
-> = {
-	light: { label: "Light theme", Icon: Sun },
-	dark: { label: "Dark theme", Icon: Moon },
-	system: { label: "System theme", Icon: Monitor },
+const themeIcons: Record<ThemePreference, typeof Sun> = {
+	light: Sun,
+	dark: Moon,
+	system: Monitor,
 };
 
 export function ThemeToggle() {
+	const { ui } = useLocaleContent();
 	const { preference, setPreference } = useTheme();
-	const { label, Icon } = themeOptions[preference];
-	const nextLabel = themeOptions[getNextThemePreference(preference)].label;
+
+	const labels: Record<ThemePreference, string> = {
+		light: ui.theme.light,
+		dark: ui.theme.dark,
+		system: ui.theme.system,
+	};
+
+	const label = labels[preference];
+	const nextLabel = labels[getNextThemePreference(preference)];
+	const Icon = themeIcons[preference];
 
 	return (
 		<button
 			type="button"
 			onClick={() => setPreference(getNextThemePreference(preference))}
-			aria-label={`${label}. Activate to switch to ${nextLabel}.`}
-			title={`${label} — click for ${nextLabel.toLowerCase()}`}
+			aria-label={ui.theme.switchLabel(label, nextLabel)}
+			title={ui.theme.switchTitle(label, nextLabel)}
 			className={`inline-flex min-h-10 min-w-10 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-border-subtle bg-surface-overlay text-text-muted transition-colors hover:border-border-strong hover:text-text-primary ${focusRing}`}
 		>
 			<Icon aria-hidden className="size-4" />
