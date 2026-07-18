@@ -1,17 +1,22 @@
 type SectionHeadingProps = {
 	id: string;
 	children: React.ReactNode;
+	description?: string;
 };
 
-export function SectionHeading({ id, children }: SectionHeadingProps) {
+export function SectionHeading({
+	id,
+	children,
+	description,
+}: SectionHeadingProps) {
 	return (
-		<div className="section-heading flex items-end gap-5">
-			<h2
-				id={id}
-				className="apple-display-headline text-balance text-2xl text-text-primary md:text-3xl"
-			>
+		<div>
+			<h2 id={id} className="editorial-label">
 				{children}
 			</h2>
+			{description ? (
+				<p className="mt-2 text-sm text-text-muted">{description}</p>
+			) : null}
 		</div>
 	);
 }

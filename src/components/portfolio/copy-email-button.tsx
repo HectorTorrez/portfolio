@@ -45,16 +45,16 @@ export function CopyEmailButton({ email }: CopyEmailButtonProps) {
 			aria-label={
 				copied ? ui.copyEmail.copiedAria : ui.copyEmail.copyAria(email)
 			}
-			className={`apple-pill inline-flex cursor-pointer items-center justify-center gap-1.5 bg-accent-highlight px-5 py-2.5 font-normal text-sm text-white transition-all hover:brightness-110 ${focusRing}`}
+			className={`inline-flex cursor-pointer items-center justify-center gap-1.5 text-sm text-text-muted transition-opacity hover:text-text-primary hover:opacity-100 ${focusRing}`}
 		>
 			{copied ? (
 				<>
-					<Check aria-hidden className="size-4" />
+					<Check aria-hidden className="size-3.5" />
 					{ui.copyEmail.copied}
 				</>
 			) : (
 				<>
-					<Copy aria-hidden className="size-4" />
+					<Copy aria-hidden className="size-3.5" />
 					{ui.copyEmail.label}
 				</>
 			)}

@@ -1,43 +1,58 @@
-import { CopyEmailButton } from "./copy-email-button";
-import { CtaLink } from "./cta-link";
+import { focusRing } from "./focus-ring";
 import { useLocaleContent } from "./locale-context";
 import { SectionHeading } from "./section-heading";
 
 export function SiteFooter() {
 	const { portfolio, ui } = useLocaleContent();
 
+	const links = [
+		{
+			href: `mailto:${portfolio.links.email}`,
+			label: ui.contact.email,
+			external: false,
+		},
+		{
+			href: portfolio.links.linkedIn,
+			label: ui.contact.linkedInProfile,
+			external: true,
+		},
+		{
+			href: portfolio.links.github,
+			label: ui.contact.githubProfile,
+			external: true,
+		},
+	] as const;
+
 	return (
 		<footer
 			id="contact"
-			className="section-reveal scroll-mt-24 border-border-subtle border-t px-5 py-16 md:px-8 md:py-24"
+			className="section-reveal scroll-mt-24 content-column border-border-subtle border-t py-12 md:py-16"
 		>
-			<div className="mx-auto max-w-[980px]">
-				<SectionHeading id="contact-heading">
-					{ui.contact.heading}
-				</SectionHeading>
-				<p className="mt-4 max-w-lg text-pretty text-base text-text-muted md:text-lg">
-					{ui.contact.body}
-				</p>
-				<div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-					<CopyEmailButton email={portfolio.links.email} />
-					<CtaLink
-						href={portfolio.links.linkedIn}
-						target="_blank"
-						rel="noopener noreferrer"
-						variant="secondary"
-					>
-						{ui.contact.linkedInProfile}
-					</CtaLink>
-					<CtaLink
-						href={portfolio.links.github}
-						target="_blank"
-						rel="noopener noreferrer"
-						variant="secondary"
-					>
-						{ui.contact.githubProfile}
-					</CtaLink>
-				</div>
-			</div>
+			<SectionHeading id="contact-heading">
+				{ui.sections.elsewhere}
+			</SectionHeading>
+			<ul className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2">
+				{links.map((link) => (
+					<li key={link.href}>
+						<a
+							href={link.href}
+							target={link.external ? "_blank" : undefined}
+							rel={link.external ? "noopener noreferrer" : undefined}
+							className={`editorial-link inline-flex items-baseline gap-1 text-sm text-text-muted hover:text-text-primary hover:opacity-100 ${focusRing}`}
+						>
+							{link.label}
+							{link.external ? (
+								<span aria-hidden className="text-text-faint">
+									↗
+								</span>
+							) : null}
+							{link.external ? (
+								<span className="sr-only"> {ui.a11y.opensInNewTab}</span>
+							) : null}
+						</a>
+					</li>
+				))}
+			</ul>
 		</footer>
 	);
 }

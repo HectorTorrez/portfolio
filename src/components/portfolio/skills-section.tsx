@@ -8,22 +8,12 @@ export function SkillsSection() {
 		<section
 			id="skills"
 			aria-labelledby="skills-heading"
-			className="section-reveal scroll-mt-24 apple-section-elevated px-5 py-16 md:px-8 md:py-20"
+			className="section-reveal scroll-mt-24 content-column py-12 md:py-16"
 		>
-			<div className="mx-auto max-w-[980px]">
-				<SectionHeading id="skills-heading">
-					{ui.sections.skills}
-				</SectionHeading>
-				<ul className="mt-8 flex flex-wrap gap-2">
-					{portfolio.skills.map((skill) => (
-						<li key={skill}>
-							<span className="apple-pill inline-block border border-border-subtle bg-surface-overlay px-4 py-2 text-sm text-text-primary">
-								{skill}
-							</span>
-						</li>
-					))}
-				</ul>
-			</div>
+			<SectionHeading id="skills-heading">{ui.sections.skills}</SectionHeading>
+			<p className="mt-6 text-pretty text-sm text-text-muted leading-relaxed md:text-base">
+				{portfolio.skills.join(" · ")}
+			</p>
 		</section>
 	);
 }

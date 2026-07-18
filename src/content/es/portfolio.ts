@@ -23,16 +23,10 @@ export const portfolio: PortfolioContent = {
 	name: "Hector Torrez",
 	headline: "Ingeniero de Software",
 	heroSubtitle:
-		"Desarrollo aplicaciones web modernas con React, TypeScript, Node.js y Cloudflare.",
+		"Soy ingeniero de software con 3 años construyendo aplicaciones web — ERP, logística, e-commerce y SaaS. Me importa React, TypeScript, una UX clara y sistemas mantenibles.",
 	heroSupportingText:
-		"3 años construyendo ERP, logística, e-commerce, gestión financiera y plataformas SaaS.",
+		"También trabajo con Node.js, PostgreSQL y Cloudflare cuando el producto lo necesita.",
 	location: "El Salvador",
-	aboutParagraphs: [
-		"Soy Ingeniero de Software enfocado en construir aplicaciones web escalables y experiencias de producto modernas.",
-		"Durante los últimos tres años he trabajado en sistemas ERP, plataformas de logística, soluciones de e-commerce, herramientas de gestión financiera y productos SaaS.",
-		"Mi experiencia principal es React, TypeScript y arquitectura frontend moderna, además de desarrollar soluciones backend con Node.js, PostgreSQL, Supabase y Cloudflare.",
-		"Disfruto construir software mantenible, mejorar la experiencia de desarrollo y resolver problemas de negocio reales a través de la tecnología.",
-	],
 	skills: portfolioSkills,
 	experience: [
 		{

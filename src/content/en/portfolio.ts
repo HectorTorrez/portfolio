@@ -23,16 +23,10 @@ export const portfolio: PortfolioContent = {
 	name: "Hector Torrez",
 	headline: "Software Engineer",
 	heroSubtitle:
-		"Building modern web applications with React, TypeScript, Node.js, and Cloudflare.",
+		"I'm a software engineer with 3 years of experience building web apps — ERP, logistics, e-commerce, and SaaS. I care about React, TypeScript, clear UX, and maintainable systems.",
 	heroSupportingText:
-		"3 years building ERP, logistics, e-commerce, financial management, and SaaS platforms.",
+		"Also shipping with Node.js, PostgreSQL, and Cloudflare when the product needs it.",
 	location: "El Salvador",
-	aboutParagraphs: [
-		"I'm a Software Engineer focused on building scalable web applications and modern product experiences.",
-		"Over the past three years, I've worked on ERP systems, logistics platforms, e-commerce solutions, financial management tools, and SaaS products.",
-		"My primary expertise is React, TypeScript, and modern frontend architecture, while also developing backend solutions using Node.js, PostgreSQL, Supabase, and Cloudflare.",
-		"I enjoy building maintainable software, improving developer experience, and solving real business problems through technology.",
-	],
 	skills: portfolioSkills,
 	experience: [
 		{

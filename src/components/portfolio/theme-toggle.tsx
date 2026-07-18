@@ -32,7 +32,7 @@ export function ThemeToggle() {
 			onClick={() => setPreference(getNextThemePreference(preference))}
 			aria-label={ui.theme.switchLabel(label, nextLabel)}
 			title={ui.theme.switchTitle(label, nextLabel)}
-			className={`inline-flex min-h-10 min-w-10 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-border-subtle bg-surface-overlay text-text-muted transition-colors hover:border-border-strong hover:text-text-primary ${focusRing}`}
+			className={`inline-flex min-h-10 min-w-10 shrink-0 cursor-pointer items-center justify-center text-text-muted transition-opacity hover:opacity-60 hover:text-text-primary ${focusRing}`}
 		>
 			<Icon aria-hidden className="size-4" />
 		</button>

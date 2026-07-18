@@ -17,7 +17,7 @@ export type ProjectEntry = {
 	name: string;
 	description: string;
 	url: string;
-	stack: string[];
+	stack: readonly string[];
 };
 
 export type PortfolioLinks = {
@@ -32,7 +32,6 @@ export type PortfolioContent = {
 	heroSubtitle: string;
 	heroSupportingText: string;
 	location: string;
-	aboutParagraphs: readonly string[];
 	skills: readonly string[];
 	experience: ExperienceEntry[];
 	projects: ProjectEntry[];
@@ -61,19 +60,20 @@ export type UiStrings = {
 	skipToContent: string;
 	nav: readonly NavItem[];
 	sections: {
-		about: string;
 		skills: string;
 		projects: string;
+		projectsBlurb: string;
 		experience: string;
 		education: string;
+		elsewhere: string;
 	};
 	contact: {
-		heading: string;
-		body: string;
 		linkedInProfile: string;
 		githubProfile: string;
+		email: string;
 	};
 	hero: {
+		status: string;
 		emailMe: string;
 		linkedIn: string;
 		github: string;
@@ -81,7 +81,6 @@ export type UiStrings = {
 	};
 	a11y: {
 		pageSections: string;
-		menu: string;
 		opensInNewTab: string;
 		language: string;
 	};
@@ -99,7 +98,6 @@ export type UiStrings = {
 		copyAria: (email: string) => string;
 	};
 	projects: {
-		featured: string;
 		visitProject: (name: string) => string;
 	};
 };

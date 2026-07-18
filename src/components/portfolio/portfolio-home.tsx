@@ -1,6 +1,5 @@
 import type { Locale } from "#/content/locales";
 
-import { AboutSection } from "./about-section";
 import { EducationSection } from "./education-section";
 import { ExperienceSection } from "./experience-section";
 import { HeroSection } from "./hero-section";
@@ -35,10 +34,9 @@ function PortfolioHomeContent() {
 
 			<main id="main-content" className="overflow-x-hidden">
 				<HeroSection />
-				<AboutSection />
-				<SkillsSection />
 				<ProjectsSection />
 				<ExperienceSection />
+				<SkillsSection />
 				<EducationSection />
 			</main>
 

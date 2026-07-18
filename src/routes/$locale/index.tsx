@@ -19,5 +19,8 @@ export const Route = createFileRoute("/$locale/")({
 
 function LocaleHome() {
 	const { locale } = Route.useParams();
+	if (!isLocale(locale)) {
+		return null;
+	}
 	return <PortfolioHome locale={locale} />;
 }

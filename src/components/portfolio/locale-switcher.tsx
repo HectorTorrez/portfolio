@@ -20,7 +20,7 @@ export function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
 				<span key={loc} className="inline-flex items-center gap-1">
 					{index > 0 ? (
 						<span aria-hidden className="text-text-faint">
-							|
+							/
 						</span>
 					) : null}
 					<Link
@@ -28,11 +28,11 @@ export function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
 						params={{ locale: loc }}
 						hash={hash || undefined}
 						aria-current={loc === locale ? "page" : undefined}
-						className={`inline-flex min-h-10 min-w-10 items-center justify-center rounded-lg px-2 font-medium tracking-wide transition-colors hover:text-text-primary ${focusRing} ${
+						className={`inline-flex min-h-10 min-w-8 items-center justify-center px-1.5 font-medium tracking-wide transition-opacity hover:opacity-60 ${focusRing} ${
 							loc === locale ? "text-text-primary" : "text-text-muted"
 						}`}
 					>
-						{loc.toUpperCase()}
+						{loc}
 					</Link>
 				</span>
 			))}

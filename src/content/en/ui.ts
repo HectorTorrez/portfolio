@@ -3,35 +3,32 @@ import type { UiStrings } from "../types";
 export const ui: UiStrings = {
 	skipToContent: "Skip to main content",
 	nav: [
-		{ href: "#about", label: "About" },
-		{ href: "#skills", label: "Skills" },
-		{ href: "#projects", label: "Projects" },
+		{ href: "#projects", label: "Work" },
 		{ href: "#experience", label: "Experience" },
-		{ href: "#education", label: "Education" },
-		{ href: "#contact", label: "Contact" },
+		{ href: "#contact", label: "Elsewhere" },
 	],
 	sections: {
-		about: "About",
 		skills: "Skills",
-		projects: "Projects",
+		projects: "Selected work",
+		projectsBlurb: "Things I've built and shipped.",
 		experience: "Experience",
 		education: "Education",
+		elsewhere: "Elsewhere",
 	},
 	contact: {
-		heading: "Let's talk",
-		body: "Have a project in mind or want to collaborate? Reach out by email, connect on LinkedIn, or browse work on GitHub.",
-		linkedInProfile: "LinkedIn profile",
-		githubProfile: "GitHub profile",
+		linkedInProfile: "LinkedIn",
+		githubProfile: "GitHub",
+		email: "Email",
 	},
 	hero: {
-		emailMe: "Email me",
+		status: "Available for work",
+		emailMe: "Email",
 		linkedIn: "LinkedIn",
 		github: "GitHub",
 		portraitAlt: (name) => `Portrait of ${name}`,
 	},
 	a11y: {
 		pageSections: "Page sections",
-		menu: "Menu",
 		opensInNewTab: "(opens in new tab)",
 		language: "Language",
 	},
@@ -51,7 +48,6 @@ export const ui: UiStrings = {
 		copyAria: (email) => `Copy email ${email}`,
 	},
 	projects: {
-		featured: "Featured",
 		visitProject: (name) => `Visit ${name} (opens in new tab)`,
 	},
 };
