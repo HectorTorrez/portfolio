@@ -3,14 +3,14 @@ import type { UiStrings } from "../types";
 export const ui: UiStrings = {
 	skipToContent: "Saltar al contenido principal",
 	nav: [
-		{ href: "#projects", label: "Trabajo" },
+		{ href: "#projects", label: "Proyectos" },
 		{ href: "#experience", label: "Experiencia" },
 		{ href: "#contact", label: "Enlaces" },
 	],
 	sections: {
 		skills: "Habilidades",
-		projects: "Trabajo seleccionado",
-		projectsBlurb: "Cosas que he construido y publicado.",
+		projects: "Proyectos destacados",
+		projectsBlurb: "Cosas que he construido y lanzado.",
 		experience: "Experiencia",
 		education: "Educación",
 		elsewhere: "Enlaces",
@@ -39,7 +39,7 @@ export const ui: UiStrings = {
 		switchLabel: (current, next) =>
 			`${current}. Activar para cambiar a ${next}.`,
 		switchTitle: (current, next) =>
-			`${current} — clic para ${next.toLowerCase()}`,
+			`${current} — haz clic para ${next.toLowerCase()}`,
 	},
 	copyEmail: {
 		label: "Copiar correo",
