@@ -1,5 +1,6 @@
 import { focusRing } from "./focus-ring";
 import { useLocaleContent } from "./locale-context";
+import { ScrambleText } from "./scramble-text";
 
 export function HeroSection() {
 	const { portfolio, ui } = useLocaleContent();
@@ -26,9 +27,10 @@ export function HeroSection() {
 
 				<h1
 					id="hero-heading"
+					aria-label={portfolio.name}
 					className="editorial-display mt-6 text-balance text-4xl text-text-primary sm:text-5xl md:text-[3.5rem]"
 				>
-					{portfolio.name}
+					<ScrambleText text={portfolio.name} />
 				</h1>
 
 				<p className="mt-3 text-lg text-text-muted md:text-xl">
