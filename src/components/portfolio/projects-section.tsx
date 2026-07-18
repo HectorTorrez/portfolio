@@ -31,7 +31,7 @@ export function ProjectsSection() {
 									{project.name}
 									<span
 										aria-hidden
-										className="text-text-faint text-sm transition-opacity group-hover:opacity-60"
+										className="text-text-faint text-sm transition-colors duration-150 ease-out group-hover:text-text-primary"
 									>
 										↗
 									</span>

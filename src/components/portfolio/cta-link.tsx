@@ -11,11 +11,10 @@ type CtaLinkProps = {
 	rel?: string;
 };
 
-const base =
-	"inline-flex items-center justify-center gap-1 text-sm transition-opacity duration-150";
+const base = "inline-flex items-center justify-center gap-1 text-sm";
 
 const variants = {
-	primary: `editorial-link font-medium underline decoration-border-strong underline-offset-[0.18em] hover:opacity-65 ${focusRing}`,
+	primary: `editorial-link font-medium underline decoration-border-strong underline-offset-[0.18em] ${focusRing}`,
 	secondary: `editorial-link text-text-muted hover:text-text-primary hover:opacity-100 ${focusRing}`,
 	tertiary: `editorial-link text-text-muted underline decoration-transparent underline-offset-[0.18em] hover:decoration-border-strong hover:opacity-100 ${focusRing}`,
 };

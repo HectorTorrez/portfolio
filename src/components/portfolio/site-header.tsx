@@ -12,7 +12,7 @@ export function SiteHeader() {
 			<div className="content-column flex items-center justify-between gap-4 py-4">
 				<a
 					href="#top"
-					className={`shrink-0 font-medium text-sm text-text-primary tracking-tight transition-opacity hover:opacity-60 ${focusRing}`}
+					className={`editorial-link shrink-0 font-medium text-sm tracking-tight no-underline ${focusRing}`}
 				>
 					{firstName.toLowerCase()}
 				</a>

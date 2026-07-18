@@ -11,6 +11,7 @@ type CopyEmailButtonProps = {
 export function CopyEmailButton({ email }: CopyEmailButtonProps) {
 	const { ui } = useLocaleContent();
 	const [copied, setCopied] = useState(false);
+	const [swapKey, setSwapKey] = useState(0);
 	const resetTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
 	useEffect(() => {
@@ -25,6 +26,7 @@ export function CopyEmailButton({ email }: CopyEmailButtonProps) {
 		try {
 			await navigator.clipboard.writeText(email);
 			setCopied(true);
+			setSwapKey((key) => key + 1);
 
 			if (resetTimeoutRef.current) {
 				clearTimeout(resetTimeoutRef.current);
@@ -32,6 +34,7 @@ export function CopyEmailButton({ email }: CopyEmailButtonProps) {
 
 			resetTimeoutRef.current = setTimeout(() => {
 				setCopied(false);
+				setSwapKey((key) => key + 1);
 			}, 2000);
 		} catch {
 			setCopied(false);
@@ -45,19 +48,24 @@ export function CopyEmailButton({ email }: CopyEmailButtonProps) {
 			aria-label={
 				copied ? ui.copyEmail.copiedAria : ui.copyEmail.copyAria(email)
 			}
-			className={`inline-flex cursor-pointer items-center justify-center gap-1.5 text-sm text-text-muted transition-opacity hover:text-text-primary hover:opacity-100 ${focusRing}`}
+			className={`pressable inline-flex cursor-pointer items-center justify-center gap-1.5 text-sm text-text-muted hover:text-text-primary hover:opacity-100 ${focusRing}`}
 		>
-			{copied ? (
-				<>
-					<Check aria-hidden className="size-3.5" />
-					{ui.copyEmail.copied}
-				</>
-			) : (
-				<>
-					<Copy aria-hidden className="size-3.5" />
-					{ui.copyEmail.label}
-				</>
-			)}
+			<span
+				key={swapKey}
+				className="icon-swap-in inline-flex items-center gap-1.5"
+			>
+				{copied ? (
+					<>
+						<Check aria-hidden className="size-3.5" />
+						{ui.copyEmail.copied}
+					</>
+				) : (
+					<>
+						<Copy aria-hidden className="size-3.5" />
+						{ui.copyEmail.label}
+					</>
+				)}
+			</span>
 			<span aria-live="polite" className="sr-only">
 				{copied ? ui.copyEmail.copiedAria : ""}
 			</span>

@@ -84,13 +84,14 @@ export function ScrambleText({
 			const length = Math.max(oldText.length, newText.length);
 			const next: QueueItem[] = [];
 
+			// Keep the scramble under ~350ms so hover delight stays snappy
 			for (let i = 0; i < length; i++) {
-				const start = Math.floor(Math.random() * 30);
+				const start = Math.floor(Math.random() * 12);
 				next.push({
 					from: oldText[i] || "",
 					to: newText[i] || "",
 					start,
-					end: start + Math.floor(Math.random() * 30),
+					end: start + Math.floor(Math.random() * 10) + 4,
 				});
 			}
 

@@ -28,7 +28,7 @@ export function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
 						params={{ locale: loc }}
 						hash={hash || undefined}
 						aria-current={loc === locale ? "page" : undefined}
-						className={`inline-flex min-h-10 min-w-8 items-center justify-center px-1.5 font-medium tracking-wide transition-opacity hover:opacity-60 ${focusRing} ${
+						className={`pressable pressable-fade inline-flex min-h-10 min-w-8 items-center justify-center px-1.5 font-medium tracking-wide ${focusRing} ${
 							loc === locale ? "text-text-primary" : "text-text-muted"
 						}`}
 					>

@@ -26,8 +26,11 @@
   --shadow-portrait: 0 8px 24px rgb(0 0 0 / 0.08);
   --shadow-dropdown: 0 12px 32px rgb(0 0 0 / 0.1);
 
-  --animate-fade-up: fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
-  --animate-scale-in: scale-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  /* Strong custom curves — built-in ease/ease-out feel weak */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+  --animate-fade-up: fade-up 0.5s var(--ease-out) both;
 }
 
 html[data-theme="dark"] {
@@ -55,7 +58,7 @@ html[data-theme="dark"] {
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -63,13 +66,15 @@ html[data-theme="dark"] {
   }
 }
 
-@keyframes scale-in {
+@keyframes icon-swap-in {
   from {
     opacity: 0;
-    transform: scale(0.98);
+    filter: blur(2px);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;
+    filter: blur(0);
     transform: scale(1);
   }
 }
@@ -80,7 +85,6 @@ html[data-theme="dark"] {
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
   }
 }
 
@@ -148,26 +152,26 @@ body {
 }
 
 .stagger-children > * {
-  animation: fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: fade-up 0.45s var(--ease-out) both;
 }
 
 .stagger-children > *:nth-child(1) {
-  animation-delay: 0.04s;
+  animation-delay: 0.03s;
 }
 .stagger-children > *:nth-child(2) {
-  animation-delay: 0.08s;
+  animation-delay: 0.06s;
 }
 .stagger-children > *:nth-child(3) {
-  animation-delay: 0.12s;
+  animation-delay: 0.09s;
 }
 .stagger-children > *:nth-child(4) {
-  animation-delay: 0.16s;
+  animation-delay: 0.12s;
 }
 .stagger-children > *:nth-child(5) {
-  animation-delay: 0.2s;
+  animation-delay: 0.15s;
 }
 .stagger-children > *:nth-child(6) {
-  animation-delay: 0.24s;
+  animation-delay: 0.18s;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -179,7 +183,7 @@ body {
 }
 
 .section-reveal {
-  animation: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: fade-up 0.5s var(--ease-out) forwards;
   animation-timeline: view();
   animation-range: entry 0% entry 40%;
 }
@@ -219,11 +223,43 @@ body {
 .editorial-link {
   color: var(--color-text-primary);
   text-underline-offset: 0.18em;
-  transition: opacity 0.15s ease;
+  transition:
+    opacity 150ms var(--ease-out),
+    color 150ms var(--ease-out);
 }
 
-.editorial-link:hover {
-  opacity: 0.65;
+@media (hover: hover) and (pointer: fine) {
+  .editorial-link:hover {
+    opacity: 0.65;
+  }
+}
+
+/* Pressable controls — buttons, icon toggles, locale chips */
+.pressable {
+  transition:
+    transform 160ms var(--ease-out),
+    opacity 150ms var(--ease-out),
+    color 150ms var(--ease-out);
+}
+
+.pressable:active {
+  transform: scale(0.97);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pressable-fade:hover {
+    opacity: 0.6;
+  }
+}
+
+.icon-swap-in {
+  animation: icon-swap-in 180ms var(--ease-out) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon-swap-in {
+    animation: none;
+  }
 }
 
 .content-column {
