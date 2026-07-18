@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="HT">
+  <rect width="32" height="32" rx="7" fill="#050506"/>
+  <!-- Geometric HT monogram -->
+  <g fill="#f5f5f7">
+    <!-- H -->
+    <rect x="6" y="8" width="2.75" height="16" rx="0.4"/>
+    <rect x="13.25" y="8" width="2.75" height="16" rx="0.4"/>
+    <rect x="6" y="14.625" width="10" height="2.75" rx="0.4"/>
+    <!-- T -->
+    <rect x="17.5" y="8" width="8.5" height="2.75" rx="0.4"/>
+    <rect x="20.375" y="8" width="2.75" height="16" rx="0.4"/>
+  </g>
+</svg>

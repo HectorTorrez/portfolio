@@ -36,6 +36,11 @@ export const Route = createRootRoute({
 			{ rel: "manifest", href: "/manifest.json" },
 			{
 				rel: "icon",
+				href: "/favicon.svg",
+				type: "image/svg+xml",
+			},
+			{
+				rel: "icon",
 				href: "/favicon-32.png",
 				type: "image/png",
 				sizes: "32x32",
