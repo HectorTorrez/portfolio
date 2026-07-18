@@ -8,11 +8,11 @@ export function isLocale(value: string): value is Locale {
 	return (locales as readonly string[]).includes(value);
 }
 
-export function localePath(locale: Locale): "/" | "/es" {
-	return locale === "en" ? "/" : "/es";
+export function localePath(locale: Locale): `/${Locale}` {
+	return `/${locale}`;
 }
 
 export function localeFromPathname(pathname: string): Locale {
 	const segment = pathname.split("/").filter(Boolean)[0];
-	return segment === "es" ? "es" : defaultLocale;
+	return isLocale(segment) ? segment : defaultLocale;
 }

@@ -1,13 +1,12 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
-import { PortfolioHome } from "#/components/portfolio/portfolio-home";
-import { buildPortfolioHead } from "#/lib/seo";
+import { defaultLocale } from "#/content/locales";
 
 export const Route = createFileRoute("/")({
-	head: () => buildPortfolioHead("en"),
-	component: Home,
+	beforeLoad: () => {
+		throw redirect({
+			to: "/$locale",
+			params: { locale: defaultLocale },
+		});
+	},
 });
-
-function Home() {
-	return <PortfolioHome locale="en" />;
-}

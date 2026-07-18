@@ -10,43 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as EsIndexRouteImport } from './routes/es/index'
+import { Route as LocaleIndexRouteImport } from './routes/$locale/index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const EsIndexRoute = EsIndexRouteImport.update({
-  id: '/es/',
-  path: '/es/',
+const LocaleIndexRoute = LocaleIndexRouteImport.update({
+  id: '/$locale/',
+  path: '/$locale/',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/es/': typeof EsIndexRoute
+  '/$locale/': typeof LocaleIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/es': typeof EsIndexRoute
+  '/$locale': typeof LocaleIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/es/': typeof EsIndexRoute
+  '/$locale/': typeof LocaleIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/es/'
+  fullPaths: '/' | '/$locale/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/es'
-  id: '__root__' | '/' | '/es/'
+  to: '/' | '/$locale'
+  id: '__root__' | '/' | '/$locale/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  EsIndexRoute: typeof EsIndexRoute
+  LocaleIndexRoute: typeof LocaleIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -58,11 +58,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/es/': {
-      id: '/es/'
-      path: '/es'
-      fullPath: '/es/'
-      preLoaderRoute: typeof EsIndexRouteImport
+    '/$locale/': {
+      id: '/$locale/'
+      path: '/$locale'
+      fullPath: '/$locale/'
+      preLoaderRoute: typeof LocaleIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -70,7 +70,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  EsIndexRoute: EsIndexRoute,
+  LocaleIndexRoute: LocaleIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

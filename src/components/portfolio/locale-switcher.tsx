@@ -1,6 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 
-import { type Locale, localePath, locales } from "#/content/locales";
+import { type Locale, locales } from "#/content/locales";
 
 import { focusRing } from "./focus-ring";
 import { useLocaleContent } from "./locale-context";
@@ -24,7 +24,8 @@ export function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
 						</span>
 					) : null}
 					<Link
-						to={localePath(loc)}
+						to="/$locale"
+						params={{ locale: loc }}
 						hash={hash || undefined}
 						aria-current={loc === locale ? "page" : undefined}
 						className={`inline-flex min-h-10 min-w-10 items-center justify-center rounded-lg px-2 font-medium tracking-wide transition-colors hover:text-text-primary ${focusRing} ${

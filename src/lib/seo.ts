@@ -37,38 +37,33 @@ function buildPersonJsonLd(locale: Locale) {
 	const { portfolio, meta } = getContent(locale);
 	const { name, headline, skills, education, links } = portfolio;
 	const localePathname = localePath(locale);
+	const localeBase = `${portfolioSiteBase.url}${localePathname}`;
 
 	return {
 		"@context": "https://schema.org",
 		"@graph": [
 			{
 				"@type": "WebSite",
-				"@id": `${portfolioSiteBase.url}${localePathname === "/" ? "" : localePathname}/#website`,
+				"@id": `${localeBase}/#website`,
 				url: absoluteUrl(localePathname),
 				name: meta.title,
 				description: meta.description,
 				inLanguage: locale,
-				publisher: {
-					"@id": `${portfolioSiteBase.url}${localePathname === "/" ? "" : localePathname}/#person`,
-				},
+				publisher: { "@id": `${localeBase}/#person` },
 			},
 			{
 				"@type": "ProfilePage",
-				"@id": `${portfolioSiteBase.url}${localePathname === "/" ? "" : localePathname}/#profile`,
+				"@id": `${localeBase}/#profile`,
 				url: absoluteUrl(localePathname),
 				name: meta.title,
 				description: meta.description,
 				inLanguage: locale,
-				isPartOf: {
-					"@id": `${portfolioSiteBase.url}${localePathname === "/" ? "" : localePathname}/#website`,
-				},
-				mainEntity: {
-					"@id": `${portfolioSiteBase.url}${localePathname === "/" ? "" : localePathname}/#person`,
-				},
+				isPartOf: { "@id": `${localeBase}/#website` },
+				mainEntity: { "@id": `${localeBase}/#person` },
 			},
 			{
 				"@type": "Person",
-				"@id": `${portfolioSiteBase.url}${localePathname === "/" ? "" : localePathname}/#person`,
+				"@id": `${localeBase}/#person`,
 				name,
 				jobTitle: headline,
 				url: absoluteUrl(localePathname),
@@ -104,7 +99,7 @@ function buildHreflangLinks(): HeadLink[] {
 		{
 			rel: "alternate",
 			hreflang: "x-default",
-			href: absoluteUrl("/"),
+			href: absoluteUrl(localePath(defaultLocale)),
 		},
 	];
 }
