@@ -74,7 +74,28 @@ export const portfolio: PortfolioContent = {
 		{
 			...pantryProject,
 			description:
-				"Generador de recetas a partir de los ingredientes que ya tienes en la cocina. Elige tiempo de cocción, dificultad y preferencias dietéticas para obtener recetas con IA — sin lista de compras.",
+				"Generador de recetas con IA que convierte ingredientes de la despensa y el tiempo de cocción en ideas útiles — con filtros dietéticos, modo cocina, favoritos y lista de compras.",
+			caseStudy: {
+				problem:
+					"Quien cocina en casa suele partir de lo que ya tiene, pero buscar recetas termina empujando una lista de compras. Pantry responde “¿qué puedo cocinar ahora?” con ingredientes, tiempo y restricciones dietéticas.",
+				role: "Construcción en solitario — producto, UI, Worker de API, auth, cuotas y despliegue en Cloudflare.",
+				constraints:
+					"Reto de entrevista con separación clara cliente/servidor, CSS plano (sin kit de UI) y despliegue en el edge sin claves externas de IA.",
+				decisions: [
+					{
+						title: "Worker de API aparte para la IA",
+						detail:
+							"TanStack Start maneja la UI y el SSR; un Worker dedicado se encarga de Workers AI, validación, auth y rate limits para que el frontend no hable con el modelo directamente.",
+					},
+					{
+						title: "Ingeniería de prompts en lugar de una base de recetas",
+						detail:
+							"Las restricciones se inyectan en un prompt estructurado con Llama 3.1 en el free tier de Workers AI, con un parser que valida campos — se prioriza cero claves externas y un camino nativo en el edge.",
+					},
+				],
+				outcome:
+					"Aplicación en vivo en Cloudflare Workers (web + API) que genera tres recetas por solicitud, envía resultados parseados a la UI y persiste favoritos, preferencias e historial en D1 para usuarios autenticados, manteniendo el estado de invitado en local.",
+			},
 		},
 	],
 	education: [

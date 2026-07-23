@@ -10,7 +10,7 @@ export const ui: UiStrings = {
 	sections: {
 		skills: "Skills",
 		projects: "Selected work",
-		projectsBlurb: "Things I've built and shipped.",
+		projectsBlurb: "Compact case studies — problem, decisions, and proof.",
 		experience: "Experience",
 		education: "Education",
 		elsewhere: "Elsewhere",
@@ -19,12 +19,14 @@ export const ui: UiStrings = {
 		linkedInProfile: "LinkedIn",
 		githubProfile: "GitHub",
 		email: "Email",
+		resume: "CV",
 	},
 	hero: {
 		status: "Available for work",
 		emailMe: "Email",
 		linkedIn: "LinkedIn",
 		github: "GitHub",
+		resume: "CV",
 		portraitAlt: (name) => `Portrait of ${name}`,
 	},
 	a11y: {
@@ -49,5 +51,12 @@ export const ui: UiStrings = {
 	},
 	projects: {
 		visitProject: (name) => `Visit ${name} (opens in new tab)`,
+		liveDemo: "Live demo",
+		source: "Source",
+		problem: "Problem",
+		role: "Role",
+		constraints: "Constraints",
+		decisions: "Decisions",
+		outcome: "Outcome",
 	},
 };
