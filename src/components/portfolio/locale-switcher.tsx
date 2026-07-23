@@ -40,7 +40,7 @@ export function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
 							to="/$locale/work/$slug"
 							params={{ locale: loc, slug: workSlug }}
 							aria-current={loc === locale ? "page" : undefined}
-							className={`pressable pressable-fade inline-flex min-h-10 min-w-8 items-center justify-center px-1.5 font-medium tracking-wide ${focusRing} ${
+							className={`pressable pressable-fade inline-flex min-h-11 min-w-9 items-center justify-center px-1.5 font-medium tracking-wide ${focusRing} ${
 								loc === locale ? "text-text-primary" : "text-text-muted"
 							}`}
 						>
@@ -52,7 +52,7 @@ export function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
 							params={{ locale: loc }}
 							hash={hash || undefined}
 							aria-current={loc === locale ? "page" : undefined}
-							className={`pressable pressable-fade inline-flex min-h-10 min-w-8 items-center justify-center px-1.5 font-medium tracking-wide ${focusRing} ${
+							className={`pressable pressable-fade inline-flex min-h-11 min-w-9 items-center justify-center px-1.5 font-medium tracking-wide ${focusRing} ${
 								loc === locale ? "text-text-primary" : "text-text-muted"
 							}`}
 						>
