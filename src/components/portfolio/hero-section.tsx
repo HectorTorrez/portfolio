@@ -13,7 +13,16 @@ export function HeroSection() {
 			className="content-column pb-16 pt-10 md:pb-20 md:pt-14"
 		>
 			<div className="stagger-children">
-				<p className="flex items-center gap-2 text-sm text-text-muted">
+				<img
+					src="/profile-photo.jpg"
+					alt={ui.hero.portraitAlt(portfolio.name)}
+					width={80}
+					height={80}
+					decoding="async"
+					className="size-16 rounded-full object-cover shadow-[var(--shadow-portrait)] md:size-20"
+				/>
+
+				<p className="mt-6 flex items-center gap-2 text-sm text-text-muted">
 					<span
 						aria-hidden
 						className="size-1.5 shrink-0 rounded-full bg-accent-status"
