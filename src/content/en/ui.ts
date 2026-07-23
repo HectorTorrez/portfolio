@@ -47,6 +47,7 @@ export const ui: UiStrings = {
 		label: "Copy email",
 		copied: "Copied!",
 		copiedAria: "Email copied to clipboard",
+		failedAria: "Couldn't copy email. Opening your email client instead.",
 		copyAria: (email) => `Copy email ${email}`,
 	},
 	projects: {

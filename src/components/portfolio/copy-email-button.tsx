@@ -11,6 +11,7 @@ type CopyEmailButtonProps = {
 export function CopyEmailButton({ email }: CopyEmailButtonProps) {
 	const { ui } = useLocaleContent();
 	const [copied, setCopied] = useState(false);
+	const [failed, setFailed] = useState(false);
 	const [swapKey, setSwapKey] = useState(0);
 	const resetTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -22,24 +23,43 @@ export function CopyEmailButton({ email }: CopyEmailButtonProps) {
 		};
 	}, []);
 
+	const scheduleReset = () => {
+		if (resetTimeoutRef.current) {
+			clearTimeout(resetTimeoutRef.current);
+		}
+
+		resetTimeoutRef.current = setTimeout(() => {
+			setCopied(false);
+			setFailed(false);
+			setSwapKey((key) => key + 1);
+		}, 2000);
+	};
+
+	const openMailtoFallback = () => {
+		window.location.href = `mailto:${email}`;
+	};
+
 	const handleCopy = async () => {
 		try {
 			await navigator.clipboard.writeText(email);
+			setFailed(false);
 			setCopied(true);
 			setSwapKey((key) => key + 1);
-
-			if (resetTimeoutRef.current) {
-				clearTimeout(resetTimeoutRef.current);
-			}
-
-			resetTimeoutRef.current = setTimeout(() => {
-				setCopied(false);
-				setSwapKey((key) => key + 1);
-			}, 2000);
+			scheduleReset();
 		} catch {
 			setCopied(false);
+			setFailed(true);
+			setSwapKey((key) => key + 1);
+			openMailtoFallback();
+			scheduleReset();
 		}
 	};
+
+	const liveMessage = copied
+		? ui.copyEmail.copiedAria
+		: failed
+			? ui.copyEmail.failedAria
+			: "";
 
 	return (
 		<button
@@ -67,7 +87,7 @@ export function CopyEmailButton({ email }: CopyEmailButtonProps) {
 				)}
 			</span>
 			<span aria-live="polite" className="sr-only">
-				{copied ? ui.copyEmail.copiedAria : ""}
+				{liveMessage}
 			</span>
 		</button>
 	);
