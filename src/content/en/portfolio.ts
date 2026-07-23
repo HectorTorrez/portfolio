@@ -35,6 +35,7 @@ export const portfolio: PortfolioContent = {
 			location: "Grand Prairie, Texas, United States",
 			start: "February 2025",
 			end: "Present",
+			startDateTime: "2025-02",
 			highlights: [
 				"Refactored and optimized frontend components using React, Next.js, and TanStack Query, improving performance, scalability, and maintainability.",
 				"Built reusable UI components and application features with Next.js and TanStack Start, focusing on modern routing, data fetching, and developer experience.",
@@ -51,16 +52,20 @@ export const portfolio: PortfolioContent = {
 			location: "El Salvador",
 			start: "June 2024",
 			end: "February 2025",
+			startDateTime: "2024-06",
+			endDateTime: "2025-02",
 			highlights: [
 				"Built frontend and backend features for e-commerce and event platforms, including dashboards, filtering systems, real-time updates, administrative tools, and API integrations.",
 				"Developed reusable components and scalable workflows that reduced repetitive operational tasks and improved maintainability across multiple projects.",
 			],
 		},
 		{
-			company: "Freelance",
+			company: "Independent",
 			role: "Full Stack Developer",
 			start: "December 2023",
 			end: "May 2024",
+			startDateTime: "2023-12",
+			endDateTime: "2024-05",
 			highlights: [
 				"Collaborated in the creation of a user interface that allowed users to view and manage earnings, improving accessibility and clarity of financial data.",
 				"Developed custom formulas similar to Excel, enabling users to perform calculations within the platform.",
@@ -79,7 +84,7 @@ export const portfolio: PortfolioContent = {
 	],
 	education: [
 		{
-			institution: "Universidad Capitán Gerardo Barrios",
+			institution: "Universidad Capitán General Gerardo Barrios",
 			credential: "Software Engineer, Computer Science",
 			period: "June 2021 – December 2024",
 		},

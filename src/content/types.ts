@@ -2,8 +2,14 @@ export type ExperienceEntry = {
 	company: string;
 	role: string;
 	location?: string;
+	/** Display label, e.g. "February 2025" */
 	start: string;
+	/** Display label, e.g. "Present" */
 	end: string;
+	/** Machine-readable start for <time dateTime>, month precision (YYYY-MM) */
+	startDateTime: string;
+	/** Machine-readable end for <time dateTime>; omit when ongoing */
+	endDateTime?: string;
 	highlights: string[];
 };
 
@@ -100,6 +106,7 @@ export type UiStrings = {
 		label: string;
 		copied: string;
 		copiedAria: string;
+		failedAria: string;
 		copyAria: (email: string) => string;
 	};
 	projects: {

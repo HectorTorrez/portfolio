@@ -19,9 +19,13 @@ export function ExperienceJob({ job }: { job: ExperienceEntry }) {
 					</p>
 				</div>
 				<p className="shrink-0 text-text-faint text-sm tabular-nums">
-					<time dateTime={job.start}>{job.start}</time>
+					<time dateTime={job.startDateTime}>{job.start}</time>
 					{" — "}
-					<time dateTime={job.end}>{job.end}</time>
+					{job.endDateTime ? (
+						<time dateTime={job.endDateTime}>{job.end}</time>
+					) : (
+						<span>{job.end}</span>
+					)}
 				</p>
 			</header>
 			<ul className="mt-4 list-disc space-y-2 pl-5 marker:text-text-faint">
