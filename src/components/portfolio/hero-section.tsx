@@ -1,10 +1,28 @@
+import { CopyEmailButton } from "./copy-email-button";
 import { focusRing } from "./focus-ring";
 import { useLocaleContent } from "./locale-context";
 import { ScrambleText } from "./scramble-text";
 
 export function HeroSection() {
 	const { portfolio, ui } = useLocaleContent();
-	const mailHref = `mailto:${portfolio.links.email}`;
+
+	const links = [
+		{
+			href: portfolio.links.resume,
+			label: ui.hero.resume,
+			emphasize: true,
+		},
+		{
+			href: portfolio.links.linkedIn,
+			label: ui.hero.linkedIn,
+			emphasize: false,
+		},
+		{
+			href: portfolio.links.github,
+			label: ui.hero.github,
+			emphasize: false,
+		},
+	] as const;
 
 	return (
 		<section
@@ -13,16 +31,7 @@ export function HeroSection() {
 			className="content-column pb-16 pt-10 md:pb-20 md:pt-14"
 		>
 			<div className="stagger-children">
-				<img
-					src="/profile-photo.jpg"
-					alt={ui.hero.portraitAlt(portfolio.name)}
-					width={80}
-					height={80}
-					decoding="async"
-					className="size-16 rounded-full object-cover shadow-[var(--shadow-portrait)] md:size-20"
-				/>
-
-				<p className="mt-6 flex items-center gap-2 text-sm text-text-muted">
+				<p className="flex items-center gap-2 text-sm text-text-muted">
 					<span
 						aria-hidden
 						className="size-1.5 shrink-0 rounded-full bg-accent-status"
@@ -53,48 +62,26 @@ export function HeroSection() {
 					{portfolio.heroSupportingText}
 				</p>
 
-				<ul className="mt-8 flex flex-wrap gap-x-5 gap-y-1 text-sm text-text-muted">
-					<li>
-						<a
-							href={mailHref}
-							className={`editorial-link inline-flex min-h-11 items-center ${focusRing}`}
-						>
-							{ui.hero.emailMe}
-						</a>
+				<ul className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-text-muted">
+					<li className="flex items-center">
+						<CopyEmailButton email={portfolio.links.email} />
 					</li>
-					<li>
-						<a
-							href={portfolio.links.resume}
-							target="_blank"
-							rel="noopener noreferrer"
-							className={`editorial-link inline-flex min-h-11 items-center font-medium text-text-primary ${focusRing}`}
-						>
-							{ui.hero.resume}
-							<span className="sr-only"> {ui.a11y.opensInNewTab}</span>
-						</a>
-					</li>
-					<li>
-						<a
-							href={portfolio.links.linkedIn}
-							target="_blank"
-							rel="noopener noreferrer"
-							className={`editorial-link inline-flex min-h-11 items-center ${focusRing}`}
-						>
-							{ui.hero.linkedIn}
-							<span className="sr-only"> {ui.a11y.opensInNewTab}</span>
-						</a>
-					</li>
-					<li>
-						<a
-							href={portfolio.links.github}
-							target="_blank"
-							rel="noopener noreferrer"
-							className={`editorial-link inline-flex min-h-11 items-center ${focusRing}`}
-						>
-							{ui.hero.github}
-							<span className="sr-only"> {ui.a11y.opensInNewTab}</span>
-						</a>
-					</li>
+					{links.map((link) => (
+						<li key={link.href} className="flex items-center">
+							<a
+								href={link.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								className={`editorial-link inline-flex min-h-11 items-center gap-1 hover:text-text-primary hover:opacity-100 ${link.emphasize ? "font-medium text-text-primary" : ""} ${focusRing}`}
+							>
+								{link.label}
+								<span aria-hidden className="text-text-faint">
+									↗
+								</span>
+								<span className="sr-only"> {ui.a11y.opensInNewTab}</span>
+							</a>
+						</li>
+					))}
 				</ul>
 			</div>
 		</section>
