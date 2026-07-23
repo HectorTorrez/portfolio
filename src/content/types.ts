@@ -13,17 +13,33 @@ export type EducationEntry = {
 	period: string;
 };
 
+export type ProjectDecision = {
+	title: string;
+	detail: string;
+};
+
+export type ProjectCaseStudy = {
+	problem: string;
+	role: string;
+	constraints: string;
+	decisions: readonly ProjectDecision[];
+	outcome: string;
+};
+
 export type ProjectEntry = {
 	name: string;
 	description: string;
 	url: string;
+	sourceUrl?: string;
 	stack: readonly string[];
+	caseStudy?: ProjectCaseStudy;
 };
 
 export type PortfolioLinks = {
 	email: string;
 	linkedIn: string;
 	github: string;
+	resume: string;
 };
 
 export type PortfolioContent = {
@@ -71,12 +87,14 @@ export type UiStrings = {
 		linkedInProfile: string;
 		githubProfile: string;
 		email: string;
+		resume: string;
 	};
 	hero: {
 		status: string;
 		emailMe: string;
 		linkedIn: string;
 		github: string;
+		resume: string;
 		portraitAlt: (name: string) => string;
 	};
 	a11y: {
@@ -99,6 +117,13 @@ export type UiStrings = {
 	};
 	projects: {
 		visitProject: (name: string) => string;
+		liveDemo: string;
+		source: string;
+		problem: string;
+		role: string;
+		constraints: string;
+		decisions: string;
+		outcome: string;
 	};
 };
 
