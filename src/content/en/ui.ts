@@ -10,7 +10,7 @@ export const ui: UiStrings = {
 	sections: {
 		skills: "Skills",
 		projects: "Selected work",
-		projectsBlurb: "Compact case studies — problem, decisions, and proof.",
+		projectsBlurb: "Things I've built and shipped.",
 		experience: "Experience",
 		education: "Education",
 		elsewhere: "Elsewhere",
@@ -53,10 +53,7 @@ export const ui: UiStrings = {
 		visitProject: (name) => `Visit ${name} (opens in new tab)`,
 		liveDemo: "Live demo",
 		source: "Source",
-		problem: "Problem",
-		role: "Role",
-		constraints: "Constraints",
-		decisions: "Decisions",
-		outcome: "Outcome",
+		readCaseStudy: "Read case study",
+		backToWork: "Back to selected work",
 	},
 };

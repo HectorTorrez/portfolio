@@ -28,7 +28,16 @@ export const portfolioSkills = [
 
 export const pantryProject = {
 	name: "Pantry",
+	slug: "pantry",
 	url: "https://recipe-generator-web.torrezhectorb.workers.dev/",
 	sourceUrl: "https://github.com/HectorTorrez/recipe-generator",
 	stack: ["TanStack Start", "Cloudflare Workers", "Workers AI", "D1"],
 } as const;
+
+export const caseStudySlugs = [pantryProject.slug] as const;
+
+export type CaseStudySlug = (typeof caseStudySlugs)[number];
+
+export function isCaseStudySlug(value: string): value is CaseStudySlug {
+	return (caseStudySlugs as readonly string[]).includes(value);
+}

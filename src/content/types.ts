@@ -13,26 +13,13 @@ export type EducationEntry = {
 	period: string;
 };
 
-export type ProjectDecision = {
-	title: string;
-	detail: string;
-};
-
-export type ProjectCaseStudy = {
-	problem: string;
-	role: string;
-	constraints: string;
-	decisions: readonly ProjectDecision[];
-	outcome: string;
-};
-
 export type ProjectEntry = {
 	name: string;
+	slug: string;
 	description: string;
 	url: string;
 	sourceUrl?: string;
 	stack: readonly string[];
-	caseStudy?: ProjectCaseStudy;
 };
 
 export type PortfolioLinks = {
@@ -119,11 +106,8 @@ export type UiStrings = {
 		visitProject: (name: string) => string;
 		liveDemo: string;
 		source: string;
-		problem: string;
-		role: string;
-		constraints: string;
-		decisions: string;
-		outcome: string;
+		readCaseStudy: string;
+		backToWork: string;
 	};
 };
 
