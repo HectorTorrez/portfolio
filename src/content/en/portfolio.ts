@@ -38,6 +38,7 @@ export const portfolio: PortfolioContent = {
 			highlights: [
 				"Refactored and optimized frontend components using React, Next.js, and TanStack Query, improving performance, scalability, and maintainability.",
 				"Built reusable UI components and application features with Next.js and TanStack Start, focusing on modern routing, data fetching, and developer experience.",
+				"Led the integration of a new CI/CD pipeline to deploy products from Azure to Vercel using the Vercel CLI, automating releases and improving deployment reliability across the product suite.",
 				"Developed data-driven interfaces by integrating Headless WordPress as a CMS, consuming REST APIs to power dynamic content.",
 				"Built and maintained responsive landing pages using Astro and SCSS, ensuring design consistency and a mobile-first approach.",
 				"Developed a chatbot proof of concept (PoC) in JavaScript to explore improvements in user interaction and automation.",
