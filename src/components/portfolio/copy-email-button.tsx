@@ -48,11 +48,11 @@ export function CopyEmailButton({ email }: CopyEmailButtonProps) {
 			aria-label={
 				copied ? ui.copyEmail.copiedAria : ui.copyEmail.copyAria(email)
 			}
-			className={`pressable inline-flex cursor-pointer items-center justify-center gap-1.5 text-sm text-text-muted hover:text-text-primary hover:opacity-100 ${focusRing}`}
+			className={`pressable inline-flex min-h-11 cursor-pointer items-center justify-center gap-1.5 text-sm text-text-muted hover:text-text-primary hover:opacity-100 ${focusRing}`}
 		>
 			<span
 				key={swapKey}
-				className="icon-swap-in inline-flex items-center gap-1.5"
+				className="icon-swap-in inline-flex items-center gap-1.5 leading-none"
 			>
 				{copied ? (
 					<>

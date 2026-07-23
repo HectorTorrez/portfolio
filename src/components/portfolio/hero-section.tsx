@@ -44,10 +44,24 @@ export function HeroSection() {
 					{portfolio.heroSupportingText}
 				</p>
 
-				<ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm text-text-muted">
+				<ul className="mt-8 flex flex-wrap gap-x-5 gap-y-1 text-sm text-text-muted">
 					<li>
-						<a href={mailHref} className={`editorial-link ${focusRing}`}>
+						<a
+							href={mailHref}
+							className={`editorial-link inline-flex min-h-11 items-center ${focusRing}`}
+						>
 							{ui.hero.emailMe}
+						</a>
+					</li>
+					<li>
+						<a
+							href={portfolio.links.resume}
+							target="_blank"
+							rel="noopener noreferrer"
+							className={`editorial-link inline-flex min-h-11 items-center font-medium text-text-primary ${focusRing}`}
+						>
+							{ui.hero.resume}
+							<span className="sr-only"> {ui.a11y.opensInNewTab}</span>
 						</a>
 					</li>
 					<li>
@@ -55,7 +69,7 @@ export function HeroSection() {
 							href={portfolio.links.linkedIn}
 							target="_blank"
 							rel="noopener noreferrer"
-							className={`editorial-link ${focusRing}`}
+							className={`editorial-link inline-flex min-h-11 items-center ${focusRing}`}
 						>
 							{ui.hero.linkedIn}
 							<span className="sr-only"> {ui.a11y.opensInNewTab}</span>
@@ -66,7 +80,7 @@ export function HeroSection() {
 							href={portfolio.links.github}
 							target="_blank"
 							rel="noopener noreferrer"
-							className={`editorial-link ${focusRing}`}
+							className={`editorial-link inline-flex min-h-11 items-center ${focusRing}`}
 						>
 							{ui.hero.github}
 							<span className="sr-only"> {ui.a11y.opensInNewTab}</span>

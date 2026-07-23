@@ -8,14 +8,16 @@ export function SiteFooter() {
 
 	const links = [
 		{
+			href: portfolio.links.resume,
+			label: ui.contact.resume,
+		},
+		{
 			href: portfolio.links.linkedIn,
 			label: ui.contact.linkedInProfile,
-			external: true,
 		},
 		{
 			href: portfolio.links.github,
 			label: ui.contact.githubProfile,
-			external: true,
 		},
 	] as const;
 
@@ -27,17 +29,17 @@ export function SiteFooter() {
 			<SectionHeading id="contact-heading">
 				{ui.sections.elsewhere}
 			</SectionHeading>
-			<ul className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2">
-				<li>
+			<ul className="mt-6 flex flex-col items-start gap-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-1">
+				<li className="flex items-center">
 					<CopyEmailButton email={portfolio.links.email} />
 				</li>
 				{links.map((link) => (
-					<li key={link.href}>
+					<li key={link.href} className="flex items-center">
 						<a
 							href={link.href}
 							target="_blank"
 							rel="noopener noreferrer"
-							className={`editorial-link inline-flex items-baseline gap-1 text-sm text-text-muted hover:text-text-primary hover:opacity-100 ${focusRing}`}
+							className={`editorial-link inline-flex min-h-11 items-center gap-1 text-sm text-text-muted hover:text-text-primary hover:opacity-100 ${focusRing}`}
 						>
 							{link.label}
 							<span aria-hidden className="text-text-faint">
