@@ -89,17 +89,23 @@ function buildPersonJsonLd(locale: Locale) {
 	};
 }
 
-function buildHreflangLinks(): HeadLink[] {
+function caseStudyPath(locale: Locale, slug: string): string {
+	return `${localePath(locale)}/work/${slug}`;
+}
+
+function buildHreflangLinks(
+	pathBuilder: (locale: Locale) => string,
+): HeadLink[] {
 	return [
 		...locales.map((locale) => ({
 			rel: "alternate",
 			hreflang: locale,
-			href: absoluteUrl(localePath(locale)),
+			href: absoluteUrl(pathBuilder(locale)),
 		})),
 		{
 			rel: "alternate",
 			hreflang: "x-default",
-			href: absoluteUrl(localePath(defaultLocale)),
+			href: absoluteUrl(pathBuilder(defaultLocale)),
 		},
 	];
 }
@@ -150,7 +156,7 @@ export function buildPortfolioHead(locale: string): {
 		],
 		links: [
 			{ rel: "canonical", href: canonical },
-			...buildHreflangLinks(),
+			...buildHreflangLinks(localePath),
 			{ rel: "me", href: portfolio.links.github },
 			{ rel: "me", href: portfolio.links.linkedIn },
 		],
@@ -160,5 +166,67 @@ export function buildPortfolioHead(locale: string): {
 				children: JSON.stringify(buildPersonJsonLd(resolvedLocale)),
 			},
 		],
+	};
+}
+
+export function buildCaseStudyHead(
+	locale: string,
+	slug: string,
+): {
+	meta: HeadMeta[];
+	links: HeadLink[];
+	scripts: HeadScript[];
+} {
+	const resolvedLocale = isLocale(locale) ? locale : defaultLocale;
+	const { portfolio, site, ui } = getContent(resolvedLocale);
+	const project = portfolio.projects.find((entry) => entry.slug === slug);
+
+	if (!project) {
+		return buildPortfolioHead(resolvedLocale);
+	}
+
+	const title = `${project.name} · ${portfolio.name}`;
+	const description = project.description;
+	const canonical = absoluteUrl(caseStudyPath(resolvedLocale, project.slug));
+	const image = absoluteUrl(site.ogImage);
+	const alternateLocales = locales.filter((loc) => loc !== resolvedLocale);
+
+	return {
+		meta: [
+			{ title },
+			{ name: "description", content: description },
+			{ name: "author", content: portfolio.name },
+			{ name: "robots", content: "index, follow, max-image-preview:large" },
+			{ property: "og:type", content: "article" },
+			{ property: "og:site_name", content: portfolio.name },
+			{ property: "og:locale", content: site.locale },
+			...alternateLocales.map((loc) => ({
+				property: "og:locale:alternate",
+				content: getContent(loc).site.locale,
+			})),
+			{ property: "og:url", content: canonical },
+			{ property: "og:title", content: title },
+			{ property: "og:description", content: description },
+			{ property: "og:image", content: image },
+			{
+				property: "og:image:alt",
+				content: ui.hero.portraitAlt(portfolio.name),
+			},
+			{ name: "twitter:card", content: "summary_large_image" },
+			{ name: "twitter:title", content: title },
+			{ name: "twitter:description", content: description },
+			{ name: "twitter:image", content: image },
+			{
+				name: "twitter:image:alt",
+				content: ui.hero.portraitAlt(portfolio.name),
+			},
+		],
+		links: [
+			{ rel: "canonical", href: canonical },
+			...buildHreflangLinks((loc) => caseStudyPath(loc, project.slug)),
+			{ rel: "me", href: portfolio.links.github },
+			{ rel: "me", href: portfolio.links.linkedIn },
+		],
+		scripts: [],
 	};
 }
