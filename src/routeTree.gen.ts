@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LocaleIndexRouteImport } from './routes/$locale/index'
+import { Route as LocaleWorkSlugRouteImport } from './routes/$locale/work/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +23,40 @@ const LocaleIndexRoute = LocaleIndexRouteImport.update({
   path: '/$locale/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LocaleWorkSlugRoute = LocaleWorkSlugRouteImport.update({
+  id: '/$locale/work/$slug',
+  path: '/$locale/work/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$locale/': typeof LocaleIndexRoute
+  '/$locale/work/$slug': typeof LocaleWorkSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$locale': typeof LocaleIndexRoute
+  '/$locale/work/$slug': typeof LocaleWorkSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$locale/': typeof LocaleIndexRoute
+  '/$locale/work/$slug': typeof LocaleWorkSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$locale/'
+  fullPaths: '/' | '/$locale/' | '/$locale/work/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$locale'
-  id: '__root__' | '/' | '/$locale/'
+  to: '/' | '/$locale' | '/$locale/work/$slug'
+  id: '__root__' | '/' | '/$locale/' | '/$locale/work/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   LocaleIndexRoute: typeof LocaleIndexRoute
+  LocaleWorkSlugRoute: typeof LocaleWorkSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LocaleIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$locale/work/$slug': {
+      id: '/$locale/work/$slug'
+      path: '/$locale/work/$slug'
+      fullPath: '/$locale/work/$slug'
+      preLoaderRoute: typeof LocaleWorkSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   LocaleIndexRoute: LocaleIndexRoute,
+  LocaleWorkSlugRoute: LocaleWorkSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -273,3 +273,42 @@ body {
     padding-inline: 1.5rem;
   }
 }
+
+.case-study-prose {
+  --tw-prose-body: var(--color-text-muted);
+  --tw-prose-headings: var(--color-text-primary);
+  --tw-prose-bold: var(--color-text-primary);
+  --tw-prose-links: var(--color-text-primary);
+  --tw-prose-counters: var(--color-text-faint);
+  --tw-prose-bullets: var(--color-text-faint);
+  --tw-prose-hr: var(--color-border-subtle);
+  --tw-prose-quotes: var(--color-text-muted);
+  --tw-prose-quote-borders: var(--color-border-strong);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.case-study-prose :where(h2) {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.case-study-prose :where(h3) {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+  margin-top: 1.25rem;
+  margin-bottom: 0.35rem;
+}
+
+.case-study-prose :where(p) {
+  margin-top: 0.35rem;
+  margin-bottom: 0.85rem;
+}
