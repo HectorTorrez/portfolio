@@ -1,17 +1,24 @@
-import { TanStackDevtools } from "@tanstack/react-devtools";
 import {
 	createRootRoute,
 	HeadContent,
 	Scripts,
 	useRouterState,
 } from "@tanstack/react-router";
-import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
+import { lazy, Suspense } from "react";
 
 import { ThemeProvider } from "#/components/portfolio/theme-provider";
 import { localeFromPathname } from "#/content/locales";
-import { themeInitScript } from "#/lib/theme";
+import { LIGHT_THEME_COLOR, themeInitScript } from "#/lib/theme";
 
 import appCss from "../styles.css?url";
+
+const PortfolioDevtools = import.meta.env.DEV
+	? lazy(() =>
+			import("#/components/portfolio/tanstack-devtools").then((module) => ({
+				default: module.PortfolioDevtools,
+			})),
+		)
+	: null;
 
 export const Route = createRootRoute({
 	head: () => ({
@@ -25,7 +32,7 @@ export const Route = createRootRoute({
 			},
 			{
 				name: "theme-color",
-				content: "#f4f4f5",
+				content: LIGHT_THEME_COLOR,
 			},
 		],
 		links: [
@@ -89,17 +96,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			</head>
 			<body className="touch-manipulation antialiased">
 				<ThemeProvider>{children}</ThemeProvider>
-				<TanStackDevtools
-					config={{
-						position: "bottom-right",
-					}}
-					plugins={[
-						{
-							name: "Tanstack Router",
-							render: <TanStackRouterDevtoolsPanel />,
-						},
-					]}
-				/>
+				{PortfolioDevtools ? (
+					<Suspense fallback={null}>
+						<PortfolioDevtools />
+					</Suspense>
+				) : null}
 				<Scripts />
 			</body>
 		</html>
