@@ -4,6 +4,7 @@ export const ui: UiStrings = {
 	skipToContent: "Saltar al contenido principal",
 	nav: [
 		{ href: "#projects", label: "Proyectos" },
+		{ href: "/experiments", label: "Labs" },
 		{ href: "#experience", label: "Experiencia" },
 		{ href: "#contact", label: "Enlaces" },
 	],

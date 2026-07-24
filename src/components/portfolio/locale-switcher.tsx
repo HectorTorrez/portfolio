@@ -24,6 +24,7 @@ export function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
 		segments[1] === "work" && segments[2] && isCaseStudySlug(segments[2])
 			? segments[2]
 			: null;
+	const isExperiments = segments[1] === "experiments";
 
 	return (
 		<fieldset className="m-0 flex min-w-0 items-center gap-1 border-0 p-0 text-xs text-text-muted">
@@ -39,6 +40,17 @@ export function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
 						<Link
 							to="/$locale/work/$slug"
 							params={{ locale: loc, slug: workSlug }}
+							aria-current={loc === locale ? "page" : undefined}
+							className={`pressable pressable-fade inline-flex min-h-11 min-w-9 items-center justify-center px-1.5 font-medium tracking-wide ${focusRing} ${
+								loc === locale ? "text-text-primary" : "text-text-muted"
+							}`}
+						>
+							{loc}
+						</Link>
+					) : isExperiments ? (
+						<Link
+							to="/$locale/experiments"
+							params={{ locale: loc }}
 							aria-current={loc === locale ? "page" : undefined}
 							className={`pressable pressable-fade inline-flex min-h-11 min-w-9 items-center justify-center px-1.5 font-medium tracking-wide ${focusRing} ${
 								loc === locale ? "text-text-primary" : "text-text-muted"
