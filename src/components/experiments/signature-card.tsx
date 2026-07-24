@@ -351,8 +351,10 @@ export function SignatureCard() {
 	const cardSurface = {
 		aspectRatio: "1.586 / 1",
 		transformStyle: "preserve-3d" as const,
+		// Solid fallback so white ink stays readable if the gradient fails to parse.
+		backgroundColor: "#0c0e13",
 		backgroundImage: `
-			radial-gradient(110% 80% at 100% -10%, rgb(212_175_55_/0.18), transparent 42%),
+			radial-gradient(110% 80% at 100% -10%, rgb(212 175 55 / 0.18), transparent 42%),
 			linear-gradient(155deg, #161a22 0%, #0c0e13 52%, #1c2230 100%)
 		`,
 	} satisfies CSSProperties;
