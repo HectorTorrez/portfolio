@@ -116,6 +116,48 @@ export type UiStrings = {
 		readCaseStudy: string;
 		backToWork: string;
 	};
+	experiments: {
+		label: string;
+		title: string;
+		blurb: string;
+		backHome: string;
+		items: {
+			dynamicIsland: {
+				title: string;
+				description: string;
+			};
+			signatureCard: {
+				title: string;
+				description: string;
+			};
+		};
+		dynamicIsland: {
+			expand: string;
+			collapse: string;
+			play: string;
+			pause: string;
+			next: string;
+			previous: string;
+			nowPlaying: (title: string, artist: string) => string;
+		};
+		signatureCard: {
+			cardLabel: string;
+			nameLabel: string;
+			namePlaceholder: string;
+			networkLabel: string;
+			networkPlaceholder: string;
+			expiryLabel: string;
+			expiryPlaceholder: string;
+			last4Label: string;
+			last4Placeholder: string;
+			defaultName: string;
+			defaultNetwork: string;
+			defaultExpiry: string;
+			defaultLast4: string;
+			signedAs: string;
+			hint: string;
+		};
+	};
 };
 
 export type LocaleContent = {
