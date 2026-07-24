@@ -73,7 +73,7 @@ function ExperimentsPageContent() {
 						</p>
 					</header>
 
-					<ul className="mt-12 space-y-10 md:mt-14 md:space-y-12">
+					<ul className="stagger-children mt-12 space-y-10 md:mt-14 md:space-y-12">
 						{experiments.map((experiment) => {
 							const item = experimentCopy(experiment.id, copy.items);
 

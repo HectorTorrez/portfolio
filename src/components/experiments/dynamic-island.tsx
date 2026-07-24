@@ -56,7 +56,25 @@ const sizeTransition = {
 	},
 };
 
-const fadeTransition = { duration: 0.14, ease: "easeOut" as const };
+/** Project `--ease-out` — stronger than built-in ease-out. */
+const easeOut = [0.23, 1, 0.32, 1] as const;
+
+const fadeTransition = {
+	duration: 0.16,
+	ease: easeOut,
+};
+
+const contentEnter = {
+	opacity: 1,
+	filter: "blur(0px)",
+};
+
+function contentExit(blur: boolean) {
+	return {
+		opacity: 0,
+		filter: blur ? "blur(2px)" : "blur(0px)",
+	};
+}
 
 const appleUi =
 	"[font-family:-apple-system,BlinkMacSystemFont,'SF_Pro_Text',system-ui,sans-serif]";
@@ -182,6 +200,7 @@ export function DynamicIsland() {
 	const size = expanded ? EXPANDED : COMPACT;
 	const transition = reduceMotion ? { duration: 0.01 } : sizeTransition;
 	const fade = reduceMotion ? { duration: 0.01 } : fadeTransition;
+	const exit = contentExit(!reduceMotion);
 
 	return (
 		<MotionConfig reducedMotion="user">
@@ -228,15 +247,19 @@ export function DynamicIsland() {
 					transition={transition}
 					aria-labelledby={labelId}
 				>
-					<AnimatePresence mode="wait" initial={false}>
+					{/*
+					  Sync (overlapping) presence — absolute layers so size + content
+					  stay in sync; blur masks the crossfade.
+					*/}
+					<AnimatePresence initial={false}>
 						{expanded ? (
 							<motion.div
 								key="expanded"
-								initial={{ opacity: 0 }}
-								animate={{ opacity: 1 }}
-								exit={{ opacity: 0 }}
+								initial={exit}
+								animate={contentEnter}
+								exit={exit}
 								transition={fade}
-								className="flex h-full flex-col px-3.5 pt-3.5 pb-3"
+								className="absolute inset-0 flex flex-col px-3.5 pt-3.5 pb-3"
 							>
 								<button
 									type="button"
@@ -305,14 +328,14 @@ export function DynamicIsland() {
 							<motion.button
 								key="compact"
 								type="button"
-								initial={{ opacity: 0 }}
-								animate={{ opacity: 1 }}
-								exit={{ opacity: 0 }}
+								initial={exit}
+								animate={contentEnter}
+								exit={exit}
 								transition={fade}
 								onClick={() => setExpanded(true)}
 								aria-label={labels.expand}
 								aria-expanded={false}
-								className={`flex size-full cursor-pointer items-center justify-between px-2.5 ${focusRing}`}
+								className={`pressable absolute inset-0 flex cursor-pointer items-center justify-between px-2.5 ${focusRing}`}
 							>
 								<AlbumArt track={track} size="compact" />
 								<Equalizer

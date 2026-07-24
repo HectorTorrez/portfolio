@@ -1,9 +1,16 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import {
+	motion,
+	useMotionTemplate,
+	useMotionValue,
+	useSpring,
+} from "motion/react";
+import {
 	type CSSProperties,
 	type HTMLAttributes,
 	type PointerEvent as ReactPointerEvent,
+	useEffect,
 	useId,
 	useRef,
 	useState,
@@ -13,6 +20,9 @@ import { focusRing } from "#/components/portfolio/focus-ring";
 import { useLocaleContent } from "#/components/portfolio/locale-context";
 
 gsap.registerPlugin(useGSAP);
+
+const FINE_POINTER = "(hover: hover) and (pointer: fine)";
+const TILT_SPRING = { stiffness: 220, damping: 22, mass: 0.85 };
 
 const MAX_NAME = 22;
 const MAX_NETWORK = 16;
@@ -236,11 +246,17 @@ export function SignatureCard() {
 	const [last4, setLast4] = useState(labels.defaultLast4);
 
 	const stageRef = useRef<HTMLDivElement>(null);
-	const cardRef = useRef<HTMLDivElement>(null);
 	const inkRef = useRef<SVGPathElement>(null);
 	const inkSoftRef = useRef<SVGPathElement>(null);
 	const reduceMotion = useRef(false);
 	const hasDrawn = useRef(false);
+	const [finePointer, setFinePointer] = useState(false);
+
+	const rotateX = useMotionValue(0);
+	const rotateY = useMotionValue(0);
+	const springX = useSpring(rotateX, TILT_SPRING);
+	const springY = useSpring(rotateY, TILT_SPRING);
+	const cardTransform = useMotionTemplate`perspective(900px) rotateX(${springX}deg) rotateY(${springY}deg)`;
 
 	const path = fitSignaturePath(nameToKeyPoints(name), SIGNATURE_FRAME);
 	const hasSignature = path.length > 0;
@@ -249,19 +265,27 @@ export function SignatureCard() {
 	const displayExpiry = expiry.trim() || "••/••";
 	const displayLast4 = last4.replace(/\D/g, "").padStart(4, "•").slice(-4);
 
-	useGSAP(
-		() => {
-			reduceMotion.current = window.matchMedia(
-				"(prefers-reduced-motion: reduce)",
-			).matches;
+	useEffect(() => {
+		const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+		const pointerQuery = window.matchMedia(FINE_POINTER);
 
-			const card = cardRef.current;
-			if (!card || reduceMotion.current) return;
+		const sync = () => {
+			reduceMotion.current = motionQuery.matches;
+			setFinePointer(pointerQuery.matches && !motionQuery.matches);
+			if (motionQuery.matches || !pointerQuery.matches) {
+				rotateX.set(0);
+				rotateY.set(0);
+			}
+		};
 
-			gsap.set(card, { transformPerspective: 900 });
-		},
-		{ scope: stageRef },
-	);
+		sync();
+		motionQuery.addEventListener("change", sync);
+		pointerQuery.addEventListener("change", sync);
+		return () => {
+			motionQuery.removeEventListener("change", sync);
+			pointerQuery.removeEventListener("change", sync);
+		};
+	}, [rotateX, rotateY]);
 
 	useGSAP(
 		() => {
@@ -295,7 +319,7 @@ export function SignatureCard() {
 					{ strokeDasharray: length, strokeDashoffset: length, opacity: 1 },
 					{
 						strokeDashoffset: 0,
-						duration: 0.75,
+						duration: 0.55,
 						ease: "power2.out",
 						overwrite: true,
 					},
@@ -306,41 +330,27 @@ export function SignatureCard() {
 	);
 
 	const onPointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
-		const card = cardRef.current;
-		if (!card || reduceMotion.current) return;
+		if (!finePointer) return;
 
+		const card = event.currentTarget;
 		const rect = card.getBoundingClientRect();
 		const px = (event.clientX - rect.left) / rect.width;
 		const py = (event.clientY - rect.top) / rect.height;
-		const rotateY = (px - 0.5) * 14;
-		const rotateX = (0.5 - py) * 10;
 
-		gsap.to(card, {
-			rotateX,
-			rotateY,
-			duration: 0.35,
-			ease: "power3.out",
-			overwrite: "auto",
-		});
+		rotateY.set((px - 0.5) * 14);
+		rotateX.set((0.5 - py) * 10);
 	};
 
 	const onPointerLeave = () => {
-		const card = cardRef.current;
-		if (!card || reduceMotion.current) return;
-
-		gsap.to(card, {
-			rotateX: 0,
-			rotateY: 0,
-			duration: 0.55,
-			ease: "power3.out",
-			overwrite: "auto",
-		});
+		if (!finePointer) return;
+		// Springs settle to rest — snappier than the old 550ms tween.
+		rotateX.set(0);
+		rotateY.set(0);
 	};
 
-	const cardStyle = {
+	const cardSurface = {
 		aspectRatio: "1.586 / 1",
-		transformStyle: "preserve-3d",
-		willChange: "transform",
+		transformStyle: "preserve-3d" as const,
 		backgroundImage: `
 			radial-gradient(110% 80% at 100% -10%, rgb(212_175_55_/0.18), transparent 42%),
 			linear-gradient(155deg, #161a22 0%, #0c0e13 52%, #1c2230 100%)
@@ -354,12 +364,15 @@ export function SignatureCard() {
 		>
 			{/* Preview — not the editor */}
 			<div className="w-full max-w-md [perspective:900px]">
-				<div
-					ref={cardRef}
+				<motion.div
 					className="relative w-full overflow-hidden rounded-[1.15rem] shadow-[0_24px_48px_-28px_rgb(0_0_0_/0.65)] ring-1 ring-white/10"
-					style={cardStyle}
-					onPointerMove={onPointerMove}
-					onPointerLeave={onPointerLeave}
+					style={
+						finePointer
+							? { ...cardSurface, transform: cardTransform }
+							: cardSurface
+					}
+					onPointerMove={finePointer ? onPointerMove : undefined}
+					onPointerLeave={finePointer ? onPointerLeave : undefined}
 				>
 					<div
 						className="pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-overlay"
@@ -485,7 +498,7 @@ export function SignatureCard() {
 							</p>
 						</div>
 					</div>
-				</div>
+				</motion.div>
 			</div>
 
 			{/* Editor — Huertas-style field grid below the preview */}
