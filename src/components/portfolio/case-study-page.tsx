@@ -65,23 +65,25 @@ function CaseStudyPageContent({
 						</p>
 
 						<ul className="mt-6 flex flex-wrap gap-x-5 gap-y-1 text-sm">
-							<li>
-								<a
-									href={project.url}
-									target="_blank"
-									rel="noopener noreferrer"
-									className={`editorial-link group inline-flex min-h-11 items-center gap-1.5 ${focusRing}`}
-								>
-									{ui.projects.liveDemo}
-									<span
-										aria-hidden
-										className="text-text-faint text-sm transition-colors duration-150 ease-out group-hover:text-text-primary"
+							{project.url ? (
+								<li>
+									<a
+										href={project.url}
+										target="_blank"
+										rel="noopener noreferrer"
+										className={`editorial-link group inline-flex min-h-11 items-center gap-1.5 ${focusRing}`}
 									>
-										↗
-									</span>
-									<span className="sr-only"> {ui.a11y.opensInNewTab}</span>
-								</a>
-							</li>
+										{ui.projects.liveDemo}
+										<span
+											aria-hidden
+											className="text-text-faint text-sm transition-colors duration-150 ease-out group-hover:text-text-primary"
+										>
+											↗
+										</span>
+										<span className="sr-only"> {ui.a11y.opensInNewTab}</span>
+									</a>
+								</li>
+							) : null}
 							{project.sourceUrl ? (
 								<li>
 									<a

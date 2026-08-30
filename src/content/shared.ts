@@ -23,7 +23,7 @@ export const portfolioSkills = [
 	"Node.js",
 	"NestJS",
 	"PostgreSQL",
-	"ExpressJS",
+	"Cloudflare Workers",
 ] as const;
 
 export const pantryProject = {
@@ -34,7 +34,17 @@ export const pantryProject = {
 	stack: ["TanStack Start", "Cloudflare Workers", "Workers AI", "D1"],
 } as const;
 
-export const caseStudySlugs = [pantryProject.slug] as const;
+export const ticketsProject = {
+	name: "Tickets",
+	slug: "tickets",
+	sourceUrl: "https://github.com/HectorTorrez/ticket-frontend",
+	stack: ["TanStack Start", "NestJS", "PostgreSQL", "Socket.IO"],
+} as const;
+
+export const caseStudySlugs = [
+	pantryProject.slug,
+	ticketsProject.slug,
+] as const;
 
 export type CaseStudySlug = (typeof caseStudySlugs)[number];
 

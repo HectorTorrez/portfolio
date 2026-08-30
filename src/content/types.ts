@@ -23,7 +23,7 @@ export type ProjectEntry = {
 	name: string;
 	slug: string;
 	description: string;
-	url: string;
+	url?: string;
 	sourceUrl?: string;
 	stack: readonly string[];
 };

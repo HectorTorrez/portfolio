@@ -11,7 +11,8 @@ export const ui: UiStrings = {
 	sections: {
 		skills: "Skills",
 		projects: "Selected work",
-		projectsBlurb: "Things I've built and shipped.",
+		projectsBlurb:
+			"A live AI cooking app, and a ticketing platform with reserved seats.",
 		experience: "Experience",
 		education: "Education",
 		elsewhere: "Elsewhere",
