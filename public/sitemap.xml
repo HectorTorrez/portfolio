@@ -33,4 +33,36 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://portfolio.torrezhectorb.workers.dev/en/work/tickets</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio.torrezhectorb.workers.dev/en/work/tickets"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://portfolio.torrezhectorb.workers.dev/es/work/tickets"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portfolio.torrezhectorb.workers.dev/en/work/tickets"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://portfolio.torrezhectorb.workers.dev/es/work/tickets</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio.torrezhectorb.workers.dev/en/work/tickets"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://portfolio.torrezhectorb.workers.dev/es/work/tickets"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portfolio.torrezhectorb.workers.dev/en/work/tickets"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://portfolio.torrezhectorb.workers.dev/en/experiments</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio.torrezhectorb.workers.dev/en/experiments"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://portfolio.torrezhectorb.workers.dev/es/experiments"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portfolio.torrezhectorb.workers.dev/en/experiments"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://portfolio.torrezhectorb.workers.dev/es/experiments</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio.torrezhectorb.workers.dev/en/experiments"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://portfolio.torrezhectorb.workers.dev/es/experiments"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portfolio.torrezhectorb.workers.dev/en/experiments"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>

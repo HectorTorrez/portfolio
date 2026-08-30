@@ -161,6 +161,7 @@ async function main() {
 	const pantryEs = await fetchOk("/es/work/pantry");
 	const ticketsEn = await fetchOk("/en/work/tickets");
 	const ticketsEs = await fetchOk("/es/work/tickets");
+	const sitemap = await fetchOk("/sitemap.xml");
 
 	const results = [
 		...checkHome("en", enHome),
@@ -182,6 +183,27 @@ async function main() {
 		companies(enHome) && companies(esHome)
 			? pass("bilingual-jobs", "JDK Tech, BetaCode")
 			: fail("bilingual-jobs", "a locale is missing JDK Tech or BetaCode"),
+	);
+
+	const slugs = [...new Set(projectSlugs(enHome).concat(projectSlugs(esHome)))];
+	const missingSitemap = [];
+	for (const slug of slugs) {
+		for (const locale of ["en", "es"]) {
+			const path = `/${locale}/work/${slug}`;
+			if (!sitemap.includes(path)) {
+				missingSitemap.push(path);
+			}
+		}
+	}
+	for (const path of ["/en/experiments", "/es/experiments"]) {
+		if (!sitemap.includes(path)) {
+			missingSitemap.push(path);
+		}
+	}
+	results.push(
+		missingSitemap.length === 0
+			? pass("sitemap", slugs.join(",") || "empty")
+			: fail("sitemap", `missing ${missingSitemap.join(", ")}`),
 	);
 
 	const failed = results.filter((r) => !r.ok);
