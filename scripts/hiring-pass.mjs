@@ -175,6 +175,28 @@ async function main() {
 			: fail("tickets-aws", "Tickets case study must name AWS"),
 	);
 
+	const ticketRepos = (html) =>
+		[
+			...new Set(
+				[...new JSDOM(html).window.document.querySelectorAll("a[href]")]
+					.map((a) => a.getAttribute("href") ?? "")
+					.filter((href) => href.includes("github.com/HectorTorrez/ticket-")),
+			),
+		];
+	const homeRepos = ticketRepos(enHome);
+	const caseRepos = ticketRepos(ticketsEn);
+	results.push(
+		homeRepos.length >= 2 && caseRepos.length >= 2
+			? pass(
+					"tickets-repos",
+					`home=${homeRepos.length} case=${caseRepos.length}`,
+				)
+			: fail(
+					"tickets-repos",
+					`need frontend and backend links, home=${homeRepos.length} case=${caseRepos.length}`,
+				),
+	);
+
 	const jdkFullStack =
 		/full[ -]?stack/i.test(textOf(new JSDOM(enHome))) &&
 		/full[ -]?stack/i.test(textOf(new JSDOM(esHome)));

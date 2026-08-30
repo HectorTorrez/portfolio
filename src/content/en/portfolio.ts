@@ -34,9 +34,9 @@ export const portfolio: PortfolioContent = {
 			company: "JDK Tech",
 			role: "Full-stack Developer",
 			location: "Grand Prairie, Texas, United States",
-			start: "February 2025",
+			start: "June 2023",
 			end: "Present",
-			startDateTime: "2025-02",
+			startDateTime: "2023-06",
 			highlights: [
 				"Shipped features end to end, from the React UI through the API.",
 				"Led the CI/CD move from Azure to Vercel with the Vercel CLI so the product suite deploys through one pipeline.",

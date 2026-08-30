@@ -56,6 +56,8 @@ export const ui: UiStrings = {
 		visitProject: (name) => `Visit ${name} (opens in new tab)`,
 		liveDemo: "Live demo",
 		source: "Source",
+		frontend: "Frontend",
+		backend: "Backend",
 		readCaseStudy: "Read case study",
 		backToWork: "Back to selected work",
 	},

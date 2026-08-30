@@ -4,6 +4,7 @@ import { markdownToNodes } from "#/lib/markdown";
 
 import { focusRing } from "./focus-ring";
 import { LocaleProvider, useLocaleContent } from "./locale-context";
+import { ProjectSourceLinks } from "./project-source-links";
 import { SiteFooter } from "./site-footer";
 import { SiteHeader } from "./site-header";
 
@@ -84,25 +85,7 @@ function CaseStudyPageContent({
 									</a>
 								</li>
 							) : null}
-							{project.sourceUrl ? (
-								<li>
-									<a
-										href={project.sourceUrl}
-										target="_blank"
-										rel="noopener noreferrer"
-										className={`editorial-link group inline-flex min-h-11 items-center gap-1.5 text-text-muted ${focusRing}`}
-									>
-										{ui.projects.source}
-										<span
-											aria-hidden
-											className="text-text-faint text-sm transition-colors duration-150 ease-out group-hover:text-text-primary"
-										>
-											↗
-										</span>
-										<span className="sr-only"> {ui.a11y.opensInNewTab}</span>
-									</a>
-								</li>
-							) : null}
+							<ProjectSourceLinks project={project} />
 						</ul>
 					</header>
 
