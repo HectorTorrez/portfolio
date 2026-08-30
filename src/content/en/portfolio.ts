@@ -13,31 +13,32 @@ export const portfolioSite: PortfolioSite = {
 };
 
 export const portfolioMeta: PortfolioMeta = {
-	title: "Hector Torrez | Frontend engineer · React & TypeScript",
+	title: "Hector Torrez | Software engineer · React & TypeScript",
 	description:
-		"Hector Torrez is a frontend engineer in El Salvador. React, TypeScript, and the APIs behind the UI. ERP, logistics, e-commerce, and event platforms. Available for remote work.",
+		"Hector Torrez is a software engineer in El Salvador. React, TypeScript, and full-stack product work. ERP, logistics, e-commerce, and event platforms. Available for remote work.",
 	keywords:
-		"Hector Torrez, frontend engineer, React developer, TypeScript, Node.js, Cloudflare Workers, TanStack, El Salvador, portfolio",
+		"Hector Torrez, software engineer, full-stack, React, TypeScript, Node.js, AWS, Cloudflare Workers, TanStack, El Salvador, portfolio",
 };
 
 export const portfolio: PortfolioContent = {
 	name: "Hector Torrez",
-	headline: "Frontend engineer",
+	headline: "Software engineer",
 	heroSubtitle:
-		"I ship React and TypeScript product UIs, and the Node APIs behind them when that's the job. Three years across ERP, logistics, e-commerce, and event platforms.",
+		"I ship product features end to end. React and TypeScript on the client, Node APIs when the job needs the other side. Three years across ERP, logistics, e-commerce, and event platforms.",
 	heroSupportingText:
-		"Next.js and TanStack at work. NestJS, PostgreSQL, and Cloudflare when I own more of the stack.",
+		"Next.js and TanStack at work. NestJS, PostgreSQL, Cloudflare, and AWS when I own more of the stack.",
 	location: "El Salvador",
 	skills: portfolioSkills,
 	experience: [
 		{
 			company: "JDK Tech",
-			role: "Frontend Developer",
+			role: "Full-stack Developer",
 			location: "Grand Prairie, Texas, United States",
 			start: "February 2025",
 			end: "Present",
 			startDateTime: "2025-02",
 			highlights: [
+				"Shipped features end to end, from the React UI through the API.",
 				"Led the CI/CD move from Azure to Vercel with the Vercel CLI so the product suite deploys through one pipeline.",
 				"Built product UI in React, Next.js, and TanStack Query, including pages fed by Headless WordPress over REST.",
 				"Review pull requests and keep frontend standards consistent across the suite.",

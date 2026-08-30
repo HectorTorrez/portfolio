@@ -3,11 +3,6 @@ import { JSDOM } from "jsdom";
 
 const BASE = process.env.BASE_URL ?? "http://localhost:3001";
 
-const GENERIC_HEADLINES = new Set([
-	"software engineer",
-	"ingeniero de software",
-]);
-
 const CONTACT_NEEDLES = {
 	en: ["Copy email", "LinkedIn", "GitHub", "CV"],
 	es: ["Copiar correo", "LinkedIn", "GitHub", "CV"],
@@ -24,8 +19,8 @@ const CASE_HEADINGS = {
 };
 
 const ROLE_NEEDLE = {
-	en: /frontend engineer/i,
-	es: /ingeniero frontend/i,
+	en: /software engineer|full[ -]?stack/i,
+	es: /ingeniero de software|full[ -]?stack/i,
 };
 
 const STACK_NEEDLE = {
@@ -67,13 +62,12 @@ function checkHome(locale, html) {
 	const title = document.title;
 	const roleHit =
 		ROLE_NEEDLE[locale].test(headline) || ROLE_NEEDLE[locale].test(title);
-	const genericOnly = GENERIC_HEADLINES.has(headline.toLowerCase());
 	results.push(
-		roleHit && !genericOnly
+		roleHit
 			? pass("role", `headline="${headline}" title="${title}"`)
 			: fail(
 					"role",
-					`need a hireable frontend role, got headline="${headline}" title="${title}"`,
+					`need software engineer or full-stack, got headline="${headline}" title="${title}"`,
 				),
 	);
 
@@ -171,6 +165,24 @@ async function main() {
 		...checkCaseStudy("en", "tickets", ticketsEn),
 		...checkCaseStudy("es", "tickets", ticketsEs),
 	];
+
+	const ticketsAws =
+		/aws/i.test(textOf(new JSDOM(ticketsEn))) &&
+		/aws/i.test(textOf(new JSDOM(ticketsEs)));
+	results.push(
+		ticketsAws
+			? pass("tickets-aws", "AWS on EN and ES case studies")
+			: fail("tickets-aws", "Tickets case study must name AWS"),
+	);
+
+	const jdkFullStack =
+		/full[ -]?stack/i.test(textOf(new JSDOM(enHome))) &&
+		/full[ -]?stack/i.test(textOf(new JSDOM(esHome)));
+	results.push(
+		jdkFullStack
+			? pass("jdk-fullstack", "full-stack on both homepages")
+			: fail("jdk-fullstack", "homepages must name full-stack"),
+	);
 
 	const enSlugs = projectSlugs(enHome).join(",");
 	const esSlugs = projectSlugs(esHome).join(",");

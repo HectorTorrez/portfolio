@@ -4,7 +4,7 @@ Event organizers need a catalog, reserved checkout that does not double-sell a s
 
 ## Role
 
-Solo builder. TanStack Start frontend, NestJS API, PostgreSQL, Socket.IO inventory.
+Solo builder. TanStack Start frontend, NestJS API, PostgreSQL, Socket.IO inventory. The architecture runs on AWS.
 
 ## Constraints
 
@@ -23,6 +23,10 @@ The catalog does not poll. The API pushes ticket updates so two people looking a
 ### A typed API on the other side
 
 Zod validates every response. Auth is JWT with refresh. Admin and customer routes use separate guards.
+
+### Host it on AWS
+
+The API sits on AWS behind a load balancer. PostgreSQL and S3 live on the same footprint. Event banners go to S3.
 
 ## Outcome
 

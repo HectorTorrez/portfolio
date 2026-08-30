@@ -4,7 +4,7 @@ Quien organiza un evento necesita catálogo, un checkout que reserve el asiento 
 
 ## Rol
 
-Construcción en solitario. Frontend en TanStack Start, API en NestJS, PostgreSQL e inventario por Socket.IO.
+Construcción en solitario. Frontend en TanStack Start, API en NestJS, PostgreSQL e inventario por Socket.IO. La arquitectura corre en AWS.
 
 ## Restricciones
 
@@ -23,6 +23,10 @@ El catálogo no hace polling. La API empuja cambios de tickets para que dos pers
 ### Una API tipada al otro lado
 
 Zod valida cada respuesta. Auth es JWT con refresh. Rutas de admin y de cliente usan guards distintos.
+
+### Alojarlo en AWS
+
+La API vive en AWS detrás de un load balancer. PostgreSQL y S3 quedan en el mismo footprint. Los banners de eventos van a S3.
 
 ## Resultado
 

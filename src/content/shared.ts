@@ -24,6 +24,7 @@ export const portfolioSkills = [
 	"NestJS",
 	"PostgreSQL",
 	"Cloudflare Workers",
+	"AWS",
 ] as const;
 
 export const pantryProject = {
@@ -38,7 +39,7 @@ export const ticketsProject = {
 	name: "Tickets",
 	slug: "tickets",
 	sourceUrl: "https://github.com/HectorTorrez/ticket-frontend",
-	stack: ["TanStack Start", "NestJS", "PostgreSQL", "Socket.IO"],
+	stack: ["TanStack Start", "NestJS", "PostgreSQL", "Socket.IO", "AWS"],
 } as const;
 
 export const caseStudySlugs = [
