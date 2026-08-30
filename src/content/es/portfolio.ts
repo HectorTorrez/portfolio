@@ -34,9 +34,9 @@ export const portfolio: PortfolioContent = {
 			company: "JDK Tech",
 			role: "Desarrollador full-stack",
 			location: "Grand Prairie, Texas, Estados Unidos",
-			start: "junio 2023",
+			start: "febrero 2025",
 			end: "actualidad",
-			startDateTime: "2023-06",
+			startDateTime: "2025-02",
 			highlights: [
 				"Entregué funcionalidades de punta a punta, del UI en React hasta la API.",
 				"Lideré el paso de CI/CD de Azure a Vercel con el CLI de Vercel para que la suite se despliegue por un solo pipeline.",
@@ -60,9 +60,9 @@ export const portfolio: PortfolioContent = {
 		{
 			company: "Independiente",
 			role: "Desarrollador Full Stack",
-			start: "diciembre 2023",
+			start: "junio 2023",
 			end: "mayo 2024",
-			startDateTime: "2023-12",
+			startDateTime: "2023-06",
 			endDateTime: "2024-05",
 			highlights: [
 				"Construí la UI de ganancias: ver y gestionar números, fórmulas tipo Excel y reordenar con arrastrar y soltar.",
