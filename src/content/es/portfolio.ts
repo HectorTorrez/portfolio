@@ -3,6 +3,7 @@ import {
 	portfolioLinks,
 	portfolioSiteBase,
 	portfolioSkills,
+	ticketsProject,
 } from "../shared";
 import type { PortfolioContent, PortfolioMeta, PortfolioSite } from "../types";
 
@@ -12,38 +13,35 @@ export const portfolioSite: PortfolioSite = {
 };
 
 export const portfolioMeta: PortfolioMeta = {
-	title: "Hector Torrez | Ingeniero de Software · React y TypeScript",
+	title: "Hector Torrez | Ingeniero de software · React y TypeScript",
 	description:
-		"Hector Torrez es ingeniero de software en El Salvador. Desarrolla aplicaciones web con React, TypeScript y Cloudflare — ERP, logística, e-commerce y productos full-stack.",
+		"Hector Torrez es ingeniero de software en El Salvador. React, TypeScript y trabajo full-stack de producto. ERP, logística, e-commerce y plataformas de eventos. Disponible para trabajo remoto.",
 	keywords:
-		"Hector Torrez, ingeniero de software, desarrollador React, TypeScript, Node.js, Cloudflare Workers, TanStack, desarrollador frontend, El Salvador, portafolio",
+		"Hector Torrez, ingeniero de software, full-stack, React, TypeScript, Node.js, AWS, Cloudflare Workers, TanStack, El Salvador, portafolio",
 };
 
 export const portfolio: PortfolioContent = {
 	name: "Hector Torrez",
-	headline: "Ingeniero de Software",
+	headline: "Ingeniero de software",
 	heroSubtitle:
-		"Soy ingeniero de software con 3 años de experiencia construyendo aplicaciones web — ERP, logística, e-commerce y SaaS. Trabajo con React y TypeScript, y priorizo una UX clara y sistemas fáciles de mantener.",
+		"Entrego funcionalidades de punta a punta. React y TypeScript en el cliente, APIs en Node cuando el trabajo pide el otro lado. Tres años en ERP, logística, e-commerce y plataformas de eventos.",
 	heroSupportingText:
-		"También uso Node.js, PostgreSQL y Cloudflare cuando el producto lo necesita.",
+		"En el día a día, Next.js y TanStack. NestJS, PostgreSQL, Cloudflare y AWS cuando me toca más del stack.",
 	location: "El Salvador",
 	skills: portfolioSkills,
 	experience: [
 		{
 			company: "JDK Tech",
-			role: "Desarrollador Frontend",
+			role: "Desarrollador full-stack",
 			location: "Grand Prairie, Texas, Estados Unidos",
 			start: "febrero 2025",
 			end: "actualidad",
 			startDateTime: "2025-02",
 			highlights: [
-				"Refactoricé y optimicé componentes frontend con React, Next.js y TanStack Query para mejorar rendimiento, escalabilidad y mantenibilidad.",
-				"Construí componentes de UI reutilizables y funcionalidades con Next.js y TanStack Start, con foco en routing moderno, carga de datos y una buena experiencia de desarrollo.",
-				"Lideré la integración de un nuevo pipeline de CI/CD para desplegar productos desde Azure a Vercel con el CLI de Vercel, automatizando releases y mejorando la confiabilidad de los despliegues en toda la suite de productos.",
-				"Desarrollé interfaces con contenido dinámico integrando Headless WordPress como CMS y consumiendo APIs REST.",
-				"Construí y mantuve landing pages responsivas con Astro y SCSS, cuidando la consistencia del diseño y un enfoque mobile-first.",
-				"Desarrollé una prueba de concepto (PoC) de chatbot en JavaScript para explorar mejoras en la interacción con el usuario y la automatización.",
-				"Revisé pull requests y colaboré con el equipo para fomentar buenas prácticas, mantener la calidad del código y estándares frontend consistentes.",
+				"Entregué funcionalidades de punta a punta, del UI en React hasta la API.",
+				"Lideré el paso de CI/CD de Azure a Vercel con el CLI de Vercel para que la suite se despliegue por un solo pipeline.",
+				"Construí UI de producto con React, Next.js y TanStack Query, incluidas páginas alimentadas por Headless WordPress sobre REST.",
+				"Reviso pull requests y mantengo estándares frontend consistentes en la suite.",
 			],
 		},
 		{
@@ -55,23 +53,20 @@ export const portfolio: PortfolioContent = {
 			startDateTime: "2024-06",
 			endDateTime: "2025-02",
 			highlights: [
-				"Desarrollé funcionalidades de frontend y backend para plataformas de e-commerce y eventos: dashboards, filtros, actualizaciones en tiempo real, herramientas administrativas e integraciones con APIs.",
-				"Creé componentes reutilizables y flujos escalables que redujeron tareas operativas repetitivas y mejoraron la mantenibilidad en varios proyectos.",
+				"Construí funciones de tienda y de eventos en ambos lados: dashboards, filtros, actualizaciones en vivo, admin y APIs.",
+				"Saqué componentes compartidos para no reconstruir el trabajo operativo en cada proyecto.",
 			],
 		},
 		{
 			company: "Independiente",
-			role: "Desarrollador Full Stack",
-			start: "diciembre 2023",
+			role: "Desarrollador full-stack",
+			start: "junio 2023",
 			end: "mayo 2024",
-			startDateTime: "2023-12",
+			startDateTime: "2023-06",
 			endDateTime: "2024-05",
 			highlights: [
-				"Colaboré en una interfaz para ver y gestionar ganancias, mejorando la accesibilidad y claridad de los datos financieros.",
-				"Desarrollé fórmulas personalizadas similares a Excel para calcular dentro de la plataforma.",
-				"Creé e integré endpoints de backend en varias páginas, asegurando un buen flujo de datos entre frontend y backend.",
-				"Implementé arrastrar y soltar para reordenar y gestionar elementos de forma intuitiva.",
-				"Desarrollé nuevos endpoints de API para dar soporte a funcionalidades del frontend y flujos de datos.",
+				"Construí la UI de ganancias: ver y gestionar números, fórmulas tipo Excel y reordenar con arrastrar y soltar.",
+				"Escribí los endpoints de API que esas pantallas necesitaban.",
 			],
 		},
 	],
@@ -79,7 +74,12 @@ export const portfolio: PortfolioContent = {
 		{
 			...pantryProject,
 			description:
-				"Generador de recetas con IA que convierte ingredientes de la despensa y el tiempo de cocción en ideas útiles — con filtros dietéticos, modo cocina, favoritos y lista de compras.",
+				"Generador de recetas con IA que convierte ingredientes de la despensa y el tiempo de cocción en ideas útiles, con filtros dietéticos, modo cocina, favoritos y lista de compras.",
+		},
+		{
+			...ticketsProject,
+			description:
+				"Ticketing de eventos con checkout reservado, tickets QR e inventario de asientos en vivo. Catálogo público, tickets del cliente y un dashboard de organizador con escáner en puerta.",
 		},
 	],
 	education: [

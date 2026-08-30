@@ -4,6 +4,7 @@ import { markdownToNodes } from "#/lib/markdown";
 
 import { focusRing } from "./focus-ring";
 import { LocaleProvider, useLocaleContent } from "./locale-context";
+import { ProjectSourceLinks } from "./project-source-links";
 import { SiteFooter } from "./site-footer";
 import { SiteHeader } from "./site-header";
 
@@ -65,32 +66,15 @@ function CaseStudyPageContent({
 						</p>
 
 						<ul className="mt-6 flex flex-wrap gap-x-5 gap-y-1 text-sm">
-							<li>
-								<a
-									href={project.url}
-									target="_blank"
-									rel="noopener noreferrer"
-									className={`editorial-link group inline-flex min-h-11 items-center gap-1.5 ${focusRing}`}
-								>
-									{ui.projects.liveDemo}
-									<span
-										aria-hidden
-										className="text-text-faint text-sm transition-colors duration-150 ease-out group-hover:text-text-primary"
-									>
-										↗
-									</span>
-									<span className="sr-only"> {ui.a11y.opensInNewTab}</span>
-								</a>
-							</li>
-							{project.sourceUrl ? (
+							{project.url ? (
 								<li>
 									<a
-										href={project.sourceUrl}
+										href={project.url}
 										target="_blank"
 										rel="noopener noreferrer"
-										className={`editorial-link group inline-flex min-h-11 items-center gap-1.5 text-text-muted ${focusRing}`}
+										className={`editorial-link group inline-flex min-h-11 items-center gap-1.5 ${focusRing}`}
 									>
-										{ui.projects.source}
+										{ui.projects.liveDemo}
 										<span
 											aria-hidden
 											className="text-text-faint text-sm transition-colors duration-150 ease-out group-hover:text-text-primary"
@@ -101,6 +85,7 @@ function CaseStudyPageContent({
 									</a>
 								</li>
 							) : null}
+							<ProjectSourceLinks project={project} />
 						</ul>
 					</header>
 

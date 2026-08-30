@@ -19,12 +19,19 @@ export type EducationEntry = {
 	period: string;
 };
 
+export type ProjectSourceKind = "source" | "frontend" | "backend";
+
+export type ProjectSource = {
+	href: string;
+	kind: ProjectSourceKind;
+};
+
 export type ProjectEntry = {
 	name: string;
 	slug: string;
 	description: string;
-	url: string;
-	sourceUrl?: string;
+	url?: string;
+	sources?: readonly ProjectSource[];
 	stack: readonly string[];
 };
 
@@ -113,6 +120,8 @@ export type UiStrings = {
 		visitProject: (name: string) => string;
 		liveDemo: string;
 		source: string;
+		frontend: string;
+		backend: string;
 		readCaseStudy: string;
 		backToWork: string;
 	};

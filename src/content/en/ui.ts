@@ -11,7 +11,8 @@ export const ui: UiStrings = {
 	sections: {
 		skills: "Skills",
 		projects: "Selected work",
-		projectsBlurb: "Things I've built and shipped.",
+		projectsBlurb:
+			"A live AI cooking app, and a ticketing platform with reserved seats.",
 		experience: "Experience",
 		education: "Education",
 		elsewhere: "Elsewhere",
@@ -55,6 +56,8 @@ export const ui: UiStrings = {
 		visitProject: (name) => `Visit ${name} (opens in new tab)`,
 		liveDemo: "Live demo",
 		source: "Source",
+		frontend: "Frontend",
+		backend: "Backend",
 		readCaseStudy: "Read case study",
 		backToWork: "Back to selected work",
 	},

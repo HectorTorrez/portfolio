@@ -4,6 +4,7 @@ import type { ProjectEntry } from "#/content/types";
 
 import { focusRing } from "./focus-ring";
 import { useLocaleContent } from "./locale-context";
+import { ProjectSourceLinks } from "./project-source-links";
 import { SectionHeading } from "./section-heading";
 
 function ProjectArticle({ project }: { project: ProjectEntry }) {
@@ -26,32 +27,15 @@ function ProjectArticle({ project }: { project: ProjectEntry }) {
 						{ui.projects.readCaseStudy}
 					</Link>
 				</li>
-				<li>
-					<a
-						href={project.url}
-						target="_blank"
-						rel="noopener noreferrer"
-						className={`editorial-link group inline-flex min-h-11 items-center gap-1.5 text-text-muted ${focusRing}`}
-					>
-						{ui.projects.liveDemo}
-						<span
-							aria-hidden
-							className="text-text-faint text-sm transition-colors duration-150 ease-out group-hover:text-text-primary"
-						>
-							↗
-						</span>
-						<span className="sr-only"> {ui.a11y.opensInNewTab}</span>
-					</a>
-				</li>
-				{project.sourceUrl ? (
+				{project.url ? (
 					<li>
 						<a
-							href={project.sourceUrl}
+							href={project.url}
 							target="_blank"
 							rel="noopener noreferrer"
 							className={`editorial-link group inline-flex min-h-11 items-center gap-1.5 text-text-muted ${focusRing}`}
 						>
-							{ui.projects.source}
+							{ui.projects.liveDemo}
 							<span
 								aria-hidden
 								className="text-text-faint text-sm transition-colors duration-150 ease-out group-hover:text-text-primary"
@@ -62,6 +46,7 @@ function ProjectArticle({ project }: { project: ProjectEntry }) {
 						</a>
 					</li>
 				) : null}
+				<ProjectSourceLinks project={project} />
 			</ul>
 
 			<p className="mt-3 text-sm text-text-faint">
