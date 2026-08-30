@@ -59,7 +59,7 @@ export const portfolio: PortfolioContent = {
 		},
 		{
 			company: "Independiente",
-			role: "Desarrollador Full Stack",
+			role: "Desarrollador full-stack",
 			start: "junio 2023",
 			end: "mayo 2024",
 			startDateTime: "2023-06",
