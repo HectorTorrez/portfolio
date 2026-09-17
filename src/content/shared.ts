@@ -14,17 +14,21 @@ export const portfolioLinks: PortfolioLinks = {
 };
 
 export const portfolioSkills = [
-	"JavaScript",
 	"TypeScript",
+	"JavaScript",
 	"React",
 	"Next.js",
 	"TanStack Start",
-	"Tailwind CSS",
+	"TanStack Query",
 	"Node.js",
 	"NestJS",
+	"Express.js",
+	"SQL",
 	"PostgreSQL",
+	"Supabase",
 	"Cloudflare Workers",
 	"AWS",
+	"Docker",
 ] as const;
 
 export const pantryProject = {

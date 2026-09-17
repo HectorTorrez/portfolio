@@ -111,6 +111,36 @@ function checkHome(locale, html) {
 			: fail("pitch", "hero must name React and TypeScript"),
 	);
 
+	const virtualizationNeedle =
+		locale === "en" ? /virtualiz/i : /virtualizaci[oó]n/i;
+	results.push(
+		virtualizationNeedle.test(text)
+			? pass("cv-virtualization", "virtualization on homepage")
+			: fail("cv-virtualization", "homepage must mention virtualization"),
+	);
+
+	results.push(
+		text.includes("100+")
+			? pass("cv-scale", "100+ on homepage")
+			: fail("cv-scale", "homepage must mention 100+"),
+	);
+
+	const skillsHeading = document.getElementById("skills-heading");
+	const skillsSection = skillsHeading?.closest("section");
+	const skillsLine = skillsSection?.textContent ?? text;
+	results.push(
+		skillsLine.includes("TanStack Query") && skillsLine.includes("Docker")
+			? pass("cv-skills", "TanStack Query and Docker in skills")
+			: fail("cv-skills", "skills must include TanStack Query and Docker"),
+	);
+
+	const freelanceNeedle = locale === "en" ? "Freelance" : "Independiente";
+	results.push(
+		text.includes(freelanceNeedle)
+			? pass("cv-freelance", freelanceNeedle)
+			: fail("cv-freelance", `homepage must mention ${freelanceNeedle}`),
+	);
+
 	return results;
 }
 

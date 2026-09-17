@@ -15,58 +15,60 @@ export const portfolioSite: PortfolioSite = {
 export const portfolioMeta: PortfolioMeta = {
 	title: "Hector Torrez | Ingeniero de software · React y TypeScript",
 	description:
-		"Hector Torrez es ingeniero de software en El Salvador. React, TypeScript y trabajo full-stack de producto. ERP, logística, e-commerce y plataformas de eventos. Disponible para trabajo remoto.",
+		"Hector Torrez es ingeniero de software en El Salvador. React, TypeScript y trabajo full-stack de producto. ERP, logística, e-commerce y SaaS. Disponible para trabajo remoto.",
 	keywords:
-		"Hector Torrez, ingeniero de software, full-stack, React, TypeScript, Node.js, AWS, Cloudflare Workers, TanStack, El Salvador, portafolio",
+		"Hector Torrez, ingeniero de software, full-stack, React, TypeScript, TanStack Query, NestJS, Node.js, Docker, AWS, Cloudflare Workers, El Salvador, portafolio",
 };
 
 export const portfolio: PortfolioContent = {
 	name: "Hector Torrez",
-	headline: "Ingeniero de software",
+	headline: "Ingeniero de software, desarrollador full-stack",
 	heroSubtitle:
-		"Entrego funcionalidades de punta a punta. React y TypeScript en el cliente, APIs en Node cuando el trabajo pide el otro lado. Tres años en ERP, logística, e-commerce y plataformas de eventos.",
+		"Entrego funcionalidades de punta a punta. React y TypeScript en el cliente, APIs en Node cuando el trabajo pide el otro lado. Tres años en ERP, logística, e-commerce y SaaS.",
 	heroSupportingText:
-		"En el día a día, Next.js y TanStack. NestJS, PostgreSQL, Cloudflare y AWS cuando me toca más del stack.",
+		"Lideré arquitectura frontend para plataformas con más de 100 usuarios activos. En el día a día, Next.js y TanStack. NestJS, PostgreSQL, Cloudflare y AWS cuando me toca más del stack.",
 	location: "El Salvador",
 	skills: portfolioSkills,
 	experience: [
 		{
 			company: "JDK Tech",
-			role: "Desarrollador full-stack",
-			location: "Grand Prairie, Texas, Estados Unidos",
+			role: "Ingeniero full-stack",
+			location: "Grand Prairie, Texas (remoto, El Salvador)",
 			start: "febrero 2025",
 			end: "actualidad",
 			startDateTime: "2025-02",
 			highlights: [
-				"Entregué funcionalidades de punta a punta, del UI en React hasta la API.",
-				"Lideré el paso de CI/CD de Azure a Vercel con el CLI de Vercel para que la suite se despliegue por un solo pipeline.",
-				"Construí UI de producto con React, Next.js y TanStack Query, incluidas páginas alimentadas por Headless WordPress sobre REST.",
-				"Reviso pull requests y mantengo estándares frontend consistentes en la suite.",
+				"Virtualicé un sistema de facturación de alto tráfico con cientos de líneas para más de 100 usuarios activos.",
+				"Lideré la arquitectura frontend de una plataforma logística desde el día uno: estructura de componentes, estándares de código y revisión de PRs.",
+				"Migré CI/CD de Azure a Vercel con el CLI de Vercel, un solo pipeline para la suite de productos.",
 			],
 		},
 		{
 			company: "BetaCode",
-			role: "Desarrollador Frontend",
+			role: "Desarrollador frontend",
 			location: "El Salvador",
 			start: "junio 2024",
 			end: "febrero 2025",
 			startDateTime: "2024-06",
 			endDateTime: "2025-02",
 			highlights: [
-				"Construí funciones de tienda y de eventos en ambos lados: dashboards, filtros, actualizaciones en vivo, admin y APIs.",
-				"Saqué componentes compartidos para no reconstruir el trabajo operativo en cada proyecto.",
+				"Entregué funcionalidades full-stack para e-commerce y plataformas de eventos: interfaces React, APIs REST y servicios Node.js.",
+				"Construí sitios y funcionalidades desde cero con Next.js, React, TypeScript y TanStack Query.",
+				"Construí dashboards y flujos de administración que redujeron trabajo operativo repetitivo.",
 			],
 		},
 		{
 			company: "Independiente",
 			role: "Desarrollador full-stack",
+			location: "El Salvador",
 			start: "junio 2023",
 			end: "mayo 2024",
 			startDateTime: "2023-06",
 			endDateTime: "2024-05",
 			highlights: [
-				"Construí la UI de ganancias: ver y gestionar números, fórmulas tipo Excel y reordenar con arrastrar y soltar.",
-				"Escribí los endpoints de API que esas pantallas necesitaban.",
+				"Construí una UI de gestión financiera con fórmulas personalizadas tipo Excel y cálculos en producto.",
+				"Escribí servicios backend, bases de datos y APIs para flujos internos del negocio.",
+				"Añadí arrastrar y soltar y nuevos endpoints de API.",
 			],
 		},
 	],
@@ -85,12 +87,12 @@ export const portfolio: PortfolioContent = {
 	education: [
 		{
 			institution: "Universidad Capitán General Gerardo Barrios",
-			credential: "Ingeniería de Software, Ciencias de la Computación",
+			credential: "Ingeniería de software",
 			period: "junio 2021 – diciembre 2024",
 		},
 		{
 			institution: "Universidad Capitán General Gerardo Barrios",
-			credential: "Técnico en Ingeniería de Sistemas, programación",
+			credential: "Técnico en ingeniería de sistemas, programación",
 			period: "2018 – 2020",
 		},
 	],
