@@ -32,7 +32,7 @@ export const portfolio: PortfolioContent = {
 	experience: [
 		{
 			company: "JDK Tech",
-			role: "Ingeniero full-stack",
+			role: "Desarrollador full-stack",
 			location: "Grand Prairie, Texas (remoto, El Salvador)",
 			start: "febrero 2025",
 			end: "actualidad",
