@@ -38,14 +38,14 @@ export const portfolio: PortfolioContent = {
 			end: "Present",
 			startDateTime: "2025-02",
 			highlights: [
-				"Virtualized a high-traffic invoicing system with hundreds of line items for 100+ active users.",
+				"Resolved a high-traffic invoicing bottleneck with list virtualization, for invoices with hundreds of line items and 100+ active users.",
 				"Led frontend architecture for a logistics platform from day one: component structure, coding standards, and PR review ownership.",
 				"Migrated CI/CD from Azure to Vercel with the Vercel CLI, one pipeline for the product suite.",
 			],
 		},
 		{
 			company: "BetaCode",
-			role: "Frontend Developer",
+			role: "Frontend developer",
 			location: "El Salvador",
 			start: "June 2024",
 			end: "February 2025",
@@ -59,7 +59,7 @@ export const portfolio: PortfolioContent = {
 		},
 		{
 			company: "Freelance",
-			role: "Full-stack Developer",
+			role: "Full-stack developer",
 			location: "El Salvador",
 			start: "June 2023",
 			end: "May 2024",
@@ -67,7 +67,7 @@ export const portfolio: PortfolioContent = {
 			endDateTime: "2024-05",
 			highlights: [
 				"Built a financial management UI with custom Excel-like formulas and in-product calculations.",
-				"Wrote backend services, databases, and APIs for internal business workflows.",
+				"Integrated backend services, databases, and APIs for internal business workflows.",
 				"Added drag-and-drop functionality and new API endpoints.",
 			],
 		},

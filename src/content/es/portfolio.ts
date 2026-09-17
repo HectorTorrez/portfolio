@@ -26,7 +26,7 @@ export const portfolio: PortfolioContent = {
 	heroSubtitle:
 		"Entrego funcionalidades de punta a punta. React y TypeScript en el cliente, APIs en Node cuando el trabajo pide el otro lado. Tres años en ERP, logística, e-commerce y SaaS.",
 	heroSupportingText:
-		"Lideré arquitectura frontend para plataformas con más de 100 usuarios activos. En el día a día, Next.js y TanStack. NestJS, PostgreSQL, Cloudflare y AWS cuando me toca más del stack.",
+		"Lideré la arquitectura frontend para plataformas con más de 100 usuarios activos. En el día a día, Next.js y TanStack. NestJS, PostgreSQL, Cloudflare y AWS cuando me toca más del stack.",
 	location: "El Salvador",
 	skills: portfolioSkills,
 	experience: [
@@ -38,7 +38,7 @@ export const portfolio: PortfolioContent = {
 			end: "actualidad",
 			startDateTime: "2025-02",
 			highlights: [
-				"Virtualicé un sistema de facturación de alto tráfico con cientos de líneas para más de 100 usuarios activos.",
+				"Resolví un cuello de botella de facturación de alto tráfico con virtualización de listas, para más de 100 usuarios activos.",
 				"Lideré la arquitectura frontend de una plataforma logística desde el día uno: estructura de componentes, estándares de código y revisión de PRs.",
 				"Migré CI/CD de Azure a Vercel con el CLI de Vercel, un solo pipeline para la suite de productos.",
 			],
@@ -67,7 +67,7 @@ export const portfolio: PortfolioContent = {
 			endDateTime: "2024-05",
 			highlights: [
 				"Construí una UI de gestión financiera con fórmulas personalizadas tipo Excel y cálculos en producto.",
-				"Escribí servicios backend, bases de datos y APIs para flujos internos del negocio.",
+				"Integré servicios de backend, bases de datos y APIs para flujos internos del negocio.",
 				"Añadí arrastrar y soltar y nuevos endpoints de API.",
 			],
 		},
