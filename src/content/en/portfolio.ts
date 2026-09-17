@@ -15,58 +15,60 @@ export const portfolioSite: PortfolioSite = {
 export const portfolioMeta: PortfolioMeta = {
 	title: "Hector Torrez | Software engineer · React & TypeScript",
 	description:
-		"Hector Torrez is a software engineer in El Salvador. React, TypeScript, and full-stack product work. ERP, logistics, e-commerce, and event platforms. Available for remote work.",
+		"Hector Torrez is a software engineer in El Salvador. React, TypeScript, and full-stack product work. ERP, logistics, e-commerce, and SaaS. Available for remote work.",
 	keywords:
-		"Hector Torrez, software engineer, full-stack, React, TypeScript, Node.js, AWS, Cloudflare Workers, TanStack, El Salvador, portfolio",
+		"Hector Torrez, software engineer, full-stack, React, TypeScript, TanStack Query, NestJS, Node.js, Docker, AWS, Cloudflare Workers, El Salvador, portfolio",
 };
 
 export const portfolio: PortfolioContent = {
 	name: "Hector Torrez",
-	headline: "Software engineer",
+	headline: "Software engineer, full-stack developer",
 	heroSubtitle:
-		"I ship product features end to end. React and TypeScript on the client, Node APIs when the job needs the other side. Three years across ERP, logistics, e-commerce, and event platforms.",
+		"I ship product features end to end. React and TypeScript on the client, Node APIs when the job needs the other side. Three years across ERP, logistics, e-commerce, and SaaS.",
 	heroSupportingText:
-		"Next.js and TanStack at work. NestJS, PostgreSQL, Cloudflare, and AWS when I own more of the stack.",
+		"Led frontend architecture for platforms serving 100+ active users. Next.js and TanStack at work. NestJS, PostgreSQL, Cloudflare, and AWS when I own more of the stack.",
 	location: "El Salvador",
 	skills: portfolioSkills,
 	experience: [
 		{
 			company: "JDK Tech",
-			role: "Full-stack Developer",
-			location: "Grand Prairie, Texas, United States",
+			role: "Full-stack developer",
+			location: "Grand Prairie, Texas (remote, El Salvador)",
 			start: "February 2025",
 			end: "Present",
 			startDateTime: "2025-02",
 			highlights: [
-				"Shipped features end to end, from the React UI through the API.",
-				"Led the CI/CD move from Azure to Vercel with the Vercel CLI so the product suite deploys through one pipeline.",
-				"Built product UI in React, Next.js, and TanStack Query, including pages fed by Headless WordPress over REST.",
-				"Review pull requests and keep frontend standards consistent across the suite.",
+				"Resolved a high-traffic invoicing bottleneck with list virtualization, for invoices with hundreds of line items and 100+ active users.",
+				"Led frontend architecture for a logistics platform from day one: component structure, coding standards, and PR review ownership.",
+				"Migrated CI/CD from Azure to Vercel with the Vercel CLI, one pipeline for the product suite.",
 			],
 		},
 		{
 			company: "BetaCode",
-			role: "Frontend Developer",
+			role: "Frontend developer",
 			location: "El Salvador",
 			start: "June 2024",
 			end: "February 2025",
 			startDateTime: "2024-06",
 			endDateTime: "2025-02",
 			highlights: [
-				"Built storefront and event-platform features on both sides: dashboards, filters, live updates, admin tools, and APIs.",
-				"Extracted shared components so repeat ops work did not get rebuilt on every project.",
+				"Shipped full-stack features for e-commerce and event platforms: React UIs, REST APIs, and Node.js services.",
+				"Built sites and app features from scratch with Next.js, React, TypeScript, and TanStack Query.",
+				"Built dashboard and admin workflows that reduced repetitive operational work.",
 			],
 		},
 		{
-			company: "Independent",
-			role: "Full-stack Developer",
+			company: "Freelance",
+			role: "Full-stack developer",
+			location: "El Salvador",
 			start: "June 2023",
 			end: "May 2024",
 			startDateTime: "2023-06",
 			endDateTime: "2024-05",
 			highlights: [
-				"Built the earnings UI: view and manage numbers, Excel-like formulas, and drag-and-drop reorder.",
-				"Wrote the API endpoints those screens needed.",
+				"Built a financial management UI with custom Excel-like formulas and in-product calculations.",
+				"Integrated backend services, databases, and APIs for internal business workflows.",
+				"Added drag-and-drop functionality and new API endpoints.",
 			],
 		},
 	],
@@ -85,12 +87,12 @@ export const portfolio: PortfolioContent = {
 	education: [
 		{
 			institution: "Universidad Capitán General Gerardo Barrios",
-			credential: "Software Engineer, Computer Science",
+			credential: "Software engineering",
 			period: "June 2021 – December 2024",
 		},
 		{
 			institution: "Universidad Capitán General Gerardo Barrios",
-			credential: "Technical degree in systems engineering, programming",
+			credential: "Systems engineering technician, programming",
 			period: "2018 – 2020",
 		},
 	],
