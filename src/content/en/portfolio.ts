@@ -40,7 +40,7 @@ export const portfolio: PortfolioContent = {
 			highlights: [
 				"Resolved a high-traffic invoicing bottleneck with list virtualization, for invoices with hundreds of line items and 100+ active users.",
 				"Led frontend architecture for a logistics platform from day one: component structure, coding standards, and PR review ownership.",
-				"Migrated CI/CD from Azure to Vercel with the Vercel CLI, one pipeline for the product suite.",
+				"Led the implementation of a CI/CD pipeline in Azure using the Vercel CLI, automating and standardizing deployments across our projects on Vercel.",
 			],
 		},
 		{

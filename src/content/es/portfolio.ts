@@ -40,7 +40,7 @@ export const portfolio: PortfolioContent = {
 			highlights: [
 				"Resolví un cuello de botella de facturación de alto tráfico con virtualización de listas, para más de 100 usuarios activos.",
 				"Lideré la arquitectura frontend de una plataforma logística desde el día uno: estructura de componentes, estándares de código y revisión de PRs.",
-				"Migré CI/CD de Azure a Vercel con el CLI de Vercel, un solo pipeline para la suite de productos.",
+				"Lideré la implementación de un pipeline de CI/CD en Azure usando el CLI de Vercel, automatizando y estandarizando despliegues en nuestros proyectos en Vercel.",
 			],
 		},
 		{
