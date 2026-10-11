@@ -24,7 +24,7 @@ export const ui: UiStrings = {
 		resume: "CV",
 	},
 	hero: {
-		status: "Open to mid-level Frontend / Full-Stack roles",
+		status: "Open to Frontend / Full-Stack roles",
 		workArrangement: "Remote · US time zones (CST)",
 		emailMe: "Email me",
 		linkedIn: "LinkedIn",
