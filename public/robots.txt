@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://portfolio.torrezhectorb.workers.dev/sitemap.xml
+Sitemap: https://hectortorrez.com/sitemap.xml

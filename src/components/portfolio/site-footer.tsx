@@ -27,7 +27,7 @@ export function SiteFooter() {
 			className="section-reveal scroll-mt-24 content-column border-border-subtle border-t py-12 md:py-16"
 		>
 			<SectionHeading id="contact-heading">
-				{ui.sections.elsewhere}
+				{ui.sections.contact}
 			</SectionHeading>
 			<ul className="mt-6 flex flex-col items-start gap-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-1">
 				<li className="flex items-center">

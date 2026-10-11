@@ -1,6 +1,6 @@
 ## Problema
 
-Quien cocina en casa suele partir de lo que ya tiene, pero buscar recetas termina empujando una lista de compras. Pantry responde “¿qué puedo cocinar ahora?” con ingredientes, tiempo y restricciones dietéticas.
+Quien cocina en casa suele partir de lo que ya tiene, pero la mayoría de sitios de recetas asume que primero vas a ir de compras. Pantry responde “¿qué puedo cocinar ahora?” con ingredientes, tiempo y restricciones dietéticas.
 
 ## Rol
 
@@ -8,7 +8,7 @@ Construcción en solitario — producto, UI, Worker de API, auth, cuotas y despl
 
 ## Restricciones
 
-Reto de entrevista con separación clara cliente/servidor, CSS plano (sin kit de UI) y despliegue en el edge sin claves externas de IA.
+Separación clara cliente/servidor, CSS plano (sin kit de UI) y despliegue en el edge sin claves externas de IA, para que corra en el free tier de Cloudflare.
 
 ## Decisiones
 

@@ -4,7 +4,7 @@ Quien organiza un evento necesita catálogo, un checkout que reserve el asiento 
 
 ## Rol
 
-Construcción en solitario. Frontend en TanStack Start, API en NestJS, PostgreSQL e inventario por Socket.IO. La arquitectura corre en AWS.
+Construcción en solitario. Frontend en TanStack Start, API en NestJS, PostgreSQL e inventario por Socket.IO. Diseñada para AWS (load balancer, RDS, S3); hoy corre en local.
 
 ## Restricciones
 
@@ -20,14 +20,14 @@ Un pedido retiene asientos en PostgreSQL con un TTL. Si el pago no llega, la res
 
 El catálogo no hace polling. La API empuja cambios de tickets para que dos personas vean el mismo cupo.
 
-### Una API tipada al otro lado
+### Contrato de API tipado de punta a punta
 
 Zod valida cada respuesta. Auth es JWT con refresh. Rutas de admin y de cliente usan guards distintos.
 
-### Alojarlo en AWS
+### Diseñada para AWS
 
-La API vive en AWS detrás de un load balancer. PostgreSQL y S3 quedan en el mismo footprint. Los banners de eventos van a S3.
+El despliegue objetivo pone la API detrás de un load balancer, con PostgreSQL en RDS y los banners de eventos en S3. Docker Compose replica ese entorno en local.
 
 ## Resultado
 
-Una plataforma que corre en local: eventos públicos, checkout reservado, tickets QR, dashboard de organizador y escáner en puerta. Los repos de frontend y API son públicos. Todavía no hay URL de producción.
+Una plataforma que corre en local: eventos públicos, checkout reservado, tickets QR, dashboard de organizador y escáner en puerta. Los repos de frontend y API son públicos, con tests unitarios y end-to-end en Jest, specs de Playwright, un script de prueba de checkout concurrente y CI en ambos.

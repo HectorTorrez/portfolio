@@ -13,20 +13,20 @@ export const portfolioSite: PortfolioSite = {
 };
 
 export const portfolioMeta: PortfolioMeta = {
-	title: "Hector Torrez | Software engineer · React & TypeScript",
+	title: "Hector Torrez | Full-Stack Software Engineer · React & TypeScript",
 	description:
-		"Hector Torrez is a software engineer in El Salvador. React, TypeScript, and full-stack product work. ERP, logistics, e-commerce, and SaaS. Available for remote work.",
+		"Hector Torrez is a full-stack software engineer in El Salvador. React, TypeScript, and Node.js product work across ERP, logistics, e-commerce, and SaaS. Open to remote roles in US time zones.",
 	keywords:
 		"Hector Torrez, software engineer, full-stack, React, TypeScript, TanStack Query, NestJS, Node.js, Docker, AWS, Cloudflare Workers, El Salvador, portfolio",
 };
 
 export const portfolio: PortfolioContent = {
 	name: "Hector Torrez",
-	headline: "Software engineer, full-stack developer",
+	headline: "Full-Stack Software Engineer · React, TypeScript, Node.js",
 	heroSubtitle:
-		"I ship product features end to end. React and TypeScript on the client, Node APIs when the job needs the other side. Three years across ERP, logistics, e-commerce, and SaaS.",
+		"I ship product features end to end: React and TypeScript on the frontend, and Node.js APIs on the backend. Three years across ERP, logistics, e-commerce, and SaaS.",
 	heroSupportingText:
-		"Led frontend architecture for platforms serving 100+ active users. Next.js and TanStack at work. NestJS, PostgreSQL, Cloudflare, and AWS when I own more of the stack.",
+		"I lead frontend architecture for ERP and logistics platforms at JDK Tech, with Next.js and TanStack. On my own projects I own the whole stack: NestJS, PostgreSQL, Cloudflare, and AWS.",
 	location: "El Salvador",
 	skills: portfolioSkills,
 	experience: [
@@ -38,9 +38,9 @@ export const portfolio: PortfolioContent = {
 			end: "Present",
 			startDateTime: "2025-02",
 			highlights: [
-				"Resolved a high-traffic invoicing bottleneck with list virtualization, for invoices with hundreds of line items and 100+ active users.",
+				"Fixed a performance bottleneck in invoicing by virtualizing lists, so invoices with hundreds of line items render smoothly for 100+ daily users.",
 				"Led frontend architecture for a logistics platform from day one: component structure, coding standards, and PR review ownership.",
-				"Led the implementation of a CI/CD pipeline in Azure using the Vercel CLI, automating and standardizing deployments across our projects on Vercel.",
+				"Built a CI/CD pipeline in Azure Pipelines that deploys to Vercel via the Vercel CLI, standardizing deployments across all our projects.",
 			],
 		},
 		{
@@ -52,7 +52,7 @@ export const portfolio: PortfolioContent = {
 			startDateTime: "2024-06",
 			endDateTime: "2025-02",
 			highlights: [
-				"Shipped full-stack features for e-commerce and event platforms: React UIs, REST APIs, and Node.js services.",
+				"Shipped frontend features for e-commerce and event platforms in React, and contributed to the REST APIs and Node.js services behind them.",
 				"Built sites and app features from scratch with Next.js, React, TypeScript, and TanStack Query.",
 				"Built dashboard and admin workflows that reduced repetitive operational work.",
 			],
@@ -66,9 +66,9 @@ export const portfolio: PortfolioContent = {
 			startDateTime: "2023-06",
 			endDateTime: "2024-05",
 			highlights: [
-				"Built a financial management UI with custom Excel-like formulas and in-product calculations.",
+				"Built a financial management UI with custom Excel-like formulas and real-time calculations.",
 				"Integrated backend services, databases, and APIs for internal business workflows.",
-				"Added drag-and-drop functionality and new API endpoints.",
+				"Built drag-and-drop workflows and the API endpoints behind them.",
 			],
 		},
 	],

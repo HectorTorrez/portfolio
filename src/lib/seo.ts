@@ -143,9 +143,11 @@ export function buildPortfolioHead(locale: string): {
 			{ property: "og:title", content: meta.title },
 			{ property: "og:description", content: meta.description },
 			{ property: "og:image", content: image },
+			{ property: "og:image:width", content: "1200" },
+			{ property: "og:image:height", content: "630" },
 			{
 				property: "og:image:alt",
-				content: ui.hero.portraitAlt(portfolio.name),
+				content: ui.hero.ogImageAlt(portfolio.name),
 			},
 			{ property: "profile:first_name", content: "Hector" },
 			{ property: "profile:last_name", content: "Torrez" },
@@ -155,7 +157,7 @@ export function buildPortfolioHead(locale: string): {
 			{ name: "twitter:image", content: image },
 			{
 				name: "twitter:image:alt",
-				content: ui.hero.portraitAlt(portfolio.name),
+				content: ui.hero.ogImageAlt(portfolio.name),
 			},
 		],
 		links: [
@@ -203,9 +205,11 @@ export function buildExperimentsHead(locale: string): {
 			{ property: "og:title", content: title },
 			{ property: "og:description", content: description },
 			{ property: "og:image", content: image },
+			{ property: "og:image:width", content: "1200" },
+			{ property: "og:image:height", content: "630" },
 			{
 				property: "og:image:alt",
-				content: ui.hero.portraitAlt(portfolio.name),
+				content: ui.hero.ogImageAlt(portfolio.name),
 			},
 			{ name: "twitter:card", content: "summary_large_image" },
 			{ name: "twitter:title", content: title },
@@ -213,7 +217,7 @@ export function buildExperimentsHead(locale: string): {
 			{ name: "twitter:image", content: image },
 			{
 				name: "twitter:image:alt",
-				content: ui.hero.portraitAlt(portfolio.name),
+				content: ui.hero.ogImageAlt(portfolio.name),
 			},
 		],
 		links: [
@@ -265,9 +269,11 @@ export function buildCaseStudyHead(
 			{ property: "og:title", content: title },
 			{ property: "og:description", content: description },
 			{ property: "og:image", content: image },
+			{ property: "og:image:width", content: "1200" },
+			{ property: "og:image:height", content: "630" },
 			{
 				property: "og:image:alt",
-				content: ui.hero.portraitAlt(portfolio.name),
+				content: ui.hero.ogImageAlt(portfolio.name),
 			},
 			{ name: "twitter:card", content: "summary_large_image" },
 			{ name: "twitter:title", content: title },
@@ -275,7 +281,7 @@ export function buildCaseStudyHead(
 			{ name: "twitter:image", content: image },
 			{
 				name: "twitter:image:alt",
-				content: ui.hero.portraitAlt(portfolio.name),
+				content: ui.hero.ogImageAlt(portfolio.name),
 			},
 		],
 		links: [

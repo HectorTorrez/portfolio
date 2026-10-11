@@ -2,66 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://portfolio.torrezhectorb.workers.dev/en</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio.torrezhectorb.workers.dev/en"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://portfolio.torrezhectorb.workers.dev/es"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://portfolio.torrezhectorb.workers.dev/en"/>
+    <loc>https://hectortorrez.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hectortorrez.com/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hectortorrez.com/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hectortorrez.com/en"/>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://portfolio.torrezhectorb.workers.dev/es</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio.torrezhectorb.workers.dev/en"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://portfolio.torrezhectorb.workers.dev/es"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://portfolio.torrezhectorb.workers.dev/en"/>
+    <loc>https://hectortorrez.com/es</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hectortorrez.com/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hectortorrez.com/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hectortorrez.com/en"/>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://portfolio.torrezhectorb.workers.dev/en/work/pantry</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio.torrezhectorb.workers.dev/en/work/pantry"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://portfolio.torrezhectorb.workers.dev/es/work/pantry"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://portfolio.torrezhectorb.workers.dev/en/work/pantry"/>
+    <loc>https://hectortorrez.com/en/work/pantry</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hectortorrez.com/en/work/pantry"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hectortorrez.com/es/work/pantry"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hectortorrez.com/en/work/pantry"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portfolio.torrezhectorb.workers.dev/es/work/pantry</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio.torrezhectorb.workers.dev/en/work/pantry"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://portfolio.torrezhectorb.workers.dev/es/work/pantry"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://portfolio.torrezhectorb.workers.dev/en/work/pantry"/>
+    <loc>https://hectortorrez.com/es/work/pantry</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hectortorrez.com/en/work/pantry"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hectortorrez.com/es/work/pantry"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hectortorrez.com/en/work/pantry"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portfolio.torrezhectorb.workers.dev/en/work/tickets</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio.torrezhectorb.workers.dev/en/work/tickets"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://portfolio.torrezhectorb.workers.dev/es/work/tickets"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://portfolio.torrezhectorb.workers.dev/en/work/tickets"/>
+    <loc>https://hectortorrez.com/en/work/tickets</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hectortorrez.com/en/work/tickets"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hectortorrez.com/es/work/tickets"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hectortorrez.com/en/work/tickets"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portfolio.torrezhectorb.workers.dev/es/work/tickets</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio.torrezhectorb.workers.dev/en/work/tickets"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://portfolio.torrezhectorb.workers.dev/es/work/tickets"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://portfolio.torrezhectorb.workers.dev/en/work/tickets"/>
+    <loc>https://hectortorrez.com/es/work/tickets</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hectortorrez.com/en/work/tickets"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hectortorrez.com/es/work/tickets"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hectortorrez.com/en/work/tickets"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portfolio.torrezhectorb.workers.dev/en/experiments</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio.torrezhectorb.workers.dev/en/experiments"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://portfolio.torrezhectorb.workers.dev/es/experiments"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://portfolio.torrezhectorb.workers.dev/en/experiments"/>
+    <loc>https://hectortorrez.com/en/experiments</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hectortorrez.com/en/experiments"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hectortorrez.com/es/experiments"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hectortorrez.com/en/experiments"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://portfolio.torrezhectorb.workers.dev/es/experiments</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio.torrezhectorb.workers.dev/en/experiments"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://portfolio.torrezhectorb.workers.dev/es/experiments"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://portfolio.torrezhectorb.workers.dev/en/experiments"/>
+    <loc>https://hectortorrez.com/es/experiments</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hectortorrez.com/en/experiments"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hectortorrez.com/es/experiments"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hectortorrez.com/en/experiments"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

@@ -81,7 +81,7 @@ export type UiStrings = {
 		projectsBlurb: string;
 		experience: string;
 		education: string;
-		elsewhere: string;
+		contact: string;
 	};
 	contact: {
 		linkedInProfile: string;
@@ -91,14 +91,17 @@ export type UiStrings = {
 	};
 	hero: {
 		status: string;
+		workArrangement: string;
 		emailMe: string;
 		linkedIn: string;
 		github: string;
 		resume: string;
-		portraitAlt: (name: string) => string;
+		ogImageAlt: (name: string) => string;
 	};
 	a11y: {
 		pageSections: string;
+		openMenu: string;
+		closeMenu: string;
 		opensInNewTab: string;
 		language: string;
 	};

@@ -1,6 +1,6 @@
 ## Problem
 
-Home cooks often plan meals from what they already have, but browsing recipes still pushes shopping lists. Pantry answers “what can I cook now?” from ingredients, time, and dietary constraints.
+Home cooks often plan meals from what they already have, but most recipe sites assume you’ll go shopping first. Pantry answers “what can I cook now?” from ingredients, time, and dietary constraints.
 
 ## Role
 
@@ -8,7 +8,7 @@ Solo builder — product, UI, API Worker, auth, quotas, and Cloudflare deploy.
 
 ## Constraints
 
-Interview challenge requiring a clear client/server split, plain CSS (no UI kit), and edge deploy with no external AI API keys.
+A clear client/server split, plain CSS (no UI kit), and an edge deploy with no external AI API keys, so it runs on the Cloudflare free tier.
 
 ## Decisions
 

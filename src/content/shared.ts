@@ -1,16 +1,15 @@
 import type { PortfolioLinks } from "./types";
 
 export const portfolioSiteBase = {
-	url: "https://portfolio.torrezhectorb.workers.dev",
-	ogImage: "/profile-photo.jpg",
+	url: "https://hectortorrez.com",
+	ogImage: "/og-image.png",
 } as const;
 
 export const portfolioLinks: PortfolioLinks = {
 	email: "torrezhectorb@gmail.com",
 	linkedIn: "https://www.linkedin.com/in/hector-torrez",
 	github: "https://github.com/HectorTorrez",
-	resume:
-		"https://docs.google.com/document/d/1_PhNtvlutXrqt-tgLcCIC35xXBRq0mTT/edit?usp=sharing",
+	resume: "/hector-torrez-cv.pdf",
 };
 
 export const portfolioSkills = [

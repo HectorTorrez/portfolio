@@ -4,11 +4,11 @@ Event organizers need a catalog, reserved checkout that does not double-sell a s
 
 ## Role
 
-Solo builder. TanStack Start frontend, NestJS API, PostgreSQL, Socket.IO inventory. The architecture runs on AWS.
+Solo builder. TanStack Start frontend, NestJS API, PostgreSQL, Socket.IO inventory. Designed for AWS (load balancer, RDS, S3); runs locally today.
 
 ## Constraints
 
-Payments are mocked. A real processor comes later. Inventory still has to stay correct when two people checkout at once.
+Payments are mocked. A real processor comes later. Inventory still has to stay correct when two people check out at once.
 
 ## Decisions
 
@@ -20,14 +20,14 @@ An order holds seats in PostgreSQL with a TTL. If payment never lands, the hold 
 
 The catalog does not poll. The API pushes ticket updates so two people looking at the same event see the same remaining count.
 
-### A typed API on the other side
+### End-to-end typed API contract
 
 Zod validates every response. Auth is JWT with refresh. Admin and customer routes use separate guards.
 
-### Host it on AWS
+### Designed for AWS
 
-The API sits on AWS behind a load balancer. PostgreSQL and S3 live on the same footprint. Event banners go to S3.
+The target deployment puts the API behind a load balancer, with PostgreSQL on RDS and event banners in S3. Docker Compose mirrors that setup locally.
 
 ## Outcome
 
-A platform you can run locally: public events, reserved checkout, QR tickets, organizer dashboard, and a gate scanner. The frontend and API repos are public. There is no production URL yet.
+A platform you can run locally: public events, reserved checkout, QR tickets, organizer dashboard, and a gate scanner. The frontend and API repos are public, with Jest unit and end-to-end tests, Playwright specs, a concurrent-checkout test script, and CI on both.

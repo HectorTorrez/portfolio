@@ -1,4 +1,6 @@
 import { useRouterState } from "@tanstack/react-router";
+import { Menu, X } from "lucide-react";
+import { useEffect, useId, useState } from "react";
 
 import { focusRing } from "./focus-ring";
 import { useLocaleContent } from "./locale-context";
@@ -23,6 +25,26 @@ export function SiteHeader() {
 	});
 	const isHome = pathname === `/${locale}` || pathname === `/${locale}/`;
 	const homeHref = isHome ? "#top" : `/${locale}#top`;
+	const [menuOpen, setMenuOpen] = useState(false);
+	const mobileMenuId = useId();
+
+	useEffect(() => {
+		if (!menuOpen) return;
+		const onKeyDown = (event: KeyboardEvent) => {
+			if (event.key === "Escape") setMenuOpen(false);
+		};
+		document.addEventListener("keydown", onKeyDown);
+		return () => document.removeEventListener("keydown", onKeyDown);
+	}, [menuOpen]);
+
+	const navItems = ui.nav.map((item) => ({
+		...item,
+		resolvedHref: resolveNavHref(locale, item.href, isHome),
+		isCurrent:
+			item.href === "/experiments" &&
+			(pathname === `/${locale}/experiments` ||
+				pathname === `/${locale}/experiments/`),
+	}));
 
 	return (
 		<header className="sticky top-0 z-50 bg-surface-base/80 backdrop-blur-md">
@@ -37,29 +59,21 @@ export function SiteHeader() {
 				<div className="flex min-w-0 items-center gap-1 sm:gap-2">
 					<nav aria-label={ui.a11y.pageSections} className="min-w-0">
 						<ul className="flex items-center gap-0.5 sm:gap-1">
-							{ui.nav.map((item) => {
-								const href = resolveNavHref(locale, item.href, isHome);
-								const isCurrent =
-									item.href === "/experiments" &&
-									(pathname === `/${locale}/experiments` ||
-										pathname === `/${locale}/experiments/`);
-
-								return (
-									<li key={item.href} className="hidden sm:list-item">
-										<a
-											href={href}
-											aria-current={isCurrent ? "page" : undefined}
-											className={`editorial-link inline-flex min-h-11 items-center px-1.5 text-sm no-underline sm:px-2 ${focusRing} ${
-												isCurrent
-													? "text-text-primary"
-													: "text-text-muted hover:text-text-primary"
-											}`}
-										>
-											{item.label}
-										</a>
-									</li>
-								);
-							})}
+							{navItems.map((item) => (
+								<li key={item.href} className="hidden sm:list-item">
+									<a
+										href={item.resolvedHref}
+										aria-current={item.isCurrent ? "page" : undefined}
+										className={`editorial-link inline-flex min-h-11 items-center px-1.5 text-sm no-underline sm:px-2 ${focusRing} ${
+											item.isCurrent
+												? "text-text-primary"
+												: "text-text-muted hover:text-text-primary"
+										}`}
+									>
+										{item.label}
+									</a>
+								</li>
+							))}
 							<li>
 								<a
 									href={portfolio.links.resume}
@@ -76,8 +90,50 @@ export function SiteHeader() {
 
 					<LocaleSwitcher locale={locale} />
 					<ThemeToggle />
+
+					<button
+						type="button"
+						aria-expanded={menuOpen}
+						aria-controls={mobileMenuId}
+						aria-label={menuOpen ? ui.a11y.closeMenu : ui.a11y.openMenu}
+						onClick={() => setMenuOpen((open) => !open)}
+						className={`pressable inline-flex size-11 items-center justify-center rounded-full text-text-muted hover:text-text-primary sm:hidden ${focusRing}`}
+					>
+						{menuOpen ? (
+							<X aria-hidden className="icon-swap-in size-5" />
+						) : (
+							<Menu aria-hidden className="icon-swap-in size-5" />
+						)}
+					</button>
 				</div>
 			</div>
+
+			{menuOpen ? (
+				<nav
+					id={mobileMenuId}
+					aria-label={ui.a11y.pageSections}
+					className="content-column border-border-subtle border-b pb-3 sm:hidden"
+				>
+					<ul className="flex flex-col">
+						{navItems.map((item) => (
+							<li key={item.href}>
+								<a
+									href={item.resolvedHref}
+									aria-current={item.isCurrent ? "page" : undefined}
+									onClick={() => setMenuOpen(false)}
+									className={`editorial-link flex min-h-11 items-center text-base no-underline ${focusRing} ${
+										item.isCurrent
+											? "text-text-primary"
+											: "text-text-muted hover:text-text-primary"
+									}`}
+								>
+									{item.label}
+								</a>
+							</li>
+						))}
+					</ul>
+				</nav>
+			) : null}
 		</header>
 	);
 }
