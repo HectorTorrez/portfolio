@@ -80,7 +80,7 @@ function checkHome(locale, html) {
 			: fail("proof", `${caseLinks.length} case-study links, need ≥2`),
 	);
 
-	const jdk = [...document.querySelectorAll("p")].find((p) =>
+	const jdk = [...document.querySelectorAll("article p")].find((p) =>
 		(p.textContent ?? "").includes("JDK Tech"),
 	);
 	const jdkList = jdk?.closest("article")?.querySelector("ul");
