@@ -1,4 +1,5 @@
 import {
+	blinkProject,
 	pantryProject,
 	portfolioLinks,
 	portfolioSiteBase,
@@ -74,6 +75,11 @@ export const portfolio: PortfolioContent = {
 		},
 	],
 	projects: [
+		{
+			...blinkProject,
+			description:
+				"Una ventana de notas mínima, translúcida y flotante para macOS. Ábrela, escribe y vuelve al trabajo; las notas se guardan en JSON local, con espacios de trabajo, búsqueda rápida y un panel de acciones orientado al teclado.",
+		},
 		{
 			...pantryProject,
 			description:

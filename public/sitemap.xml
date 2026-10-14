@@ -50,6 +50,22 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://hectortorrez.com/en/work/blink</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hectortorrez.com/en/work/blink"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hectortorrez.com/es/work/blink"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hectortorrez.com/en/work/blink"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hectortorrez.com/es/work/blink</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hectortorrez.com/en/work/blink"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hectortorrez.com/es/work/blink"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hectortorrez.com/en/work/blink"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://hectortorrez.com/en/experiments</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://hectortorrez.com/en/experiments"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://hectortorrez.com/es/experiments"/>

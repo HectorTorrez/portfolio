@@ -59,9 +59,22 @@ export const ticketsProject = {
 	stack: ["TanStack Start", "NestJS", "PostgreSQL", "Socket.IO", "AWS"],
 } as const;
 
+export const blinkProject = {
+	name: "Blink",
+	slug: "blink",
+	sources: [
+		{
+			kind: "source",
+			href: "https://github.com/HectorTorrez/nook-notes",
+		},
+	],
+	stack: ["SwiftUI", "Swift", "macOS"],
+} as const;
+
 export const caseStudySlugs = [
 	pantryProject.slug,
 	ticketsProject.slug,
+	blinkProject.slug,
 ] as const;
 
 export type CaseStudySlug = (typeof caseStudySlugs)[number];
