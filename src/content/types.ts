@@ -125,8 +125,6 @@ export type UiStrings = {
 		source: string;
 		frontend: string;
 		backend: string;
-		readCaseStudy: string;
-		backToWork: string;
 	};
 	experiments: {
 		label: string;

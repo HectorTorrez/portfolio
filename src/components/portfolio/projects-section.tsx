@@ -1,5 +1,3 @@
-import { Link } from "@tanstack/react-router";
-
 import type { ProjectEntry } from "#/content/types";
 
 import { focusRing } from "./focus-ring";
@@ -8,7 +6,7 @@ import { ProjectSourceLinks } from "./project-source-links";
 import { SectionHeading } from "./section-heading";
 
 function ProjectArticle({ project }: { project: ProjectEntry }) {
-	const { locale, ui } = useLocaleContent();
+	const { ui } = useLocaleContent();
 
 	return (
 		<article>
@@ -18,15 +16,6 @@ function ProjectArticle({ project }: { project: ProjectEntry }) {
 			</p>
 
 			<ul className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-sm">
-				<li>
-					<Link
-						to="/$locale/work/$slug"
-						params={{ locale, slug: project.slug }}
-						className={`editorial-link inline-flex min-h-11 items-center font-medium text-text-primary ${focusRing}`}
-					>
-						{ui.projects.readCaseStudy}
-					</Link>
-				</li>
 				{project.url ? (
 					<li>
 						<a

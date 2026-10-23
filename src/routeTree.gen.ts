@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LocaleIndexRouteImport } from './routes/$locale/index'
 import { Route as LocaleExperimentsIndexRouteImport } from './routes/$locale/experiments/index'
-import { Route as LocaleWorkSlugRouteImport } from './routes/$locale/work/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -29,48 +28,34 @@ const LocaleExperimentsIndexRoute = LocaleExperimentsIndexRouteImport.update({
   path: '/$locale/experiments/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LocaleWorkSlugRoute = LocaleWorkSlugRouteImport.update({
-  id: '/$locale/work/$slug',
-  path: '/$locale/work/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$locale/': typeof LocaleIndexRoute
-  '/$locale/work/$slug': typeof LocaleWorkSlugRoute
   '/$locale/experiments/': typeof LocaleExperimentsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$locale': typeof LocaleIndexRoute
-  '/$locale/work/$slug': typeof LocaleWorkSlugRoute
   '/$locale/experiments': typeof LocaleExperimentsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$locale/': typeof LocaleIndexRoute
-  '/$locale/work/$slug': typeof LocaleWorkSlugRoute
   '/$locale/experiments/': typeof LocaleExperimentsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$locale/' | '/$locale/work/$slug' | '/$locale/experiments/'
+  fullPaths: '/' | '/$locale/' | '/$locale/experiments/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$locale' | '/$locale/work/$slug' | '/$locale/experiments'
-  id:
-    | '__root__'
-    | '/'
-    | '/$locale/'
-    | '/$locale/work/$slug'
-    | '/$locale/experiments/'
+  to: '/' | '/$locale' | '/$locale/experiments'
+  id: '__root__' | '/' | '/$locale/' | '/$locale/experiments/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   LocaleIndexRoute: typeof LocaleIndexRoute
-  LocaleWorkSlugRoute: typeof LocaleWorkSlugRoute
   LocaleExperimentsIndexRoute: typeof LocaleExperimentsIndexRoute
 }
 
@@ -97,20 +82,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LocaleExperimentsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/$locale/work/$slug': {
-      id: '/$locale/work/$slug'
-      path: '/$locale/work/$slug'
-      fullPath: '/$locale/work/$slug'
-      preLoaderRoute: typeof LocaleWorkSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   LocaleIndexRoute: LocaleIndexRoute,
-  LocaleWorkSlugRoute: LocaleWorkSlugRoute,
   LocaleExperimentsIndexRoute: LocaleExperimentsIndexRoute,
 }
 export const routeTree = rootRouteImport
