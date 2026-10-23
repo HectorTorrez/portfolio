@@ -70,15 +70,3 @@ export const blinkProject = {
 	],
 	stack: ["SwiftUI", "Swift", "macOS"],
 } as const;
-
-export const caseStudySlugs = [
-	pantryProject.slug,
-	ticketsProject.slug,
-	blinkProject.slug,
-] as const;
-
-export type CaseStudySlug = (typeof caseStudySlugs)[number];
-
-export function isCaseStudySlug(value: string): value is CaseStudySlug {
-	return (caseStudySlugs as readonly string[]).includes(value);
-}

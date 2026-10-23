@@ -61,8 +61,6 @@ export const ui: UiStrings = {
 		source: "Código",
 		frontend: "Frontend",
 		backend: "Backend",
-		readCaseStudy: "Leer caso de estudio",
-		backToWork: "Volver a proyectos destacados",
 	},
 	experiments: {
 		label: "Labs",

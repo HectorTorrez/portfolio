@@ -8,16 +8,6 @@ const CONTACT_NEEDLES = {
 	es: ["Copiar correo", "LinkedIn", "GitHub", "CV"],
 };
 
-const CASE_STUDY_LINK = {
-	en: "Read case study",
-	es: "Leer caso de estudio",
-};
-
-const CASE_HEADINGS = {
-	en: ["Problem", "Decisions", "Outcome"],
-	es: ["Problema", "Decisiones", "Resultado"],
-};
-
 const ROLE_NEEDLE = {
 	en: /software engineer|full[ -]?stack/i,
 	es: /ingeniero de software|full[ -]?stack/i,
@@ -69,15 +59,6 @@ function checkHome(locale, html) {
 					"role",
 					`need software engineer or full-stack, got headline="${headline}" title="${title}"`,
 				),
-	);
-
-	const caseLinks = [...document.querySelectorAll("a")].filter((a) =>
-		(a.textContent ?? "").includes(CASE_STUDY_LINK[locale]),
-	);
-	results.push(
-		caseLinks.length >= 2
-			? pass("proof", `${caseLinks.length} case-study links`)
-			: fail("proof", `${caseLinks.length} case-study links, need ≥2`),
 	);
 
 	const jdk = [...document.querySelectorAll("article p")].find((p) =>
@@ -143,36 +124,15 @@ function checkHome(locale, html) {
 	return results;
 }
 
-function checkCaseStudy(locale, slug, html) {
-	const text = textOf(new JSDOM(html));
-	const missing = CASE_HEADINGS[locale].filter(
-		(heading) => !text.includes(heading),
-	);
-	return [
-		missing.length === 0
-			? pass(
-					`case-${locale}-${slug}`,
-					CASE_HEADINGS[locale].join(", "),
-				)
-			: fail(
-					`case-${locale}-${slug}`,
-					`missing ${missing.join(", ")}`,
-				),
-	];
-}
-
 function companies(html) {
 	const text = textOf(new JSDOM(html));
 	return ["JDK Tech", "BetaCode"].every((name) => text.includes(name));
 }
 
-function projectSlugs(html) {
+function projectNames(html) {
 	const dom = new JSDOM(html);
-	return [...dom.window.document.querySelectorAll('a[href*="/work/"]')]
-		.map((a) => {
-			const href = a.getAttribute("href") ?? "";
-			return href.split("/work/")[1] ?? "";
-		})
+	return [...dom.window.document.querySelectorAll("#projects h3")]
+		.map((heading) => heading.textContent?.trim() ?? "")
 		.filter(Boolean)
 		.sort();
 }
@@ -180,28 +140,20 @@ function projectSlugs(html) {
 async function main() {
 	const enHome = await fetchOk("/en");
 	const esHome = await fetchOk("/es");
-	const pantryEn = await fetchOk("/en/work/pantry");
-	const pantryEs = await fetchOk("/es/work/pantry");
-	const ticketsEn = await fetchOk("/en/work/tickets");
-	const ticketsEs = await fetchOk("/es/work/tickets");
 	const sitemap = await fetchOk("/sitemap.xml");
 
 	const results = [
 		...checkHome("en", enHome),
 		...checkHome("es", esHome),
-		...checkCaseStudy("en", "pantry", pantryEn),
-		...checkCaseStudy("es", "pantry", pantryEs),
-		...checkCaseStudy("en", "tickets", ticketsEn),
-		...checkCaseStudy("es", "tickets", ticketsEs),
 	];
 
-	const ticketsAws =
-		/aws/i.test(textOf(new JSDOM(ticketsEn))) &&
-		/aws/i.test(textOf(new JSDOM(ticketsEs)));
+	const homeAws =
+		/aws/i.test(textOf(new JSDOM(enHome))) &&
+		/aws/i.test(textOf(new JSDOM(esHome)));
 	results.push(
-		ticketsAws
-			? pass("tickets-aws", "AWS on EN and ES case studies")
-			: fail("tickets-aws", "Tickets case study must name AWS"),
+		homeAws
+			? pass("aws", "AWS on EN and ES homepages")
+			: fail("aws", "homepages must name AWS"),
 	);
 
 	const ticketRepos = (html) =>
@@ -213,16 +165,12 @@ async function main() {
 			),
 		];
 	const homeRepos = ticketRepos(enHome);
-	const caseRepos = ticketRepos(ticketsEn);
 	results.push(
-		homeRepos.length >= 2 && caseRepos.length >= 2
-			? pass(
-					"tickets-repos",
-					`home=${homeRepos.length} case=${caseRepos.length}`,
-				)
+		homeRepos.length >= 2
+			? pass("tickets-repos", `home=${homeRepos.length}`)
 			: fail(
 					"tickets-repos",
-					`need frontend and backend links, home=${homeRepos.length} case=${caseRepos.length}`,
+					`need frontend and backend links, home=${homeRepos.length}`,
 				),
 	);
 
@@ -235,12 +183,12 @@ async function main() {
 			: fail("jdk-fullstack", "homepages must name full-stack"),
 	);
 
-	const enSlugs = projectSlugs(enHome).join(",");
-	const esSlugs = projectSlugs(esHome).join(",");
+	const enProjects = projectNames(enHome).join(",");
+	const esProjects = projectNames(esHome).join(",");
 	results.push(
-		enSlugs === esSlugs && enSlugs.length > 0
-			? pass("bilingual-slugs", enSlugs)
-			: fail("bilingual-slugs", `en=${enSlugs} es=${esSlugs}`),
+		enProjects === esProjects && enProjects.length > 0
+			? pass("bilingual-projects", enProjects)
+			: fail("bilingual-projects", `en=${enProjects} es=${esProjects}`),
 	);
 	results.push(
 		companies(enHome) && companies(esHome)
@@ -248,16 +196,7 @@ async function main() {
 			: fail("bilingual-jobs", "a locale is missing JDK Tech or BetaCode"),
 	);
 
-	const slugs = [...new Set(projectSlugs(enHome).concat(projectSlugs(esHome)))];
 	const missingSitemap = [];
-	for (const slug of slugs) {
-		for (const locale of ["en", "es"]) {
-			const path = `/${locale}/work/${slug}`;
-			if (!sitemap.includes(path)) {
-				missingSitemap.push(path);
-			}
-		}
-	}
 	for (const path of ["/en/experiments", "/es/experiments"]) {
 		if (!sitemap.includes(path)) {
 			missingSitemap.push(path);
@@ -265,7 +204,7 @@ async function main() {
 	}
 	results.push(
 		missingSitemap.length === 0
-			? pass("sitemap", slugs.join(",") || "empty")
+			? pass("sitemap", "experiments")
 			: fail("sitemap", `missing ${missingSitemap.join(", ")}`),
 	);
 

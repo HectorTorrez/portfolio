@@ -1,7 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 
 import { type Locale, locales } from "#/content/locales";
-import { isCaseStudySlug } from "#/content/shared";
 
 import { focusRing } from "./focus-ring";
 import { useLocaleContent } from "./locale-context";
@@ -20,10 +19,6 @@ export function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
 	});
 
 	const segments = pathname.split("/").filter(Boolean);
-	const workSlug =
-		segments[1] === "work" && segments[2] && isCaseStudySlug(segments[2])
-			? segments[2]
-			: null;
 	const isExperiments = segments[1] === "experiments";
 
 	return (
@@ -36,18 +31,7 @@ export function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
 							/
 						</span>
 					) : null}
-					{workSlug ? (
-						<Link
-							to="/$locale/work/$slug"
-							params={{ locale: loc, slug: workSlug }}
-							aria-current={loc === locale ? "page" : undefined}
-							className={`pressable pressable-fade inline-flex min-h-11 min-w-9 items-center justify-center px-1.5 font-medium tracking-wide ${focusRing} ${
-								loc === locale ? "text-text-primary" : "text-text-muted"
-							}`}
-						>
-							{loc}
-						</Link>
-					) : isExperiments ? (
+					{isExperiments ? (
 						<Link
 							to="/$locale/experiments"
 							params={{ locale: loc }}
