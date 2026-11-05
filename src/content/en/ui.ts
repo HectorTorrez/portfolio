@@ -12,7 +12,7 @@ export const ui: UiStrings = {
 		skills: "Skills",
 		projects: "Selected work",
 		projectsBlurb:
-			"A live AI cooking app and a real-time ticketing platform with reserved seats.",
+			"A multi-tenant RAG platform that answers questions from your team's documents, with citations.",
 		experience: "Experience",
 		education: "Education",
 		contact: "Contact",
@@ -61,6 +61,15 @@ export const ui: UiStrings = {
 		source: "Source",
 		frontend: "Frontend",
 		backend: "Backend",
+		featured: "Featured project",
+		viewAll: "See all projects",
+	},
+	projectsPage: {
+		label: "Projects",
+		title: "More projects",
+		blurb:
+			"Other things I've built end to end: an AI cooking app, a real-time ticketing platform, and a native macOS notes app.",
+		backHome: "Back home",
 	},
 	experiments: {
 		label: "Labs",

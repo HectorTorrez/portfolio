@@ -5,15 +5,32 @@ import { useLocaleContent } from "./locale-context";
 import { ProjectSourceLinks } from "./project-source-links";
 import { SectionHeading } from "./section-heading";
 
-function ProjectArticle({ project }: { project: ProjectEntry }) {
+export function ProjectArticle({
+	project,
+	headingLevel = "h3",
+}: {
+	project: ProjectEntry;
+	headingLevel?: "h2" | "h3";
+}) {
 	const { ui } = useLocaleContent();
+	const Heading = headingLevel;
 
 	return (
 		<article>
-			<h3 className="text-lg text-text-primary md:text-xl">{project.name}</h3>
+			<Heading className="text-lg text-text-primary md:text-xl">
+				{project.name}
+			</Heading>
 			<p className="mt-2 max-w-prose text-pretty text-sm text-text-muted leading-relaxed md:text-base">
 				{project.description}
 			</p>
+
+			{project.highlights?.length ? (
+				<ul className="mt-4 max-w-prose list-disc space-y-1.5 pl-5 text-pretty text-sm text-text-muted leading-relaxed marker:text-text-faint md:text-[0.95rem]">
+					{project.highlights.map((highlight) => (
+						<li key={highlight}>{highlight}</li>
+					))}
+				</ul>
+			) : null}
 
 			<ul className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-sm">
 				{project.url ? (
@@ -46,7 +63,7 @@ function ProjectArticle({ project }: { project: ProjectEntry }) {
 }
 
 export function ProjectsSection() {
-	const { portfolio, ui } = useLocaleContent();
+	const { locale, portfolio, ui } = useLocaleContent();
 
 	return (
 		<section
@@ -60,13 +77,28 @@ export function ProjectsSection() {
 			>
 				{ui.sections.projects}
 			</SectionHeading>
-			<ul className="mt-8 flex flex-col gap-8">
-				{portfolio.projects.map((project) => (
-					<li key={project.slug}>
-						<ProjectArticle project={project} />
-					</li>
-				))}
-			</ul>
+
+			<div className="mt-8">
+				<p className="mb-2 text-text-faint text-xs uppercase tracking-wider">
+					{ui.projects.featured}
+				</p>
+				<ProjectArticle project={portfolio.featuredProject} />
+			</div>
+
+			{portfolio.projects.length > 0 ? (
+				<a
+					href={`/${locale}/projects`}
+					className={`editorial-link group mt-8 inline-flex min-h-11 items-center gap-1.5 text-sm text-text-primary ${focusRing}`}
+				>
+					{ui.projects.viewAll}
+					<span
+						aria-hidden
+						className="text-text-faint transition-transform duration-150 ease-out group-hover:translate-x-0.5"
+					>
+						→
+					</span>
+				</a>
+			) : null}
 		</section>
 	);
 }

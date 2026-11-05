@@ -33,6 +33,8 @@ export type ProjectEntry = {
 	url?: string;
 	sources?: readonly ProjectSource[];
 	stack: readonly string[];
+	/** Short proof points, shown for the featured project */
+	highlights?: readonly string[];
 };
 
 export type PortfolioLinks = {
@@ -50,6 +52,9 @@ export type PortfolioContent = {
 	location: string;
 	skills: readonly string[];
 	experience: ExperienceEntry[];
+	/** Lead project, shown on the home page */
+	featuredProject: ProjectEntry;
+	/** Remaining projects, listed on the projects page */
 	projects: ProjectEntry[];
 	education: EducationEntry[];
 	links: PortfolioLinks;
@@ -125,6 +130,14 @@ export type UiStrings = {
 		source: string;
 		frontend: string;
 		backend: string;
+		featured: string;
+		viewAll: string;
+	};
+	projectsPage: {
+		label: string;
+		title: string;
+		blurb: string;
+		backHome: string;
 	};
 	experiments: {
 		label: string;

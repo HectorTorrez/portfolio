@@ -18,6 +18,22 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://hectortorrez.com/en/projects</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hectortorrez.com/en/projects"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hectortorrez.com/es/projects"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hectortorrez.com/en/projects"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hectortorrez.com/es/projects</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hectortorrez.com/en/projects"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hectortorrez.com/es/projects"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hectortorrez.com/en/projects"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://hectortorrez.com/en/experiments</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://hectortorrez.com/en/experiments"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://hectortorrez.com/es/experiments"/>

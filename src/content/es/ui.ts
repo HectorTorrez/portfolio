@@ -12,7 +12,7 @@ export const ui: UiStrings = {
 		skills: "Habilidades",
 		projects: "Proyectos destacados",
 		projectsBlurb:
-			"Una app de cocina con IA en vivo y una plataforma de tickets en tiempo real con asientos reservados.",
+			"Una plataforma RAG multi-tenant que responde preguntas a partir de los documentos de tu equipo, con citas.",
 		experience: "Experiencia",
 		education: "Educación",
 		contact: "Contacto",
@@ -61,6 +61,15 @@ export const ui: UiStrings = {
 		source: "Código",
 		frontend: "Frontend",
 		backend: "Backend",
+		featured: "Proyecto destacado",
+		viewAll: "Ver todos los proyectos",
+	},
+	projectsPage: {
+		label: "Proyectos",
+		title: "Más proyectos",
+		blurb:
+			"Otras cosas que he construido de principio a fin: una app de cocina con IA, una plataforma de tickets en tiempo real y una app nativa de notas para macOS.",
+		backHome: "Volver al inicio",
 	},
 	experiments: {
 		label: "Labs",
