@@ -41,9 +41,9 @@ export function SiteHeader() {
 		...item,
 		resolvedHref: resolveNavHref(locale, item.href, isHome),
 		isCurrent:
-			item.href === "/experiments" &&
-			(pathname === `/${locale}/experiments` ||
-				pathname === `/${locale}/experiments/`),
+			item.href.startsWith("/") &&
+			(pathname === `/${locale}${item.href}` ||
+				pathname === `/${locale}${item.href}/`),
 	}));
 
 	return (

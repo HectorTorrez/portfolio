@@ -1,5 +1,6 @@
 import {
 	blinkProject,
+	knowledgeHubProject,
 	pantryProject,
 	portfolioLinks,
 	portfolioSiteBase,
@@ -73,6 +74,17 @@ export const portfolio: PortfolioContent = {
 			],
 		},
 	],
+	featuredProject: {
+		...knowledgeHubProject,
+		description:
+			"Multi-tenant RAG SaaS where teams upload their documents and get grounded, cited answers. A NestJS API owns auth, organizations, ingestion, and retrieval; a TanStack Start app streams answers back over SSE.",
+		highlights: [
+			"Hybrid retrieval: pgvector embeddings plus PostgreSQL full-text search, with query rewriting before generation.",
+			"Every answer cites its source chunks, with an evaluation suite that checks citation validity.",
+			"Organizations, roles, and invitations, plus per-tenant rate limits and usage quotas to keep LLM spend bounded.",
+			"Presigned uploads to Cloudflare R2 and a background processing pipeline for extraction, chunking, and embedding.",
+		],
+	},
 	projects: [
 		{
 			...blinkProject,

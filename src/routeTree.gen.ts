@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LocaleIndexRouteImport } from './routes/$locale/index'
+import { Route as LocaleProjectsIndexRouteImport } from './routes/$locale/projects/index'
 import { Route as LocaleExperimentsIndexRouteImport } from './routes/$locale/experiments/index'
 
 const IndexRoute = IndexRouteImport.update({
@@ -23,6 +24,11 @@ const LocaleIndexRoute = LocaleIndexRouteImport.update({
   path: '/$locale/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LocaleProjectsIndexRoute = LocaleProjectsIndexRouteImport.update({
+  id: '/$locale/projects/',
+  path: '/$locale/projects/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LocaleExperimentsIndexRoute = LocaleExperimentsIndexRouteImport.update({
   id: '/$locale/experiments/',
   path: '/$locale/experiments/',
@@ -33,30 +39,39 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$locale/': typeof LocaleIndexRoute
   '/$locale/experiments/': typeof LocaleExperimentsIndexRoute
+  '/$locale/projects/': typeof LocaleProjectsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$locale': typeof LocaleIndexRoute
   '/$locale/experiments': typeof LocaleExperimentsIndexRoute
+  '/$locale/projects': typeof LocaleProjectsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$locale/': typeof LocaleIndexRoute
   '/$locale/experiments/': typeof LocaleExperimentsIndexRoute
+  '/$locale/projects/': typeof LocaleProjectsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$locale/' | '/$locale/experiments/'
+  fullPaths: '/' | '/$locale/' | '/$locale/experiments/' | '/$locale/projects/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$locale' | '/$locale/experiments'
-  id: '__root__' | '/' | '/$locale/' | '/$locale/experiments/'
+  to: '/' | '/$locale' | '/$locale/experiments' | '/$locale/projects'
+  id:
+    | '__root__'
+    | '/'
+    | '/$locale/'
+    | '/$locale/experiments/'
+    | '/$locale/projects/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   LocaleIndexRoute: typeof LocaleIndexRoute
   LocaleExperimentsIndexRoute: typeof LocaleExperimentsIndexRoute
+  LocaleProjectsIndexRoute: typeof LocaleProjectsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -75,6 +90,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LocaleIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$locale/projects/': {
+      id: '/$locale/projects/'
+      path: '/$locale/projects'
+      fullPath: '/$locale/projects/'
+      preLoaderRoute: typeof LocaleProjectsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/$locale/experiments/': {
       id: '/$locale/experiments/'
       path: '/$locale/experiments'
@@ -89,6 +111,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   LocaleIndexRoute: LocaleIndexRoute,
   LocaleExperimentsIndexRoute: LocaleExperimentsIndexRoute,
+  LocaleProjectsIndexRoute: LocaleProjectsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -30,6 +30,28 @@ export const portfolioSkills = [
 	"Docker",
 ] as const;
 
+export const knowledgeHubProject = {
+	name: "KnowledgeHub AI",
+	slug: "knowledgehub-ai",
+	sources: [
+		{
+			kind: "source",
+			href: "https://github.com/HectorTorrez/knowledgehub-ai",
+		},
+	],
+	stack: [
+		"NestJS",
+		"TanStack Start",
+		"PostgreSQL",
+		"pgvector",
+		"Prisma",
+		"OpenAI",
+		"Redis",
+		"Cloudflare R2",
+		"Railway",
+	],
+} as const;
+
 export const pantryProject = {
 	name: "Pantry",
 	slug: "pantry",
