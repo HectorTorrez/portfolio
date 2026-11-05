@@ -33,6 +33,7 @@ export const portfolioSkills = [
 export const knowledgeHubProject = {
 	name: "KnowledgeHub AI",
 	slug: "knowledgehub-ai",
+	url: "https://app.knowledgehubai.dev/",
 	sources: [
 		{
 			kind: "source",
