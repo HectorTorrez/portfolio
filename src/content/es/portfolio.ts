@@ -83,7 +83,6 @@ export const portfolio: PortfolioContent = {
 			"Recuperación híbrida: embeddings con pgvector más búsqueda de texto completo en PostgreSQL, con reescritura de consultas antes de generar.",
 			"Cada respuesta cita sus fragmentos de origen, con una suite de evaluación que verifica la validez de las citas.",
 			"Organizaciones, roles e invitaciones, además de límites de uso y cuotas por tenant para mantener acotado el gasto en LLM.",
-			"Subidas con URLs prefirmadas a Cloudflare R2 y un pipeline en segundo plano para extracción, fragmentación y embeddings.",
 		],
 	},
 	projects: [

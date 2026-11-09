@@ -82,7 +82,6 @@ export const portfolio: PortfolioContent = {
 			"Hybrid retrieval: pgvector embeddings plus PostgreSQL full-text search, with query rewriting before generation.",
 			"Every answer cites its source chunks, with an evaluation suite that checks citation validity.",
 			"Organizations, roles, and invitations, plus per-tenant rate limits and usage quotas to keep LLM spend bounded.",
-			"Presigned uploads to Cloudflare R2 and a background processing pipeline for extraction, chunking, and embedding.",
 		],
 	},
 	projects: [
