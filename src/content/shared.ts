@@ -40,45 +40,6 @@ export const knowledgeHubProject = {
 			href: "https://github.com/HectorTorrez/knowledgehub-ai",
 		},
 	],
-	stack: [
-		"NestJS",
-		"TanStack Start",
-		"PostgreSQL",
-		"pgvector",
-		"Prisma",
-		"OpenAI",
-		"Redis",
-		"Railway",
-	],
-} as const;
-
-export const pantryProject = {
-	name: "Pantry",
-	slug: "pantry",
-	url: "https://recipe-generator-web.torrezhectorb.workers.dev/",
-	sources: [
-		{
-			kind: "source",
-			href: "https://github.com/HectorTorrez/recipe-generator",
-		},
-	],
-	stack: ["TanStack Start", "Cloudflare Workers", "Workers AI", "D1"],
-} as const;
-
-export const ticketsProject = {
-	name: "Tickets",
-	slug: "tickets",
-	sources: [
-		{
-			kind: "frontend",
-			href: "https://github.com/HectorTorrez/ticket-frontend",
-		},
-		{
-			kind: "backend",
-			href: "https://github.com/HectorTorrez/ticket-api",
-		},
-	],
-	stack: ["TanStack Start", "NestJS", "PostgreSQL", "Socket.IO", "AWS"],
 } as const;
 
 export const blinkProject = {
@@ -90,5 +51,4 @@ export const blinkProject = {
 			href: "https://github.com/HectorTorrez/nook-notes",
 		},
 	],
-	stack: ["SwiftUI", "Swift", "macOS"],
 } as const;

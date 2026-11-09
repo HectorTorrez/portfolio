@@ -3,7 +3,7 @@ import type { ExperienceEntry } from "#/content/types";
 export function ExperienceJob({ job }: { job: ExperienceEntry }) {
 	return (
 		<article>
-			<header className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+			<header className="flex flex-col gap-1 xl:flex-row xl:items-baseline xl:justify-between xl:gap-4">
 				<div>
 					<h3 className="font-medium text-base text-text-primary md:text-lg">
 						{job.role}

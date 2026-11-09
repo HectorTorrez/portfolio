@@ -4,15 +4,13 @@ export const ui: UiStrings = {
 	skipToContent: "Saltar al contenido principal",
 	nav: [
 		{ href: "#projects", label: "Proyectos" },
-		{ href: "/experiments", label: "Labs" },
 		{ href: "#experience", label: "Experiencia" },
 		{ href: "#contact", label: "Contacto" },
 	],
 	sections: {
 		skills: "Habilidades",
 		projects: "Proyectos destacados",
-		projectsBlurb:
-			"Una plataforma RAG multi-tenant que responde preguntas a partir de los documentos de tu equipo, con citas.",
+		projectsBlurb: "Productos propios, de la idea a la experiencia.",
 		experience: "Experiencia",
 		education: "Educación",
 		contact: "Contacto",
@@ -21,12 +19,16 @@ export const ui: UiStrings = {
 		linkedInProfile: "LinkedIn",
 		githubProfile: "GitHub",
 		email: "Correo",
+		title: "¿Construimos algo juntos?",
+		blurb:
+			"Estoy abierto a nuevas oportunidades y conversaciones sobre producto y software.",
 		resume: "CV",
 	},
 	hero: {
 		status: "Abierto a roles Frontend / Full-Stack",
 		workArrangement: "Remoto · horarios de EE. UU. (CST)",
-		emailMe: "Escríbeme",
+		emailMe: "Contactarme",
+		viewProjects: "Ver proyectos",
 		linkedIn: "LinkedIn",
 		github: "GitHub",
 		resume: "CV (PDF)",
@@ -57,7 +59,7 @@ export const ui: UiStrings = {
 	},
 	projects: {
 		visitProject: (name) => `Visitar ${name} (se abre en una nueva pestaña)`,
-		liveDemo: "Demo en vivo",
+		liveDemo: "Explorar proyecto",
 		source: "Código",
 		frontend: "Frontend",
 		backend: "Backend",
@@ -66,54 +68,8 @@ export const ui: UiStrings = {
 	},
 	projectsPage: {
 		label: "Proyectos",
-		title: "Más proyectos",
-		blurb:
-			"Otras cosas que he construido de principio a fin: una app de cocina con IA, una plataforma de tickets en tiempo real y una app nativa de notas para macOS.",
+		title: "Proyectos",
+		blurb: "Una selección de productos que he construido.",
 		backHome: "Volver al inicio",
-	},
-	experiments: {
-		label: "Labs",
-		title: "Experimentos",
-		blurb:
-			"Pequeñas exploraciones interactivas — interacciones, motion e ideas de UI que estoy probando.",
-		backHome: "Volver al inicio",
-		items: {
-			dynamicIsland: {
-				title: "Dynamic Island",
-				description:
-					"Una isla al estilo iPhone que pasa de una píldora compacta de reproducción a un control de música completo.",
-			},
-			signatureCard: {
-				title: "Tarjeta con firma",
-				description:
-					"Edita los campos abajo — la tarjeta se actualiza en vivo, y la firma es la ruta QWERTY de tu nombre en un solo trazo.",
-			},
-		},
-		dynamicIsland: {
-			expand: "Expandir reproductor",
-			collapse: "Contraer reproductor",
-			play: "Reproducir",
-			pause: "Pausar",
-			next: "Siguiente pista",
-			previous: "Pista anterior",
-			nowPlaying: (title, artist) => `Reproduciendo ${title} de ${artist}`,
-		},
-		signatureCard: {
-			cardLabel: "Titular",
-			nameLabel: "Nombre",
-			namePlaceholder: "TU NOMBRE",
-			networkLabel: "Red",
-			networkPlaceholder: "visa",
-			expiryLabel: "Caducidad",
-			expiryPlaceholder: "MM/AA",
-			last4Label: "Últimos 4",
-			last4Placeholder: "4242",
-			defaultName: "Hector",
-			defaultNetwork: "visa",
-			defaultExpiry: "12/28",
-			defaultLast4: "4242",
-			signedAs: "Firma autorizada",
-			hint: "La firma sigue la ruta QWERTY del nombre — H → E → C → T → O → R",
-		},
 	},
 };

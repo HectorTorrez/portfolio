@@ -32,9 +32,7 @@ export type ProjectEntry = {
 	description: string;
 	url?: string;
 	sources?: readonly ProjectSource[];
-	stack: readonly string[];
-	/** Short proof points, shown for the featured project */
-	highlights?: readonly string[];
+	category: string;
 };
 
 export type PortfolioLinks = {
@@ -92,12 +90,15 @@ export type UiStrings = {
 		linkedInProfile: string;
 		githubProfile: string;
 		email: string;
+		title: string;
+		blurb: string;
 		resume: string;
 	};
 	hero: {
 		status: string;
 		workArrangement: string;
 		emailMe: string;
+		viewProjects: string;
 		linkedIn: string;
 		github: string;
 		resume: string;
@@ -138,48 +139,6 @@ export type UiStrings = {
 		title: string;
 		blurb: string;
 		backHome: string;
-	};
-	experiments: {
-		label: string;
-		title: string;
-		blurb: string;
-		backHome: string;
-		items: {
-			dynamicIsland: {
-				title: string;
-				description: string;
-			};
-			signatureCard: {
-				title: string;
-				description: string;
-			};
-		};
-		dynamicIsland: {
-			expand: string;
-			collapse: string;
-			play: string;
-			pause: string;
-			next: string;
-			previous: string;
-			nowPlaying: (title: string, artist: string) => string;
-		};
-		signatureCard: {
-			cardLabel: string;
-			nameLabel: string;
-			namePlaceholder: string;
-			networkLabel: string;
-			networkPlaceholder: string;
-			expiryLabel: string;
-			expiryPlaceholder: string;
-			last4Label: string;
-			last4Placeholder: string;
-			defaultName: string;
-			defaultNetwork: string;
-			defaultExpiry: string;
-			defaultLast4: string;
-			signedAs: string;
-			hint: string;
-		};
 	};
 };
 

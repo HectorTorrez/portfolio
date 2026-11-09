@@ -11,15 +11,9 @@ type LocaleSwitcherProps = {
 
 export function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
 	const { ui } = useLocaleContent();
-	const { hash, pathname } = useRouterState({
-		select: (state) => ({
-			hash: state.location.hash,
-			pathname: state.location.pathname,
-		}),
+	const hash = useRouterState({
+		select: (state) => state.location.hash,
 	});
-
-	const segments = pathname.split("/").filter(Boolean);
-	const isExperiments = segments[1] === "experiments";
 
 	return (
 		<fieldset className="m-0 flex min-w-0 items-center gap-1 border-0 p-0 text-xs text-text-muted">
@@ -31,30 +25,17 @@ export function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
 							/
 						</span>
 					) : null}
-					{isExperiments ? (
-						<Link
-							to="/$locale/experiments"
-							params={{ locale: loc }}
-							aria-current={loc === locale ? "page" : undefined}
-							className={`pressable pressable-fade inline-flex min-h-11 min-w-9 items-center justify-center px-1.5 font-medium tracking-wide ${focusRing} ${
-								loc === locale ? "text-text-primary" : "text-text-muted"
-							}`}
-						>
-							{loc}
-						</Link>
-					) : (
-						<Link
-							to="/$locale"
-							params={{ locale: loc }}
-							hash={hash || undefined}
-							aria-current={loc === locale ? "page" : undefined}
-							className={`pressable pressable-fade inline-flex min-h-11 min-w-9 items-center justify-center px-1.5 font-medium tracking-wide ${focusRing} ${
-								loc === locale ? "text-text-primary" : "text-text-muted"
-							}`}
-						>
-							{loc}
-						</Link>
-					)}
+					<Link
+						to="/$locale"
+						params={{ locale: loc }}
+						hash={hash || undefined}
+						aria-current={loc === locale ? "page" : undefined}
+						className={`pressable pressable-fade inline-flex min-h-11 min-w-9 items-center justify-center px-1.5 font-medium tracking-wide ${focusRing} ${
+							loc === locale ? "text-text-primary" : "text-text-muted"
+						}`}
+					>
+						{loc}
+					</Link>
 				</span>
 			))}
 		</fieldset>

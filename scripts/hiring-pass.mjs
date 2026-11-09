@@ -197,14 +197,14 @@ async function main() {
 	);
 
 	const missingSitemap = [];
-	for (const path of ["/en/experiments", "/es/experiments"]) {
+	for (const path of ["/en", "/es", "/en/projects", "/es/projects"]) {
 		if (!sitemap.includes(path)) {
 			missingSitemap.push(path);
 		}
 	}
 	results.push(
 		missingSitemap.length === 0
-			? pass("sitemap", "experiments")
+			? pass("sitemap", "homepages and projects")
 			: fail("sitemap", `missing ${missingSitemap.join(", ")}`),
 	);
 

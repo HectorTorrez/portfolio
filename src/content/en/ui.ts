@@ -4,15 +4,13 @@ export const ui: UiStrings = {
 	skipToContent: "Skip to main content",
 	nav: [
 		{ href: "#projects", label: "Work" },
-		{ href: "/experiments", label: "Labs" },
 		{ href: "#experience", label: "Experience" },
 		{ href: "#contact", label: "Contact" },
 	],
 	sections: {
 		skills: "Skills",
 		projects: "Selected work",
-		projectsBlurb:
-			"A multi-tenant RAG platform that answers questions from your team's documents, with citations.",
+		projectsBlurb: "Independent products, from idea to experience.",
 		experience: "Experience",
 		education: "Education",
 		contact: "Contact",
@@ -21,12 +19,16 @@ export const ui: UiStrings = {
 		linkedInProfile: "LinkedIn",
 		githubProfile: "GitHub",
 		email: "Email",
+		title: "Let’s build something together.",
+		blurb:
+			"I’m open to new opportunities and conversations about products and software.",
 		resume: "CV",
 	},
 	hero: {
 		status: "Open to Frontend / Full-Stack roles",
 		workArrangement: "Remote · US time zones (CST)",
-		emailMe: "Email me",
+		emailMe: "Get in touch",
+		viewProjects: "See projects",
 		linkedIn: "LinkedIn",
 		github: "GitHub",
 		resume: "CV (PDF)",
@@ -57,7 +59,7 @@ export const ui: UiStrings = {
 	},
 	projects: {
 		visitProject: (name) => `Visit ${name} (opens in new tab)`,
-		liveDemo: "Live demo",
+		liveDemo: "Explore project",
 		source: "Source",
 		frontend: "Frontend",
 		backend: "Backend",
@@ -66,54 +68,8 @@ export const ui: UiStrings = {
 	},
 	projectsPage: {
 		label: "Projects",
-		title: "More projects",
-		blurb:
-			"Other things I've built end to end: an AI cooking app, a real-time ticketing platform, and a native macOS notes app.",
+		title: "Projects",
+		blurb: "A selection of products I’ve built.",
 		backHome: "Back home",
-	},
-	experiments: {
-		label: "Labs",
-		title: "Experiments",
-		blurb:
-			"Small interactive explorations — interactions, motion, and UI ideas I'm trying out.",
-		backHome: "Back home",
-		items: {
-			dynamicIsland: {
-				title: "Dynamic Island",
-				description:
-					"An iPhone-style island that morphs from a compact now-playing pill into a full music control.",
-			},
-			signatureCard: {
-				title: "Signature Card",
-				description:
-					"Edit the fields below — the card updates live, and the signature is your name’s QWERTY swipe path as one continuous stroke.",
-			},
-		},
-		dynamicIsland: {
-			expand: "Expand player",
-			collapse: "Collapse player",
-			play: "Play",
-			pause: "Pause",
-			next: "Next track",
-			previous: "Previous track",
-			nowPlaying: (title, artist) => `Now playing ${title} by ${artist}`,
-		},
-		signatureCard: {
-			cardLabel: "Cardholder",
-			nameLabel: "Name",
-			namePlaceholder: "YOUR NAME",
-			networkLabel: "Network",
-			networkPlaceholder: "visa",
-			expiryLabel: "Expiry",
-			expiryPlaceholder: "MM/YY",
-			last4Label: "Last 4",
-			last4Placeholder: "4242",
-			defaultName: "Hector",
-			defaultNetwork: "visa",
-			defaultExpiry: "12/28",
-			defaultLast4: "4242",
-			signedAs: "Authorized signature",
-			hint: "The signature follows the QWERTY path of the name — H → E → C → T → O → R",
-		},
 	},
 };

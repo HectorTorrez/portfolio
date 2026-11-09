@@ -31,7 +31,7 @@ function ProjectsPageContent() {
 			<SiteHeader />
 
 			<main id="main-content" className="overflow-x-hidden">
-				<div className="content-column pb-16 pt-10 md:pb-20 md:pt-14">
+				<div className="portfolio-column pb-16 pt-10 md:pb-20 md:pt-14">
 					<a
 						href={`/${locale}`}
 						className={`editorial-link inline-flex min-h-11 items-center text-sm text-text-muted ${focusRing}`}
@@ -49,12 +49,14 @@ function ProjectsPageContent() {
 						</p>
 					</header>
 
-					<ul className="stagger-children mt-12 flex flex-col gap-10 md:mt-14 md:gap-12">
-						{portfolio.projects.map((project) => (
-							<li key={project.slug}>
-								<ProjectArticle project={project} headingLevel="h2" />
-							</li>
-						))}
+					<ul className="stagger-children mt-12 grid grid-cols-1 gap-x-12 gap-y-10 md:mt-14 md:grid-cols-2 md:gap-y-14">
+						{[portfolio.featuredProject, ...portfolio.projects].map(
+							(project) => (
+								<li key={project.slug}>
+									<ProjectArticle project={project} headingLevel="h2" />
+								</li>
+							),
+						)}
 					</ul>
 				</div>
 			</main>

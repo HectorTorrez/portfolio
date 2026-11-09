@@ -48,7 +48,7 @@ export function SiteHeader() {
 
 	return (
 		<header className="sticky top-0 z-50 bg-surface-base/80 backdrop-blur-md">
-			<div className="content-column flex items-center justify-between gap-3 py-4">
+			<div className="portfolio-column flex items-center justify-between gap-3 py-4">
 				<a
 					href={homeHref}
 					className={`editorial-link shrink-0 font-medium text-sm tracking-tight no-underline ${focusRing}`}
@@ -112,7 +112,7 @@ export function SiteHeader() {
 				<nav
 					id={mobileMenuId}
 					aria-label={ui.a11y.pageSections}
-					className="content-column border-border-subtle border-b pb-3 sm:hidden"
+					className="portfolio-column border-border-subtle border-b pb-3 sm:hidden"
 				>
 					<ul className="flex flex-col">
 						{navItems.map((item) => (

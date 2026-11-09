@@ -8,10 +8,10 @@ export function SkillsSection() {
 		<section
 			id="skills"
 			aria-labelledby="skills-heading"
-			className="section-reveal scroll-mt-24 content-column py-12 md:py-16"
+			className="section-reveal scroll-mt-24 portfolio-column section-layout py-12 md:py-20"
 		>
 			<SectionHeading id="skills-heading">{ui.sections.skills}</SectionHeading>
-			<p className="mt-6 text-pretty text-sm text-text-muted leading-relaxed md:text-base">
+			<p className="section-body text-pretty text-sm text-text-muted leading-relaxed md:text-base">
 				{portfolio.skills.join(" · ")}
 			</p>
 		</section>

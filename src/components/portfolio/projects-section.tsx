@@ -16,22 +16,29 @@ export function ProjectArticle({
 	const Heading = headingLevel;
 
 	return (
-		<article>
-			<Heading className="text-lg text-text-primary md:text-xl">
-				{project.name}
+		<article className="border-t border-border-strong pt-7">
+			<Heading className="font-medium text-2xl tracking-tight text-text-primary md:text-3xl">
+				{project.url ? (
+					<a
+						href={project.url}
+						target="_blank"
+						rel="noopener noreferrer"
+						className={`editorial-link inline-flex min-h-11 items-center gap-3 ${focusRing}`}
+						aria-label={ui.projects.visitProject(project.name)}
+					>
+						{project.name}
+						<span aria-hidden className="text-lg text-text-faint">
+							↗
+						</span>
+					</a>
+				) : (
+					project.name
+				)}
 			</Heading>
-			<p className="mt-2 max-w-prose text-pretty text-sm text-text-muted leading-relaxed md:text-base">
+			<p className="mt-3 max-w-xl text-pretty text-base text-text-muted leading-relaxed md:text-lg">
 				{project.description}
 			</p>
-
-			{project.highlights?.length ? (
-				<ul className="mt-4 max-w-prose list-disc space-y-1.5 pl-5 text-pretty text-sm text-text-muted leading-relaxed marker:text-text-faint md:text-[0.95rem]">
-					{project.highlights.map((highlight) => (
-						<li key={highlight}>{highlight}</li>
-					))}
-				</ul>
-			) : null}
-
+			<p className="mt-5 text-sm text-text-faint">{project.category}</p>
 			<ul className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-sm">
 				{project.url ? (
 					<li>
@@ -39,25 +46,16 @@ export function ProjectArticle({
 							href={project.url}
 							target="_blank"
 							rel="noopener noreferrer"
-							className={`editorial-link group inline-flex min-h-11 items-center gap-1.5 text-text-muted ${focusRing}`}
+							className={`editorial-link inline-flex min-h-11 items-center gap-2 ${focusRing}`}
 						>
 							{ui.projects.liveDemo}
-							<span
-								aria-hidden
-								className="text-text-faint text-sm transition-colors duration-150 ease-out group-hover:text-text-primary"
-							>
-								↗
-							</span>
+							<span aria-hidden>↗</span>
 							<span className="sr-only"> {ui.a11y.opensInNewTab}</span>
 						</a>
 					</li>
 				) : null}
 				<ProjectSourceLinks project={project} />
 			</ul>
-
-			<p className="mt-3 text-sm text-text-faint">
-				{project.stack.join(" · ")}
-			</p>
 		</article>
 	);
 }
@@ -69,7 +67,7 @@ export function ProjectsSection() {
 		<section
 			id="projects"
 			aria-labelledby="projects-heading"
-			className="section-reveal scroll-mt-24 content-column py-12 md:py-16"
+			className="section-reveal scroll-mt-24 portfolio-column section-layout py-12 md:py-20"
 		>
 			<SectionHeading
 				id="projects-heading"
@@ -77,28 +75,18 @@ export function ProjectsSection() {
 			>
 				{ui.sections.projects}
 			</SectionHeading>
-
-			<div className="mt-8">
-				<p className="mb-2 text-text-faint text-xs uppercase tracking-wider">
-					{ui.projects.featured}
-				</p>
+			<div className="section-body">
 				<ProjectArticle project={portfolio.featuredProject} />
-			</div>
-
-			{portfolio.projects.length > 0 ? (
-				<a
-					href={`/${locale}/projects`}
-					className={`editorial-link group mt-8 inline-flex min-h-11 items-center gap-1.5 text-sm text-text-primary ${focusRing}`}
-				>
-					{ui.projects.viewAll}
-					<span
-						aria-hidden
-						className="text-text-faint transition-transform duration-150 ease-out group-hover:translate-x-0.5"
+				{portfolio.projects.length > 0 ? (
+					<a
+						href={`/${locale}/projects`}
+						className={`editorial-link mt-6 inline-flex min-h-11 items-center gap-3 text-sm ${focusRing}`}
 					>
-						→
-					</span>
-				</a>
-			) : null}
+						{ui.projects.viewAll}
+						<span aria-hidden>→</span>
+					</a>
+				) : null}
+			</div>
 		</section>
 	);
 }

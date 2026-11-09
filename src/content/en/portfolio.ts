@@ -1,11 +1,9 @@
 import {
 	blinkProject,
 	knowledgeHubProject,
-	pantryProject,
 	portfolioLinks,
 	portfolioSiteBase,
 	portfolioSkills,
-	ticketsProject,
 } from "../shared";
 import type { PortfolioContent, PortfolioMeta, PortfolioSite } from "../types";
 
@@ -24,11 +22,10 @@ export const portfolioMeta: PortfolioMeta = {
 
 export const portfolio: PortfolioContent = {
 	name: "Hector Torrez",
-	headline: "Full-Stack Software Engineer · React, TypeScript, Node.js",
+	headline: "Full-stack software engineer",
 	heroSubtitle:
-		"I ship product features end to end: React and TypeScript on the frontend, and Node.js APIs on the backend. Three years across ERP, logistics, e-commerce, and SaaS.",
-	heroSupportingText:
-		"I lead frontend architecture for ERP and logistics platforms at JDK Tech, with Next.js and TanStack. On my own projects I own the whole stack: NestJS, PostgreSQL, Cloudflare, and AWS.",
+		"I like building products and caring for the details that make them feel good to use.",
+	heroSupportingText: "From the first idea to a product in people’s hands.",
 	location: "El Salvador",
 	skills: portfolioSkills,
 	experience: [
@@ -77,28 +74,15 @@ export const portfolio: PortfolioContent = {
 	featuredProject: {
 		...knowledgeHubProject,
 		description:
-			"Multi-tenant RAG SaaS where teams upload their documents and get grounded, cited answers. A NestJS API owns auth, organizations, ingestion, and retrieval; a TanStack Start app streams answers back over SSE.",
-		highlights: [
-			"Hybrid retrieval: pgvector embeddings plus PostgreSQL full-text search, with query rewriting before generation.",
-			"Every answer cites its source chunks, with an evaluation suite that checks citation validity.",
-			"Organizations, roles, and invitations, plus per-tenant rate limits and usage quotas to keep LLM spend bounded.",
-		],
+			"A place for teams to ask questions about their documents and find clear answers, with references to the original information.",
+		category: "Knowledge · AI",
 	},
 	projects: [
 		{
 			...blinkProject,
 			description:
-				"A tiny, glassy, floating notes window for macOS. Open it, jot it down, get back to work; notes save locally as JSON, with workspaces, quick search, and a keyboard-first action panel.",
-		},
-		{
-			...pantryProject,
-			description:
-				"AI recipe generator that turns pantry ingredients and cooking time into usable meal ideas, with dietary filters, cook mode, favorites, and a shopping list.",
-		},
-		{
-			...ticketsProject,
-			description:
-				"Event ticketing with reserved checkout, QR tickets, and live seat inventory. Public catalog, customer tickets, and an organizer dashboard with a gate scanner.",
+				"Notes within reach, without breaking your flow. A small floating window to capture an idea and get back to work.",
+			category: "Productivity · macOS",
 		},
 	],
 	education: [

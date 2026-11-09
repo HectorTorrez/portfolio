@@ -9,12 +9,12 @@ export function ExperienceSection() {
 		<section
 			id="experience"
 			aria-labelledby="experience-heading"
-			className="section-reveal scroll-mt-24 content-column py-12 md:py-16"
+			className="section-reveal scroll-mt-24 portfolio-column section-layout py-12 md:py-20"
 		>
 			<SectionHeading id="experience-heading">
 				{ui.sections.experience}
 			</SectionHeading>
-			<div className="mt-8 flex flex-col gap-10">
+			<div className="section-body flex flex-col gap-10">
 				{portfolio.experience.map((job) => (
 					<ExperienceJob key={`${job.company}-${job.start}`} job={job} />
 				))}

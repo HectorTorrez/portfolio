@@ -8,12 +8,12 @@ export function EducationSection() {
 		<section
 			id="education"
 			aria-labelledby="education-heading"
-			className="section-reveal scroll-mt-24 content-column py-12 md:py-16"
+			className="section-reveal scroll-mt-24 portfolio-column section-layout py-12 md:py-20"
 		>
 			<SectionHeading id="education-heading">
 				{ui.sections.education}
 			</SectionHeading>
-			<ul className="mt-8 flex flex-col gap-6">
+			<ul className="section-body flex flex-col gap-6">
 				{portfolio.education.map((edu) => (
 					<li key={`${edu.institution}-${edu.period}`}>
 						<article>

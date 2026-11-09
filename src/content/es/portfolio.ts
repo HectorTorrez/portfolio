@@ -1,11 +1,9 @@
 import {
 	blinkProject,
 	knowledgeHubProject,
-	pantryProject,
 	portfolioLinks,
 	portfolioSiteBase,
 	portfolioSkills,
-	ticketsProject,
 } from "../shared";
 import type { PortfolioContent, PortfolioMeta, PortfolioSite } from "../types";
 
@@ -25,11 +23,11 @@ export const portfolioMeta: PortfolioMeta = {
 
 export const portfolio: PortfolioContent = {
 	name: "Hector Torrez",
-	headline: "Ingeniero de software full-stack · React, TypeScript, Node.js",
+	headline: "Ingeniero de software full-stack",
 	heroSubtitle:
-		"Entrego funcionalidades de punta a punta: React y TypeScript en el frontend, y APIs en Node.js en el backend. Tres años en ERP, logística, e-commerce y SaaS.",
+		"Me gusta construir productos y cuidar los detalles que hacen que usarlos se sienta bien.",
 	heroSupportingText:
-		"Lidero la arquitectura frontend de plataformas de ERP y logística en JDK Tech, con Next.js y TanStack. En mis propios proyectos llevo todo el stack: NestJS, PostgreSQL, Cloudflare y AWS.",
+		"Desde la primera idea hasta el producto en manos de las personas.",
 	location: "El Salvador",
 	skills: portfolioSkills,
 	experience: [
@@ -78,28 +76,15 @@ export const portfolio: PortfolioContent = {
 	featuredProject: {
 		...knowledgeHubProject,
 		description:
-			"SaaS de RAG multi-tenant donde los equipos suben sus documentos y obtienen respuestas fundamentadas y con citas. Una API en NestJS gestiona autenticación, organizaciones, ingesta y recuperación; una app en TanStack Start transmite las respuestas por SSE.",
-		highlights: [
-			"Recuperación híbrida: embeddings con pgvector más búsqueda de texto completo en PostgreSQL, con reescritura de consultas antes de generar.",
-			"Cada respuesta cita sus fragmentos de origen, con una suite de evaluación que verifica la validez de las citas.",
-			"Organizaciones, roles e invitaciones, además de límites de uso y cuotas por tenant para mantener acotado el gasto en LLM.",
-		],
+			"Un espacio donde los equipos pueden consultar sus documentos y encontrar respuestas claras, con referencias a la información original.",
+		category: "Conocimiento · IA",
 	},
 	projects: [
 		{
 			...blinkProject,
 			description:
-				"Una ventana de notas mínima, translúcida y flotante para macOS. Ábrela, escribe y vuelve al trabajo; las notas se guardan en JSON local, con espacios de trabajo, búsqueda rápida y un panel de acciones orientado al teclado.",
-		},
-		{
-			...pantryProject,
-			description:
-				"Generador de recetas con IA que convierte ingredientes de la despensa y el tiempo de cocción en ideas útiles, con filtros dietéticos, modo cocina, favoritos y lista de compras.",
-		},
-		{
-			...ticketsProject,
-			description:
-				"Ticketing de eventos con checkout reservado, tickets QR e inventario de asientos en vivo. Catálogo público, tickets del cliente y un dashboard de organizador con escáner en puerta.",
+				"Notas siempre a mano, sin interrumpir lo que estás haciendo. Una pequeña ventana flotante para capturar ideas y volver al trabajo.",
+			category: "Productividad · macOS",
 		},
 	],
 	education: [
