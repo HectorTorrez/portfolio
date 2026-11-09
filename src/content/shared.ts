@@ -48,7 +48,6 @@ export const knowledgeHubProject = {
 		"Prisma",
 		"OpenAI",
 		"Redis",
-		"Cloudflare R2",
 		"Railway",
 	],
 } as const;
