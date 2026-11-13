@@ -1,5 +1,6 @@
 import {
 	blinkProject,
+	kiloraProject,
 	knowledgeHubProject,
 	portfolioLinks,
 	portfolioSiteBase,
@@ -78,6 +79,12 @@ export const portfolio: PortfolioContent = {
 		category: "Knowledge · AI",
 	},
 	projects: [
+		{
+			...kiloraProject,
+			description:
+				"A shared service history for vehicle owners and workshops in El Salvador. Workshops manage orders and AI-assisted quotes, while owners keep their maintenance records wherever they go.",
+			category: "Automotive · AI",
+		},
 		{
 			...blinkProject,
 			description:

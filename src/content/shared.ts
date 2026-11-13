@@ -42,6 +42,18 @@ export const knowledgeHubProject = {
 	],
 } as const;
 
+export const kiloraProject = {
+	name: "Kilora",
+	slug: "kilora",
+	url: "https://kilora.dev/",
+	sources: [
+		{
+			kind: "source",
+			href: "https://github.com/HectorTorrez/kilora",
+		},
+	],
+} as const;
+
 export const blinkProject = {
 	name: "Blink",
 	slug: "blink",

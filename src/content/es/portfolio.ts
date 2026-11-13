@@ -1,5 +1,6 @@
 import {
 	blinkProject,
+	kiloraProject,
 	knowledgeHubProject,
 	portfolioLinks,
 	portfolioSiteBase,
@@ -80,6 +81,12 @@ export const portfolio: PortfolioContent = {
 		category: "Conocimiento · IA",
 	},
 	projects: [
+		{
+			...kiloraProject,
+			description:
+				"Un historial de servicios compartido entre propietarios de vehículos y talleres en El Salvador. Los talleres gestionan órdenes y cotizaciones asistidas por IA, mientras los propietarios conservan su historial de mantenimiento, incluso al cambiar de taller.",
+			category: "Automotriz · IA",
+		},
 		{
 			...blinkProject,
 			description:
